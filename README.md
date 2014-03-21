@@ -12,4 +12,5 @@ Development and contribution
 ===============
 
 The library was developed by the German Aerospace Center (DLR) Contributors:
- •Franciscus van der Linden
+
+ • Franciscus van der Linden
