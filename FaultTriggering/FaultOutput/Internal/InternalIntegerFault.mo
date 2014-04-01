@@ -24,9 +24,10 @@ fault_local;
         textString="%name",
         lineColor={0,0,255})}),
     Documentation(info="<html>
+</html>", revisions="<html>
 <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\"><tr>
-<td><p><br/><img src=\"modelica://FaultTriggering/Resources/Documentation/Images/logo_dlr.png\"/></p></td>
-<td><p><h4>Copyright &copy; DLR Institute of System Dynamics and Control </h4></p></td>
+<td><p><img src=\"modelica://FaultTriggering/Resources/Documentation/Images/logo_dlr.png\"/></p></td>
+<td><h4>Copyright &copy; DLR Institute of System Dynamics and Control </h4></td>
 </tr>
 </table>
 </html>"));

@@ -23,8 +23,14 @@ Documentation(info="<html>
 <p>The Real output y is a constant signal: </p>
 <p><img src=\"modelica://Modelica/Resources/Images/Blocks/Sources/Constant.png\"/></p>
 <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\"><tr>
-<td><p><br/><img src=\"modelica://FaultTriggering/Resources/Documentation/Images/logo_dlr.png\"/></p></td>
-<td><p><h4>Copyright &copy; DLR Institute of System Dynamics and Control </h4></p></td>
+<td></td>
+<td></td>
+</tr>
+</table>
+</html>", revisions="<html>
+<table cellspacing=\"0\" cellpadding=\"0\" border=\"0\"><tr>
+<td><p><img src=\"modelica://FaultTriggering/Resources/Documentation/Images/logo_dlr.png\"/></p></td>
+<td><h4>Copyright &copy; DLR Institute of System Dynamics and Control </h4></td>
 </tr>
 </table>
 </html>"));

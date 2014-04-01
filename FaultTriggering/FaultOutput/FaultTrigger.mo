@@ -21,19 +21,30 @@ equation
 &nbsp;&nbsp;realFault[2]&nbsp;=&nbsp;time*2;
 &nbsp;&nbsp;realFault[3]&nbsp;=&nbsp;time*3;
 &nbsp;&nbsp;realFault[4]&nbsp;=&nbsp;time*4;
-
+
 &nbsp;&nbsp;integerFault[1]&nbsp;=&nbsp;0;
 &nbsp;&nbsp;integerFault[2]&nbsp;=&nbsp;1;
 &nbsp;&nbsp;integerFault[3]&nbsp;=&nbsp;2;
 &nbsp;&nbsp;integerFault[4]&nbsp;=&nbsp;3;
-
+
 &nbsp;&nbsp;booleanFault[1]&nbsp;=&nbsp;true;
 &nbsp;&nbsp;booleanFault[2]&nbsp;=&nbsp;false;
 &nbsp;&nbsp;booleanFault[3]&nbsp;=&nbsp;true;
 &nbsp;&nbsp;booleanFault[4]&nbsp;=&nbsp;false;</pre>
 <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\"><tr>
-<td><p><br/><br/><img src=\"modelica://FaultTriggering/Resources/Documentation/Images/logo_dlr.png\"/></p></td>
-<td><p><h4>Copyright &copy; DLR Institute of System Dynamics and Control </h4></p></td>
+<td></td>
+<td></td>
+</tr>
+</table>
+</html>", revisions="<html>
+<table cellspacing=\"0\" cellpadding=\"0\" border=\"0\"><tr>
+<td><p><img src=\"modelica://FaultTriggering/Resources/Documentation/Images/logo_dlr.png\"/></p></td>
+<td><h4>Copyright &copy; DLR Institute of System Dynamics and Control </h4></td>
+</tr>
+</table>
+<table cellspacing=\"0\" cellpadding=\"0\" border=\"0\"><tr>
+<td></td>
+<td></td>
 </tr>
 </table>
 </html>"));
