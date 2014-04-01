@@ -62,12 +62,23 @@ partial model Partial_FaultTrigger "partial model defining the fault classes"
           lineColor={0,0,0})}),
     Diagram(graphics),
     Documentation(info="<html>
-<p><h4>General Information</h4></p>
+<h4>General Information</h4>
 <p>This global model is used in combination with variable Faults.</p>
-<p><br/>The values of the Real, Integer and Boolean values must be set in this element.</p>
+<p><br>The values of the Real, Integer and Boolean values must be set in this element.</p>
 <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\"><tr>
-<td><p><br/><br/><img src=\"modelica://FaultTriggering/Resources/Documentation/Images/logo_dlr.png\"/></p></td>
-<td><p><h4>Copyright &copy; DLR Institute of System Dynamics and Control </h4></p></td>
+<td></td>
+<td></td>
+</tr>
+</table>
+</html>", revisions="<html>
+<table cellspacing=\"0\" cellpadding=\"0\" border=\"0\"><tr>
+<td><p><img src=\"modelica://FaultTriggering/Resources/Documentation/Images/logo_dlr.png\"/></p></td>
+<td><h4>Copyright &copy; DLR Institute of System Dynamics and Control </h4></td>
+</tr>
+</table>
+<table cellspacing=\"0\" cellpadding=\"0\" border=\"0\"><tr>
+<td></td>
+<td></td>
 </tr>
 </table>
 </html>"));
