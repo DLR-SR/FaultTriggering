@@ -8,6 +8,8 @@ License
 
 The libray is released under Modelica License 2.
 
+Copyright (C) 2014, **DLR** German Aerospace Center
+
 Development and contribution
 ===============
 
