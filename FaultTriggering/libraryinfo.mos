@@ -1,0 +1,13 @@
+LibraryInfoMenuSeparator(
+  category="libraries",
+  pos=100)
+
+LibraryInfoMenuCommand(
+  category="libraries",
+  text="FaultTriggering",
+  reference="FaultTriggering",
+  version="0.4.0",
+  isModel=true,
+  description="FaultTriggering Library 0.2.0 (for Modelica 3.2.1)",
+  ModelicaVersion="3.2.1",
+  pos=1965)

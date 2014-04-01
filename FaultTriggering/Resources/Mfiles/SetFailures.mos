@@ -1,0 +1,9 @@
+actuatorInternalFault.driveline.DriveFriction.externalRealFault.faultIndex=1;//RealIndex%
+actuatorInternalFault.driveline.DriveFriction.externalRealFault.externalFaultOn=1;//RealIndexSwitch%
+actuatorInternalFault.motor.motorKtFailure.externalIntegerFault.faultIndex=1;//IntegerIndex%
+actuatorInternalFault.motor.motorKtFailure.externalIntegerFault.externalFaultOn=1;//IntergerIndexSwitch%
+actuatorInternalFault.motor.speedSensor.externalBooleanFault.faultIndex=1;//BooleanIndex%
+actuatorInternalFault.motor.speedSensor.externalBooleanFault.externalFaultOn=1;//BooleanIndexSwitch%
+actuatorInternalFault.driveline.speedSensor.externalBooleanFault.faultIndex=2;//BooleanIndex%
+actuatorInternalFault.driveline.speedSensor.externalBooleanFault.externalFaultOn=1;//BooleanIndexSwitch%
+actuatorInternalFault.driveline.DrivelineDisconnect.constBooleanFault=0;//Boolean%
