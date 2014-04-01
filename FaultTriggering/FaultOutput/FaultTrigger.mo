@@ -21,12 +21,12 @@ equation
 &nbsp;&nbsp;realFault[2]&nbsp;=&nbsp;time*2;
 &nbsp;&nbsp;realFault[3]&nbsp;=&nbsp;time*3;
 &nbsp;&nbsp;realFault[4]&nbsp;=&nbsp;time*4;
-
+
 &nbsp;&nbsp;integerFault[1]&nbsp;=&nbsp;0;
 &nbsp;&nbsp;integerFault[2]&nbsp;=&nbsp;1;
 &nbsp;&nbsp;integerFault[3]&nbsp;=&nbsp;2;
 &nbsp;&nbsp;integerFault[4]&nbsp;=&nbsp;3;
-
+
 &nbsp;&nbsp;booleanFault[1]&nbsp;=&nbsp;true;
 &nbsp;&nbsp;booleanFault[2]&nbsp;=&nbsp;false;
 &nbsp;&nbsp;booleanFault[3]&nbsp;=&nbsp;true;
