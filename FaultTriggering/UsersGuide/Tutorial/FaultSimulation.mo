@@ -15,5 +15,11 @@ extends FaultTriggering.Utilities.Icons.Information;
 <p><br/><br/><img src=\"modelica://FaultTriggering/Resources/Documentation/SimulinkWrapperSetup.png\"/></p>
 <p>Using this setup, the model can be directly integrated in a simulink environment.</p>
 <p><img src=\"modelica://FaultTriggering/Resources/Documentation/SimulinkDymolaBlock.png\"/></p>
+</html>", revisions="<html>
+<table cellspacing=\"0\" cellpadding=\"0\" border=\"0\"><tr>
+<td><p><img src=\"modelica://FaultTriggering/Resources/Documentation/Images/logo_dlr.png\"/></p></td>
+<td><h4>Copyright &copy; DLR Institute of System Dynamics and Control </h4></td>
+</tr>
+</table>
 </html>"));
 end FaultSimulation;

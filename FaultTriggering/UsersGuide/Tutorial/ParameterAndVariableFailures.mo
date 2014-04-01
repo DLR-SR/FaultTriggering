@@ -31,5 +31,11 @@ model ParameterAndVariableFailures "Parameter and Variable Failures"
 <p><h4><font color=\"#008000\">Real, Integer or Boolean failures?</font></h4></p>
 <p>The choice between Real, Integer and Boolean failures, can usually be mady by analysing the failure and the test procedures which are planned with it.</p>
 <p>If a failure has a variable &QUOT;fault&QUOT; value (such as a friction increase), a Real failure is most appropriate. If the failureoutput is used to switch certain pre-defined failure cases (different failure modes of a bearing), an Integer failure should be used. If a failure only has an &QUOT;Off&QUOT; and an &QUOT;On&QUOT; state (such a short circuit or shaft breakage), a boolean failure should be used.</p>
+</html>", revisions="<html>
+<table cellspacing=\"0\" cellpadding=\"0\" border=\"0\"><tr>
+<td><p><img src=\"modelica://FaultTriggering/Resources/Documentation/Images/logo_dlr.png\"/></p></td>
+<td><h4>Copyright &copy; DLR Institute of System Dynamics and Control </h4></td>
+</tr>
+</table>
 </html>"));
 end ParameterAndVariableFailures;

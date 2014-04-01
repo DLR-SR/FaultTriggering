@@ -52,5 +52,11 @@ driveline.speedSensor.constBooleanFault=0;//Boolean&percnt;</pre>
 <p><h4><font color=\"#008000\">Using the Fault toolbox in Simulink</font></h4></p>
 <p>To use the fault toolbox with Simulink the model has to be set up like before, however, the faultbus should be defined as an input. <a href=\" FaultBus.FaultsInput\">FaultsInput</a> in the FaultBus package is a predefined input connector.</p>
 <p>After the model is prepared in Dymola, it can be set up as usual in simulink. Please refer to the dymola documentation on how to set up dymola models in Simulink using a &QUOT;DymolaBlock&QUOT;.</p>
+</html>", revisions="<html>
+<table cellspacing=\"0\" cellpadding=\"0\" border=\"0\"><tr>
+<td><p><img src=\"modelica://FaultTriggering/Resources/Documentation/Images/logo_dlr.png\"/></p></td>
+<td><h4>Copyright &copy; DLR Institute of System Dynamics and Control </h4></td>
+</tr>
+</table>
 </html>"));
 end FaultModelSetup;
