@@ -1,0 +1,10 @@
+ConstantRealFault
+ConstantIntegerFault
+ConstantBooleanFault
+VariableRealFault
+VariableIntegerFault
+VariableBooleanFault
+FaultTrigger
+ExternalFaultTrigger
+Partial_FaultTrigger
+Internal

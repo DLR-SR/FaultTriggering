@@ -1,0 +1,14 @@
+within FaultTriggering.Examples;
+package ActuatorExample 
+  extends FaultTriggering.Utilities.Icons.ExamplesPackage;
+
+
+  annotation (Icon(graphics),               Documentation(info="<html>
+<p>This library contains a very simple rotational actuator model to show the possibilities of the <b>FaultTriggering</b> toolbox</p>
+<table cellspacing=\"0\" cellpadding=\"0\" border=\"0\"><tr>
+<td><p><br/><br/><img src=\"modelica://FaultTriggering/Resources/Documentation/Images/logo_dlr.png\"/></p></td>
+<td><p><h4>Copyright &copy; DLR Institute of System Dynamics and Control </h4></p></td>
+</tr>
+</table>
+</html>"));
+end ActuatorExample;
