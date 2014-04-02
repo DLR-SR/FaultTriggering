@@ -16,11 +16,11 @@ extends FaultTriggering.Utilities.Icons.Information;
 <p>All Fault models are supllied in<b> FaultTriggering.FaultOutput</b>.</p>
 <p>All Variable Faults are controlled by a global <a href=\"FaultTriggering.FaultOutput.FaultTrigger\">model</a> &QUOT;broadcasting&QUOT; the faults. Each variable fault therefore must be coupled to a fault channel from the global FaultTriggering model. This makes also external triggering of the faults (e.g. from Simulink) possible.</p>
 <p><br/>Using these fault models all commonly know faults can be modelled. In <a href=\"FaultTriggering.UsersGuide.Tutorial.FaultModelling\">Fault Modelling</a> is explained how to use these blocks.</p>
-</html>", revisions="<html>
-<table cellspacing=\"0\" cellpadding=\"0\" border=\"0\"><tr>
-<td><p><img src=\"modelica://FaultTriggering/Resources/Documentation/Images/logo_dlr.png\"/></p></td>
-<td><h4>Copyright &copy; DLR Institute of System Dynamics and Control </h4></td>
-</tr>
-</table>
+</html>", revisions="<html><table border=0 cellspacing=0 cellpadding=0>
+  <tr><td valign=\"center\"> <img src=\"modelica://FaultTriggering/Resources/Documentation/Images/logo_dlr.png\" width=60></td>
+    <td valign=\"center\"><b>Copyright</b>
+      <br><b>&copy; 2012-2014, DLR Institute of System Dynamics and Control</b></td>
+  </tr>
+ </table>
 </html>"));
 end GettingStarted;

@@ -31,11 +31,11 @@ extends FaultTriggering.Utilities.Icons.Information;
 <li><h4>Internal Fault</h4></li>
 </ol></p>
 <p>Using the models in the package <a href=\"FaultTriggering.FaultOutput.Internal\">FaultTriggering.FaultOutput.Internal</a>, it is possible to create broken models by using the &QUOT;<i>extends</i>&QUOT; functionality. An example of this possibility can be found in the sensor model <a href=\"FaultTriggering.Examples.MotorExample.FaultSpeedSensor\">FaultTriggering.Examples.MotorExample.FaultSpeedSensor</a> </p>
-</html>", revisions="<html>
-<table cellspacing=\"0\" cellpadding=\"0\" border=\"0\"><tr>
-<td><p><img src=\"modelica://FaultTriggering/Resources/Documentation/Images/logo_dlr.png\"/></p></td>
-<td><h4>Copyright &copy; DLR Institute of System Dynamics and Control </h4></td>
-</tr>
-</table>
+</html>", revisions="<html><table border=0 cellspacing=0 cellpadding=0>
+  <tr><td valign=\"center\"> <img src=\"modelica://FaultTriggering/Resources/Documentation/Images/logo_dlr.png\" width=60></td>
+    <td valign=\"center\"><b>Copyright</b>
+      <br><b>&copy; 2012-2014, DLR Institute of System Dynamics and Control</b></td>
+  </tr>
+ </table>
 </html>"));
 end FaultModelling;
