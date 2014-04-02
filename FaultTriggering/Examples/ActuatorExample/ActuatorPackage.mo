@@ -20,6 +20,13 @@ externalBooleanFault =                 FaultTriggering.Utilities.Types.Variable_
             externalFaultOn=true,faultIndex=1,faultMode=1))));
 inner FaultTriggerController faultTrigger
     annotation (Placement(transformation(extent={{60,60},{80,80}})));
+    annotation (Documentation(revisions="<html><table border=0 cellspacing=0 cellpadding=0>
+  <tr><td valign=\"center\"> <img src=\"modelica://FaultTriggering/Resources/Documentation/Images/logo_dlr.png\" width=60></td>
+    <td valign=\"center\"><b>Copyright</b>
+      <br><b>&copy; 2012-2014, DLR Institute of System Dynamics and Control</b></td>
+  </tr>
+ </table>
+</html>"));
 end ActuatorWrapper;
 
 model FaultTriggerController
@@ -76,7 +83,14 @@ booleanFault[2] = faults.driveline.bearing.fault.externalBooleanFault;
         extent={{6,3},{6,3}}));
 annotation (defaultComponentPrefixes="inner",defaultComponentName="faultTrigger",Diagram(
           coordinateSystem(preserveAspectRatio=false, extent={{-100,-100},{100,
-              100}}),                                                                    graphics));
+              100}}),                                                                    graphics),
+      Documentation(revisions="<html><table border=0 cellspacing=0 cellpadding=0>
+  <tr><td valign=\"center\"> <img src=\"modelica://FaultTriggering/Resources/Documentation/Images/logo_dlr.png\" width=60></td>
+    <td valign=\"center\"><b>Copyright</b>
+      <br><b>&copy; 2012-2014, DLR Institute of System Dynamics and Control</b></td>
+  </tr>
+ </table>
+</html>"));
 end FaultTriggerController;
 
 record FaultRecord "Predefined Fault record"
@@ -116,11 +130,25 @@ extends FaultTriggering.Utilities.Records.Faults(
       path=  "FaultTriggering.Examples.ActuatorExample.Actuator.driveline.bearing.fault.externalBooleanFault")},
   booleanFaultSelect=  {1, 2},
     booleanFaultMode=  {1, 1}));
+    annotation (Documentation(revisions="<html><table border=0 cellspacing=0 cellpadding=0>
+  <tr><td valign=\"center\"> <img src=\"modelica://FaultTriggering/Resources/Documentation/Images/logo_dlr.png\" width=60></td>
+    <td valign=\"center\"><b>Copyright</b>
+      <br><b>&copy; 2012-2014, DLR Institute of System Dynamics and Control</b></td>
+  </tr>
+ </table>
+</html>"));
 end FaultRecord;
 
 expandable connector FaultsInput = input ActuatorPackage.Interfaces.Faults
     "'input Faults' as connector"                                                                         annotation (Icon(graphics={Rectangle(extent={{-8,4},{10,0}},lineColor={255,0,0},
-            lineThickness =                                                                                                    0.5)}));
+            lineThickness =                                                                                                    0.5)}),
+      Documentation(revisions="<html><table border=0 cellspacing=0 cellpadding=0>
+  <tr><td valign=\"center\"> <img src=\"modelica://FaultTriggering/Resources/Documentation/Images/logo_dlr.png\" width=60></td>
+    <td valign=\"center\"><b>Copyright</b>
+      <br><b>&copy; 2012-2014, DLR Institute of System Dynamics and Control</b></td>
+  </tr>
+ </table>
+</html>"));
 package Interfaces
 extends FaultTriggering.Utilities.Icons.InterfacesPackage;
 expandable connector Faults
@@ -169,4 +197,11 @@ extends FaultTriggering.Utilities.Icons.FaultSubBus;
 ActuatorPackage.Interfaces.externalBooleanFault externalBooleanFault;
 end fault;
 end Interfaces;
+  annotation (Documentation(revisions="<html><table border=0 cellspacing=0 cellpadding=0>
+  <tr><td valign=\"center\"> <img src=\"modelica://FaultTriggering/Resources/Documentation/Images/logo_dlr.png\" width=60></td>
+    <td valign=\"center\"><b>Copyright</b>
+      <br><b>&copy; 2012-2014, DLR Institute of System Dynamics and Control</b></td>
+  </tr>
+ </table>
+</html>"));
 end ActuatorPackage;

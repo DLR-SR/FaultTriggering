@@ -100,16 +100,11 @@ equation
           pattern=LinePattern.None)}),
     Documentation(info="<html>
 <p>This block is used to simulate a variable fault. Using the function <a href=\"FaultTriggering.createFaultPackage\">FaultTriggering.createFaultPackage</a> all the faults in the model can be found and set.</p>
-</html>", revisions="<html>
-<table cellspacing=\"0\" cellpadding=\"0\" border=\"0\"><tr>
-<td><p><img src=\"modelica://FaultTriggering/Resources/Documentation/Images/logo_dlr.png\"/></p></td>
-<td><h4>Copyright &copy; DLR Institute of System Dynamics and Control </h4></td>
-</tr>
-</table>
-<table cellspacing=\"0\" cellpadding=\"0\" border=\"0\"><tr>
-<td></td>
-<td></td>
-</tr>
-</table>
+</html>", revisions="<html><table border=0 cellspacing=0 cellpadding=0>
+  <tr><td valign=\"center\"> <img src=\"modelica://FaultTriggering/Resources/Documentation/Images/logo_dlr.png\" width=60></td>
+    <td valign=\"center\"><b>Copyright</b>
+      <br><b>&copy; 2012-2014, DLR Institute of System Dynamics and Control</b></td>
+  </tr>
+ </table>
 </html>"));
 end VariableRealFault;

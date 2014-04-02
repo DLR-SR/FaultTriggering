@@ -11,11 +11,11 @@ model AutomaticModelReconfiguration "Automatic Model Reconfiguration"
 <p><code>&nbsp;&nbsp;<font style=\"color: #ff0000; \">Blocked</font>&nbsp;blocked&nbsp;<font style=\"color: #0000ff; \">if&nbsp;</font>fault.externalBooleanFault.faultMode==2;</code></p>
 <p><code>&nbsp;&nbsp;<font style=\"color: #ff0000; \">Simple </font>&nbsp;simple&nbsp; <font style=\"color: #0000ff; \">if&nbsp;</font>fault.externalBooleanFault.faultMode==3;</code></p>
 <p><br/>This allows the local activation of the individual components. It is not necessary to define conditional connects, as they are automatically disregarded. It is good design practice, that in case of a model selection which is done on the equation layer, a note is made on hte diagram layer. Also using dashed lines helps understadning ht emodel for the end user.</p>
-</html>", revisions="<html>
-<table cellspacing=\"0\" cellpadding=\"0\" border=\"0\"><tr>
-<td><p><img src=\"modelica://FaultTriggering/Resources/Documentation/Images/logo_dlr.png\"/></p></td>
-<td><h4>Copyright &copy; DLR Institute of System Dynamics and Control </h4></td>
-</tr>
-</table>
+</html>", revisions="<html><table border=0 cellspacing=0 cellpadding=0>
+  <tr><td valign=\"center\"> <img src=\"modelica://FaultTriggering/Resources/Documentation/Images/logo_dlr.png\" width=60></td>
+    <td valign=\"center\"><b>Copyright</b>
+      <br><b>&copy; 2012-2014, DLR Institute of System Dynamics and Control</b></td>
+  </tr>
+ </table>
 </html>"));
 end AutomaticModelReconfiguration;
