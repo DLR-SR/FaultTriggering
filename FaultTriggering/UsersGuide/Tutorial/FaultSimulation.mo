@@ -7,7 +7,7 @@ extends FaultTriggering.Utilities.Icons.Information;
 <p><img src=\"modelica://FaultTriggering/Resources/Documentation/ConnectSourcesToBus.png\"/></p>
 <p>Using this method all faults should be connected. Below an example of how this model can be connected is shown.</p>
 <p><img src=\"modelica://FaultTriggering/Resources/Documentation/ConnectBusToFault.png\"/></p>
-<p>After setting up this model, the simulation can be started. For the demo model <a href=\"FaultTriggering.Examples.ActuatorExample.Actuator\">Actuator</a> a complete set up of a faultwrapper library is given: <a href=\"FaultTriggering.Examples.ActuatorExample.ActuatorFaults\">FaultTriggering.Examples.ActuatorExample.ActuatorFaults</a>. In this library FaultTriggerController is pre-configured.</p>
+<p>After setting up this model, the simulation can be started. For the demo model <a href=\"modelica://FaultTriggering.Examples.ActuatorExample.Actuator\">Actuator</a> a complete set up of a faultwrapper library is given: <a href=\"modelica://FaultTriggering.Examples.ActuatorExample.ActuatorFaults\">FaultTriggering.Examples.ActuatorExample.ActuatorFaults</a>. In this library FaultTriggerController is pre-configured.</p>
 <p><h4><font color=\"#008000\">Simulink fault injection</font></h4></p>
 <p><br/>For the use in Simulink, it is possible to directly set the bus as an input. Use the supplied &QUOT;FaultsInput&QUOT; to set up the input for the usage with the simulink. First, the FaultTriggerController block should be editted. Add a FaultsInput bus and connect the two:</p>
 <p><img src=\"modelica://FaultTriggering/Resources/Documentation/SimulinkFaultTriggerControllerSetup.png\"/></p>
