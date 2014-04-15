@@ -46,7 +46,7 @@ driveline.bearing.fault.externalBooleanFault.faultMode=1;//BooleanMode&percnt;
 driveline.bearing.fault.externalBooleanFault.externalFaultOn=1;//Boolean&percnt;
 driveline.disconnect.constBooleanFault=0;//Boolean&percnt;
 driveline.speedSensor.constBooleanFault=0;//Boolean&percnt;</pre>
-<p>This script can be directly run in Dymola (and probably also other Modelica simulators) to set the values of the faults. It is aslso possible to modify this script for other purposes.</p>
+<p>This script can be directly run in Dymola (and probably also other Modelica simulators) to set the values of the faults. It is also possible to modify this script for other purposes.</p>
 <p>Moreover a library is generated and saved. In this library, the topmost model, which is named &QUOT;&LT;ModelName&GT;+Package&QUOT; is included. This model extends the original model and includes an inner model to control all variable faults as well as an paramter &QUOT;FaultRecord&QUOT; that controls all paramter faults. All values given in the GUI will be set. Manually editting can be by editting the faultTrigger block in the &QUOT;&LT;ModelName&GT;+Wrapper&QUOT; model. The the moment Dymola 2013FD01 has problems wenn single entires are changed in subrecords. If problems exist, the FaultRecord- Record has to be directly editted by hand.</p>
 <p>An example of such a generated library is given in FaultTriggering.Examples.ActuatorExample.ActuatorFaults.</p>
 <p><h4><font color=\"#008000\">Using the Fault toolbox in Simulink</font></h4></p>
