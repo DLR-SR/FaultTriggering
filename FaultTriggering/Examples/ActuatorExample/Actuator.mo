@@ -54,7 +54,7 @@ equation
           fillColor={170,213,255},
           fillPattern=FillPattern.Solid,
           lineColor={0,0,0},
-          textString="Actuator Speed Controler"),
+          textString="Actuator Speed Controller"),
         Text(
           extent={{-80,70},{40,50}},
           pattern=LinePattern.None,

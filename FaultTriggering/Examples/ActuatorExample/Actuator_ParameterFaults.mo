@@ -59,7 +59,7 @@ equation
           fillColor={170,213,255},
           fillPattern=FillPattern.Solid,
           lineColor={0,0,0},
-          textString="Actuator Speed Controler")}),
+          textString="Actuator Speed Controller")}),
                                  Icon(graphics={
         Rectangle(
           extent={{-80,100},{-30,-100}},
