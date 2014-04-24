@@ -12,7 +12,7 @@ model ParameterAndVariableFaults "Parameter and Variable Faults"
 </ol></p>
 <p>To help to choose between the faults, a short description and some examples are given:</p>
 <p><h5>Parameter Faults</h5></p>
-<p>Parameter Faults shoul be used for faults that change very slowly in time with respect to the simulation time so that a constant fault value can be assumed.</p>
+<p>Parameter Faults should be used for faults that change very slowly in time with respect to the simulation time so that a constant fault value can be assumed.</p>
 <p>Examples:</p>
 <p><ul>
 <li>Gearbox play</li>
