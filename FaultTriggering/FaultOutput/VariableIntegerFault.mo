@@ -10,8 +10,7 @@ parameter Boolean useModelModeSelection = false
 
   Modelica.Blocks.Interfaces.IntegerOutput mode = externalIntegerFault.faultMode if useModelModeSelection
     "Connector of Integer output signal"
-    annotation (Placement(transformation(extent={{100,-70},{120,-50}},rotation=
-              0)));
+    annotation (Placement(transformation(extent={{100,-70},{120,-50}})));
 equation
 y = fault;
 

@@ -9,8 +9,7 @@ parameter Boolean useModelModeSelection = false
     iconTransformation(extent={{100,-10},{120,10}})));
   Modelica.Blocks.Interfaces.IntegerOutput mode = externalRealFault.faultMode if useModelModeSelection
     "Connector of Integer output signal"
-    annotation (Placement(transformation(extent={{100,-70},{120,-50}},rotation=
-              0)));
+    annotation (Placement(transformation(extent={{100,-70},{120,-50}})));
 equation
 
   y = fault;

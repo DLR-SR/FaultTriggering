@@ -17,8 +17,7 @@ equation
   realFault    = realFaultInput;
   integerFault = integerFaultInput;
   booleanFault = booleanFaultInput;
-  annotation (defaultComponentPrefixes="inner",defaultComponentName="faultTrigger",Diagram(graphics), Icon(graphics),
-    Documentation(info="<html>
+  annotation (defaultComponentPrefixes="inner",defaultComponentName="faultTrigger",    Documentation(info="<html>
 <p>The outer model FaultTriggering.FaultOutput.ExternalFaultTrigger is used to supply the fault channels for all variable faults. In this block these faults can be externally controlled using the block inuts. Using the supplied matlab m-functions, this block makes it possible to trigger faults from Matlab/Simulink.</p>
 </html>", revisions="<html><table border=0 cellspacing=0 cellpadding=0>
   <tr><td valign=\"center\"> <img src=\"modelica://FaultTriggering/Resources/Documentation/Images/logo_dlr.png\" width=60></td>

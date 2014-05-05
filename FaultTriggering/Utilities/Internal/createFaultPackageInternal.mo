@@ -281,7 +281,7 @@ assert( not
     end if;
   end for;
 
-  Streams.print("annotation (defaultComponentPrefixes=\"inner\",defaultComponentName=\"faultTrigger\",Diagram(graphics));",
+  Streams.print("annotation (defaultComponentPrefixes=\"inner\",defaultComponentName=\"faultTrigger\");",
     packageName);
   Streams.print("end FaultTriggerController;", packageName);
 
@@ -390,8 +390,7 @@ Streams.print("extends FaultTriggering.Utilities.Icons.InterfacesPackage;", pack
 Streams.print("end Interfaces;", packageName);
   Streams.print("end " + readAfterDot(modelName) + "Package" + ";", packageName);
 
-  annotation (Icon(graphics),
-                         Documentation(info="<html>
+  annotation (                         Documentation(info="<html>
 <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\"><tr>
 <td><p><br/><img src=\"modelica://FaultTriggering/Resources/Documentation/Images/logo_dlr.png\"/></p></td>
 <td><p><b>Copyright &copy; DLR Institute of System Dynamics and Control</b> </p></td>

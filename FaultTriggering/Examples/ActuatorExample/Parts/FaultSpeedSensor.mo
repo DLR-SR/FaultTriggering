@@ -14,7 +14,6 @@ equation
   flange.tau = 0;
 
   annotation (
-    Diagram(graphics),
     Icon(graphics={
         Ellipse(
           extent={{-72,70},{68,-70}},

@@ -16,8 +16,7 @@ equation
   faultNumber = externalBooleanFault.faultIndex;
   fault = if externalBooleanFault.externalFaultOn then faultTrigger.booleanFault[faultNumber] else
 fault_local;
-  annotation (Diagram(graphics),
-                             Icon(graphics={
+  annotation (                             Icon(graphics={
                                         Text(
         extent={{-150,150},{150,110}},
         textString="%name",

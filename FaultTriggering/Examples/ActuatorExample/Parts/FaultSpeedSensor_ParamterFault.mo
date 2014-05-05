@@ -15,7 +15,7 @@ equation
  w = if constBooleanFault then 0 else der(flange.phi);
  flange.tau = 0;
 
-  annotation (Diagram(graphics), Icon(graphics={
+  annotation ( Icon(graphics={
         Ellipse(
           extent={{-72,70},{68,-70}},
           lineColor={0,0,0},

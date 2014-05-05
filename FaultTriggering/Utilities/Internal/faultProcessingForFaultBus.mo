@@ -305,7 +305,6 @@ assert( not
    end for;
 
   annotation (
-    Icon(graphics),
     Diagram(graphics={Polygon(
           points={{70,90},{-22,10},{0,-10},{-70,-90},{30,-10},{10,10},{70,90}},
           smooth=Smooth.None,

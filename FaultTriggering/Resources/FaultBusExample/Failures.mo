@@ -32,7 +32,7 @@ realFault[1] = failures.driveline.friction.externalRealFault;
 integerFault[1] = failures.motor.ktFailure.externalIntegerFault;
 booleanFault[1] = failures.motor.speedSensor.externalBooleanFault;
 booleanFault[2] = failures.driveline.bearing.failure.externalBooleanFault;
-annotation (defaultComponentPrefixes="inner",defaultComponentName="failureTrigger",Diagram(graphics));
+annotation (defaultComponentPrefixes="inner",defaultComponentName="failureTrigger");
 end FailureTriggerController;
 record FailureRecord "Predefined Failure record"
 extends

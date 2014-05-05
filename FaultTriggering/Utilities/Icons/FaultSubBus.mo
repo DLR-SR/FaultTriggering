@@ -5,8 +5,7 @@ connector FaultSubBus "Icon for signal sub-bus"
     Icon(coordinateSystem(
         preserveAspectRatio=false,
         extent={{-100,-100},{100,100}},
-        grid={2,2},
-        initialScale=0.1), graphics={
+        grid={2,2}), graphics={
         Line(
           points={{-16,2},{16,2}},
           color={255,0,0},
@@ -45,8 +44,7 @@ connector FaultSubBus "Icon for signal sub-bus"
     Diagram(coordinateSystem(
         preserveAspectRatio=false,
         extent={{-100,-100},{100,100}},
-        grid={2,2},
-        initialScale=0.1), graphics={
+        grid={2,2}), graphics={
         Polygon(
           points={{-40,25},{40,25},{50,15},{40,-20},{30,-25},{-30,-25},{-40,
               -20},{-50,15},{-40,25}},

@@ -60,7 +60,6 @@ partial model Partial_FaultTrigger "partial model defining the fault classes"
           fillPattern=FillPattern.Solid,
           pattern=LinePattern.None,
           lineColor={0,0,0})}),
-    Diagram(graphics),
     Documentation(info="<html>
 <h4>General Information</h4>
 <p>This global model is used in combination with variable Faults.</p>

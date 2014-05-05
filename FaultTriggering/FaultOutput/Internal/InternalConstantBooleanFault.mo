@@ -14,10 +14,6 @@ block InternalConstantBooleanFault "Generate constant Fault of type Boolean"
         extent={{-150,-140},{150,-110}},
         lineColor={0,0,0},
           textString="%constBooleanFault")}),
-    Diagram(coordinateSystem(
-      preserveAspectRatio=true,
-      extent={{-100,-100},{100,100}},
-      grid={2,2}), graphics),
     Documentation(info="<html>
 <p>This block is used to simulate a constant fault. Using the function <a href=\"FaultTriggering.GatherAndSetFaults\">FaultTriggering.GatherAndSetFaults</a> all the faults in the model can be found and set.</p>
 <p>The Boolean output y is a constant signal: </p>
