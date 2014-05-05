@@ -70,7 +70,7 @@ equation
       points={{-79,50},{-70,50}},
       color={255,0,255},
       smooth=Smooth.None));
-  annotation (Diagram(graphics), Icon(graphics={
+  annotation ( Icon(graphics={
                                         Text(
         extent={{-150,150},{150,110}},
         textString="%name",

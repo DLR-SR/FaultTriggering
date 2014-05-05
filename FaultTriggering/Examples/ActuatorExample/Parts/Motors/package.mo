@@ -1,5 +1,5 @@
 within FaultTriggering.Examples.ActuatorExample.Parts;
-package Motors 
+package Motors
   extends FaultTriggering.Utilities.Icons.Motors;
 
 

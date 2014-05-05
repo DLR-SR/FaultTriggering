@@ -16,8 +16,7 @@ equation
   faultNumber = externalRealFault.faultIndex;
   fault = if externalRealFault.externalFaultOn then faultTrigger.realFault[faultNumber] else
 fault_local;
-  annotation (Diagram(graphics),
-                             Icon(graphics={
+  annotation (                             Icon(graphics={
                                         Text(
         extent={{-150,150},{150,110}},
         textString="%name",

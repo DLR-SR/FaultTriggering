@@ -52,7 +52,7 @@ for  i = 1: length(FaultDescriptions);
             % check if real numbers are used
             if isreal(UserInput)
                 Failures.Real(j).FaultRange = UserInput;
-            else                
+            else
                 warning('DLR:SetupFailureParameters:Wrong input syntax', 'Wrong syntax, defaulting to 0');
                 Failures.Real(j).FaultRange = 0;
             end
@@ -80,7 +80,7 @@ for  i = 1: length(FaultDescriptions);
             % check if real numbers are used
             if all(CheckIfInteger(UserInput))
                 Failures.Integer(j).FaultRange = UserInput;
-            else                
+            else
                 warning('DLR:SetupFailureParameters:Wrong input syntax', 'Wrong syntax, defaulting to 0');
                 Failures.Integer(j).FaultRange = 0;
             end
@@ -108,7 +108,7 @@ for  i = 1: length(FaultDescriptions);
             % check if real numbers are used
             if all(CheckIfBoolean(UserInput))
                 Failures.Boolean(j).FaultRange = UserInput;
-            else                
+            else
                 warning('DLR:SetupFailureParameters:Wrong input syntax', 'Wrong syntax, defaulting to 0');
                 Failures.Boolean(j).FaultRange = 0;
             end

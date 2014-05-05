@@ -1,5 +1,5 @@
 within FaultTriggering.Examples.ActuatorExample.Parts;
-package Drivelines 
+package Drivelines
 
 
   annotation (Icon(graphics={

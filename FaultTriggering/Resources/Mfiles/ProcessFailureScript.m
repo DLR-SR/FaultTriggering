@@ -8,7 +8,7 @@ function [FaultNames,FaultValues,FaultDescriptions] = ProcessFailureScript(Scrip
 % applied fault values FaultValues and the fault type FaultDescription
 % (boolean, integer or real)
 
-%  Author: F.L.J. van der Linden, 
+%  Author: F.L.J. van der Linden,
 %  Revision(s): 23-07-2012 % first version
 %  Copyright 2008-20012 DLR
 
@@ -24,7 +24,7 @@ FaultEqualPositions = strfind(RawFaultNames,'=');
 FaultPercentPositions = [0,strfind(RawFaultNames,'%')];
 % read the data from the file into the output variables
 for Faulti = 1:length(FaultCommaPositions)-1
-   FaultNames{Faulti}  = RawFaultNames(FaultPercentPositions(Faulti)+1:FaultEqualPositions(Faulti)-1); 
+   FaultNames{Faulti}  = RawFaultNames(FaultPercentPositions(Faulti)+1:FaultEqualPositions(Faulti)-1);
    FaultValueString{Faulti} = RawFaultNames(FaultEqualPositions(Faulti)+1:FaultCommaPositions(Faulti+1)-1);
    FaultDescriptions{Faulti} = RawFaultNames(FaultCommaPositions(Faulti+1)+3:FaultPercentPositions(Faulti+1)-1);
    if strcmp(FaultValueString{Faulti},'true')

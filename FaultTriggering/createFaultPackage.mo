@@ -86,7 +86,7 @@ faultSizes :={size(realFaultNames, 1),size(integerFaultNames, 1),size(
     packageName,
     maxSearchSize);
 
-  annotation (Icon(graphics),   Documentation(info="<html>
+  annotation (   Documentation(info="<html>
 <p>This Function gathers all the faults in the model <b>modelName</b>, sets the values of the faults and saves it into the modelica script <b>scriptName</b>. The Integer <b>maxSearchSize</b> is needed to preallocate the number of searched elements.</p>
 <p><br>This function creates a package with name <b>packageName</b>. In this package a hiarchial bus is build to which all faults can be easily coupled in the model <b>ConnectBusToFaults</b>. </p>
 </html>", revisions="<html><table border=0 cellspacing=0 cellpadding=0>
