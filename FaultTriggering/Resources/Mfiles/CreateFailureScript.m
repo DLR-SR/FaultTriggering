@@ -74,7 +74,7 @@ if WhatTest == 3
         Test.FaultNames(k) = Failures.Boolean(i).FaultNames;
         Test.FaultSize(k) = Failures.Boolean(i).FaultRange(j);
         Test.SwichableFailures = zeros(Failures.TotalFailures,0);
-        
+
     end
     end
 end
@@ -102,14 +102,14 @@ fprintf(fid,['finalOutputScriptName = ', finalOutputScriptName,';\n']);
 for i = 1: size(Test.SwichableFailures,2)
     fprintf(fid,['//Start ',num2str(i) '. Test \n']);
     fprintf(fid,['writeFailures.testRun = ', num2str(i),';\n']);
-    
+
     for j = 1: size(Test.SwichableFailures,1)
         fprintf(fid,[FaultNames{FaultSwitches(j)}, '=', num2str(Test.SwichableFailures(j,i)),';\n']);
     end
     fprintf(fid,['simulateModel("', ModelName, '", startTime=', num2str(Simulation.startTime),...
         ', stopTime=' , num2str(Simulation.stopTime),...
         ', tolerance=', num2str(Simulation.tolerance),'); \n']);
-    
+
 end
 % close file
 fclose(fid);

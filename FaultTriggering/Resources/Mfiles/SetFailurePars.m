@@ -1,7 +1,7 @@
 % This script is used to apply the parameters generated with
 % FailureTriggering.failureProcessing.
 
-%  Author: F.L.J. van der Linden, 
+%  Author: F.L.J. van der Linden,
 %  Revision(s): 23-07-2012 % first version
 %  Copyright 2008-20012 DLR
 
@@ -20,7 +20,7 @@ DymolaBlockName = 'FailureExample/DymolaBlock'; % Dymola block name in Simulink
 
 %% set fault parameters
 for Faulti = 1:length(FaultName)
-    disp([FaultName{Faulti}, ' = ' ,num2str(FaultValue(Faulti)),' : ',FaultDescription{Faulti}]) 
+    disp([FaultName{Faulti}, ' = ' ,num2str(FaultValue(Faulti)),' : ',FaultDescription{Faulti}])
     p = setParameterByName(pnames, p, FaultName{Faulti}, FaultValue(Faulti));
 end
 

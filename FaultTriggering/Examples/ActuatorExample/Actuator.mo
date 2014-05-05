@@ -63,7 +63,7 @@ equation
           lineColor={0,0,0},
           horizontalAlignment=TextAlignment.Left,
           textString="This model is an example of an actuator model.
-Using the function createFaultPackage, a 
+Using the function createFaultPackage, a
 wrapper model is made of this model.")}),
                                  Icon(graphics={
         Rectangle(

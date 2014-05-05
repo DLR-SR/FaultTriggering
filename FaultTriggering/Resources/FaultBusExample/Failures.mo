@@ -35,7 +35,7 @@ booleanFault[2] = failures.driveline.bearing.failure.externalBooleanFault;
 annotation (defaultComponentPrefixes="inner",defaultComponentName="failureTrigger",Diagram(graphics));
 end FailureTriggerController;
 record FailureRecord "Predefined Failure record"
-extends 
+extends
 FailureTriggering.Utilities.Records.Failures(
   parameterFailures = FailureTriggering.Utilities.Records.Parameter_Failures(
     realFailures = {FailureTriggering.Utilities.Records.RealFailures(

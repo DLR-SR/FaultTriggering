@@ -1,5 +1,5 @@
 within FaultTriggering.Utilities.Icons;
-partial package TranslationalActuators 
+partial package TranslationalActuators
 
 
   annotation (Icon(graphics={

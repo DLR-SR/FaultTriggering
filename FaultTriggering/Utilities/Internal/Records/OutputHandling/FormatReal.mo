@@ -105,12 +105,12 @@ algorithm
 <p><h4>Description</h4></p>
 <p>A user friendly format of the real value val with nDec decimals is returned. </p>
 <p><h4>Example</h4></p>
-<blockquote><pre>  str1 := FormatReal(Modelica.Constants.pi, 5);              
-  str2 := FormatReal(1e25*Modelica.Constants.pi, 5);  
-  str3 := FormatReal(1e2*Modelica.Constants.pi, 5);            
-  str4 := FormatReal(1e-2*Modelica.Constants.pi, 5);               
+<blockquote><pre>  str1 := FormatReal(Modelica.Constants.pi, 5);
+  str2 := FormatReal(1e25*Modelica.Constants.pi, 5);
+  str3 := FormatReal(1e2*Modelica.Constants.pi, 5);
+  str4 := FormatReal(1e-2*Modelica.Constants.pi, 5);
   str5 := FormatReal(1e-3*Modelica.Constants.pi, 5);
-  
+
                -&GT; str1 = &QUOT;   3.14159     &QUOT;
                -&GT; str2 = &QUOT;   3.14159e+25 &QUOT;
                -&GT; str3 = &QUOT; 314.15927     &QUOT;
