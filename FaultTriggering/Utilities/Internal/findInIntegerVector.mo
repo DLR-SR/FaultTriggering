@@ -1,6 +1,6 @@
 within FaultTriggering.Utilities.Internal;
-function findInIntegerVector "finds the integer compareWith in the vector
-  inputVector. Output is a vector with the position of the found indexes
+function findInIntegerVector "finds the integer compareWith in the vector 
+  inputVector. Output is a vector with the position of the found indexes 
   and the boolean isFound that shows if the vecor is found at all"
   input Integer[:] inputVector={6,1,2,3,4,5}
     "input Integer vector that is ssearched";

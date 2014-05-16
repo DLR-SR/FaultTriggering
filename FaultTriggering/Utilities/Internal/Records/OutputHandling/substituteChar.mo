@@ -48,7 +48,7 @@ A single character of a string str is substituted by a given character c at inde
 <blockquote><pre>
   str2 := substituteChar(\"Hello\", 2, \"a\");
                -> str2 = \"Hallo\"
-
+               
   str2 := substituteChar(\"Hello\", 3, \"\");
                -> str2 = \"Helo\"
 </pre></blockquote>

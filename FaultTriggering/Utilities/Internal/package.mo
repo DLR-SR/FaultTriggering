@@ -1,5 +1,5 @@
 within FaultTriggering.Utilities;
-package Internal
+package Internal 
   extends FaultTriggering.Utilities.Icons.Package;
 
 end Internal;

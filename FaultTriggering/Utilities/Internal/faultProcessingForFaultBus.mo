@@ -39,38 +39,40 @@ algorithm
  // ----------------- Get Parameter Faults -----------------
  // ----------------------------------------------------------
 
-  // Load the names and component names of the REAL parameter faults
-  (realFaultParameterPaths,realFaultParameterNames) :=
-    FaultTriggering.Utilities.Internal.gatherFaults(
-    modelName,
-    maxSearchSize,
-    "Parameter_Fault_Real");
-  // setup the record with the loaded values
-  faults.parameterFaults.realFaults :=
-    FaultTriggering.Utilities.Records.RealFaults(realFaultParameterPaths,
-    realFaultParameterNames);
+//    // Load the names and component names of the REAL parameter faults
+//    (realFaultParameterPaths,realFaultParameterNames) :=
+//      FaultTriggering.Utilities.Internal.gatherFaults(
+//      modelName,
+//      maxSearchSize,
+//      "Parameter_Fault_Real");
+//    // setup the record with the loaded values
+//    faults.parameterFaults.realFaults :=
+//      FaultTriggering.Utilities.Records.RealFaults(realFaultParameterPaths,
+//      realFaultParameterNames);
+//
+//      // Load the names and component names of the INTEGER parameter faults
+//    (integerFaultParameterPaths,integerFaultParameterNames) :=
+//      FaultTriggering.Utilities.Internal.gatherFaults(
+//      modelName,
+//      maxSearchSize,
+//      "Parameter_Fault_Integer");
+//      // setup the record with the loaded values
+//    faults.parameterFaults.integerFaults :=
+//      FaultTriggering.Utilities.Records.IntegerFaults(integerFaultParameterPaths,
+//      integerFaultParameterNames);
+//
+//       // Load the names and component names of the BOOLEAN parameter faults
+//    (booleanFaultParameterPaths,booleanFaultParameterNames) :=
+//      FaultTriggering.Utilities.Internal.gatherFaults(
+//      modelName,
+//      maxSearchSize,
+//      "Parameter_Fault_Boolean");
+//       // setup the record with the loaded values
+//    faults.parameterFaults.booleanFaults :=
+//      FaultTriggering.Utilities.Records.BooleanFaults(booleanFaultParameterPaths,
+//      booleanFaultParameterNames);
 
-    // Load the names and component names of the INTEGER parameter faults
-  (integerFaultParameterPaths,integerFaultParameterNames) :=
-    FaultTriggering.Utilities.Internal.gatherFaults(
-    modelName,
-    maxSearchSize,
-    "Parameter_Fault_Integer");
-    // setup the record with the loaded values
-  faults.parameterFaults.integerFaults :=
-    FaultTriggering.Utilities.Records.IntegerFaults(integerFaultParameterPaths,
-    integerFaultParameterNames);
-
-     // Load the names and component names of the BOOLEAN parameter faults
-  (booleanFaultParameterPaths,booleanFaultParameterNames) :=
-    FaultTriggering.Utilities.Internal.gatherFaults(
-    modelName,
-    maxSearchSize,
-    "Parameter_Fault_Boolean");
-     // setup the record with the loaded values
-  faults.parameterFaults.booleanFaults :=
-    FaultTriggering.Utilities.Records.BooleanFaults(booleanFaultParameterPaths,
-    booleanFaultParameterNames);
+    (booleanFaultParameterPaths,booleanFaultParameterNames,integerFaultParameterPaths,integerFaultParameterNames,realFaultParameterPaths,realFaultParameterNames):= FaultTriggering.Utilities.Internal.gatherParameterFaults(modelName,maxSearchSize);
 
  // ----------------------------------------------------------
  // ----------------- Get Variable Faults  -----------------
@@ -305,6 +307,7 @@ assert( not
    end for;
 
   annotation (
+    Icon(graphics),
     Diagram(graphics={Polygon(
           points={{70,90},{-22,10},{0,-10},{-70,-90},{30,-10},{10,10},{70,90}},
           smooth=Smooth.None,
