@@ -1,0 +1,15 @@
+within FaultTriggering.Utilities.Internal.Records.FMU.InternalRecords;
+record RealAttributes
+  OptionalString declaredType;
+  OptionalString quantity;
+  OptionalString unit;
+  OptionalString displayUnit;
+  Boolean relativeQuantity;
+  OptionalReal min;
+  OptionalReal max;
+  Real nominal;
+  Boolean unbounded;
+  OptionalReal start;
+  OptionalInteger derivative;
+  Boolean reinit;
+end RealAttributes;

@@ -13,14 +13,13 @@ function gatherParameterFaults
   output String[:] realFaultNames "Component names";
 protected
   String fileName="~FMUOutput\modelDescription.xml" "path to FMI";
-  AST_Extended.WorkInProgress.FMU.ReadModelDescription.Records.ScalarVariable
-    vars[:];
+  FaultTriggering.Utilities.Internal.Records.FMU.ScalarVariable vars[:];
 
-  AST_Extended.WorkInProgress.FMU.ReadModelDescription.Records.InternalRecords.OptionalString
+  FaultTriggering.Utilities.Internal.Records.FMU.InternalRecords.OptionalString
     declaredBooleanType[:];
-  AST_Extended.WorkInProgress.FMU.ReadModelDescription.Records.InternalRecords.OptionalString
+  FaultTriggering.Utilities.Internal.Records.FMU.InternalRecords.OptionalString
     declaredIntegerType[:];
-  AST_Extended.WorkInProgress.FMU.ReadModelDescription.Records.InternalRecords.OptionalString
+  FaultTriggering.Utilities.Internal.Records.FMU.InternalRecords.OptionalString
     declaredRealType[:];
 
   String componentNames[:] "array with all model components";
