@@ -2,7 +2,8 @@ within FaultTriggering.Utilities.Internal;
 function gatherParameterFaults
   import Modelica.Utilities.Streams.print;
 
-  input String className="FaultTriggering.Examples.ActuatorExample.Actuator_ParameterFaults";
+//   input String className="FaultTriggering.Examples.ActuatorExample.Actuator_ParameterFaults";
+  input String className="FaultTriggering.Examples.ActuatorExample.Actuator";
   input Integer maxSearchSize=500 "pre allocation size of the output matrices";
 
   output String[:] BooleanfaultPaths "Path to component";
@@ -81,7 +82,7 @@ algorithm
         if IsFault then
           // if fault then save names and default values
           faultPathList[Counter_Fault] := componentPath;
-          faultNamesList[Counter_Fault] := componentName;
+          faultNamesList[Counter_Fault] := className + "." + componentName;
           // Increase FaultCounter
           Counter_Fault := Counter_Fault + 1;
         end if;
@@ -110,7 +111,7 @@ algorithm
         if IsFault then
           // if fault then save names and default values
           faultPathList[Counter_Fault] := componentPath;
-          faultNamesList[Counter_Fault] := componentName;
+          faultNamesList[Counter_Fault] := className + "." + componentName;
           // Increase FaultCounter
           Counter_Fault := Counter_Fault + 1;
         end if;
@@ -139,7 +140,7 @@ algorithm
         if IsFault then
           // if fault then save names and default values
           faultPathList[Counter_Fault] := componentPath;
-          faultNamesList[Counter_Fault] := componentName;
+          faultNamesList[Counter_Fault] := className + "." + componentName;
           // Increase FaultCounter
           Counter_Fault := Counter_Fault + 1;
         end if;
