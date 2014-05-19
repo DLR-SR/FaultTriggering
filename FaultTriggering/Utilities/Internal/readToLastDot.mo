@@ -1,7 +1,7 @@
 within FaultTriggering.Utilities.Internal;
-function readAfterDot "reads string after last dot"
+function readToLastDot "reads string before last dot"
 input String  inputString="a.b.c" "string input";
-output String afterDot "part after last dot";
+output String beforeDot "part before last dot";
 output Boolean dotFound "true if no dot is found";
 
 protected
@@ -9,17 +9,17 @@ protected
 algorithm
   dotIndex := Strings.findLast(inputString, ".");
   if dotIndex <> 0 then
-   afterDot := Strings.substring(
+         beforeDot := Strings.substring(
          inputString,
-         dotIndex+1,
-         Strings.length(inputString));
+         1,
+         dotIndex-1);
     dotFound := true;
   else
-    afterDot := inputString;
+    beforeDot := inputString;
     dotFound  := false;
   end if;
 
   annotation (Documentation(info="<html>
 <p>This fuction reads the string after the last dot. Helpfull for model names</p>
 </html>"));
-end readAfterDot;
+end readToLastDot;

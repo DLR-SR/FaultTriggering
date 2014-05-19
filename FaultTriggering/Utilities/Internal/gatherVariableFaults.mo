@@ -1,9 +1,9 @@
 within FaultTriggering.Utilities.Internal;
-function gatherParameterFaults
+function gatherVariableFaults
   import Modelica.Utilities.Streams.print;
 
-//   input String className="FaultTriggering.Examples.ActuatorExample.Actuator_ParameterFaults";
-  input String className="FaultTriggering.Examples.ActuatorExample.Actuator";
+   input String className="FaultTriggering.Examples.Replaceables.ReplaceableRedeclared";
+//  input String className="FaultTriggering.Examples.ActuatorExample.Actuator";
 //  input Integer maxSearchSize=500 "pre allocation size of the output matrices";
 
   output String[:] BooleanfaultPaths "Path to component";
@@ -13,7 +13,7 @@ function gatherParameterFaults
   output String[:] realFaultPaths "Path to component";
   output String[:] realFaultNames "Component names";
 protected
-  FaultTriggering.Utilities.Internal.Records.FMU.ScalarVariable vars[:];
+FaultTriggering.Utilities.Internal.Records.FMU.ScalarVariable vars[:];
 
   FaultTriggering.Utilities.Internal.Records.FMU.InternalRecords.OptionalString
     declaredBooleanType[:];
@@ -66,12 +66,12 @@ faultPathList := componentNames;
         // look if the name FAULT is in the type, if yes ==> FAULT. This is looped for all searchString indexes. If a string is already found, no further string comparison is needed and is skipped.
         IsFault := not (Modelica.Utilities.Strings.find(
           componentPath,
-          "Parameter_Fault_Boolean",
+          "Fault_SelectBooleanFault",
           Index_LastDotInName) == 0);
         if IsFault then
           // if fault then save names and default values
-          faultPathList[Counter_Fault] := componentPath;
-          faultNamesList[Counter_Fault] := className + "." + componentName;
+          faultPathList[Counter_Fault] := "FaultTriggering.Utilities.Types.Variable_Fault_Boolean";
+          faultNamesList[Counter_Fault] := className + "." + FaultTriggering.Utilities.Internal.readToLastDot(componentName) + ".externalBooleanFault";
           // Increase FaultCounter
           Counter_Fault := Counter_Fault + 1;
         end if;
@@ -95,12 +95,12 @@ faultPathList := componentNames;
         // look if the name FAULT is in the type, if yes ==> FAULT. This is looped for all searchString indexes. If a string is already found, no further string comparison is needed and is skipped.
         IsFault := not (Modelica.Utilities.Strings.find(
           componentPath,
-          "Parameter_Fault_Integer",
+          "Fault_SelectIntegerFault",
           Index_LastDotInName) == 0);
         if IsFault then
           // if fault then save names and default values
-          faultPathList[Counter_Fault] := componentPath;
-          faultNamesList[Counter_Fault] := className + "." + componentName;
+          faultPathList[Counter_Fault] := "FaultTriggering.Utilities.Types.Variable_Fault_Integer";
+          faultNamesList[Counter_Fault] := className + "." + FaultTriggering.Utilities.Internal.readToLastDot(componentName) + ".externalIntegerFault";
           // Increase FaultCounter
           Counter_Fault := Counter_Fault + 1;
         end if;
@@ -124,12 +124,12 @@ faultPathList := componentNames;
         // look if the name FAULT is in the type, if yes ==> FAULT. This is looped for all searchString indexes. If a string is already found, no further string comparison is needed and is skipped.
         IsFault := not (Modelica.Utilities.Strings.find(
           componentPath,
-          "Parameter_Fault_Real",
+          "Fault_SelectRealFault",
           Index_LastDotInName) == 0);
         if IsFault then
           // if fault then save names and default values
-          faultPathList[Counter_Fault] := componentPath;
-          faultNamesList[Counter_Fault] := className + "." + componentName;
+          faultPathList[Counter_Fault] := "FaultTriggering.Utilities.Types.Variable_Fault_Real";
+          faultNamesList[Counter_Fault] := className + "." + FaultTriggering.Utilities.Internal.readToLastDot(componentName) + ".externalRealFault";
           // Increase FaultCounter
           Counter_Fault := Counter_Fault + 1;
         end if;
@@ -140,4 +140,4 @@ faultPathList := componentNames;
   // Cut the initiated records to the proper length
   realFaultNames := faultNamesList[1:Counter_Fault - 1];
   realFaultPaths := faultPathList[1:Counter_Fault - 1];
-end gatherParameterFaults;
+end gatherVariableFaults;
