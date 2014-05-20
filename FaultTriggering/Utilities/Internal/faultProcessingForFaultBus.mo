@@ -42,8 +42,7 @@ algorithm
   (booleanFaultParameterPaths,booleanFaultParameterNames,
     integerFaultParameterPaths,integerFaultParameterNames,
     realFaultParameterPaths,realFaultParameterNames) :=
-    FaultTriggering.Utilities.Internal.gatherParameterFaults(modelName,
-    maxSearchSize);
+    FaultTriggering.Utilities.Internal.gatherParameterFaults(modelName);
   // setup the record with the loaded values
   faults.parameterFaults.realFaults :=
     FaultTriggering.Utilities.Records.RealFaults(realFaultParameterPaths,
@@ -60,8 +59,7 @@ algorithm
 
   (booleanFaultComponents,booleanFaultNames,integerFaultComponents,
     integerFaultNames,realFaultComponents,realFaultNames) :=
-    FaultTriggering.Utilities.Internal.gatherVariableFaults(modelName,
-    maxSearchSize);
+    FaultTriggering.Utilities.Internal.gatherVariableFaults(modelName);
 
   // setup the record with the loaded values
   faults.variableFaults.booleanFaults :=
@@ -304,7 +302,6 @@ algorithm
     Icon(graphics),
     Diagram(graphics={Polygon(
           points={{70,90},{-22,10},{0,-10},{-70,-90},{30,-10},{10,10},{70,90}},
-
           smooth=Smooth.None,
           fillColor={255,0,0},
           fillPattern=FillPattern.Solid,
@@ -334,5 +331,4 @@ algorithm
 </tr>
 </table>
 </html>"));
-
 end faultProcessingForFaultBus;
