@@ -4,7 +4,7 @@ function gatherParameterFaults
 
 //   input String className="FaultTriggering.Examples.ActuatorExample.Actuator_ParameterFaults";
   input String className="FaultTriggering.Examples.ActuatorExample.Actuator";
-//  input Integer maxSearchSize=500 "pre allocation size of the output matrices";
+   input Boolean translateModel = true "If true then model will be translated";
 
   output String[:] BooleanfaultPaths "Path to component";
   output String[:] BooleanfaultNames "Component names";
@@ -36,12 +36,14 @@ protected
 algorithm
 
   // translate model to FMU 2.0
+  if translateModel then
   translateModelFMU(
     className,
     false,
     "",
     "2",
-    "me") annotation(__Dymola_interactive=true);
+    "me");
+    end if;
   // load results
   vars := importScalarVariables("~FMUOutput\modelDescription.xml");
 
@@ -140,4 +142,6 @@ faultPathList := componentNames;
   // Cut the initiated records to the proper length
   realFaultNames := faultNamesList[1:Counter_Fault - 1];
   realFaultPaths := faultPathList[1:Counter_Fault - 1];
+
+annotation(__Dymola_interactive=true);
 end gatherParameterFaults;

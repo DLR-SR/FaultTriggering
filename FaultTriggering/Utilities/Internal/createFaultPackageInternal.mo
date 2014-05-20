@@ -58,8 +58,8 @@ function createFaultPackageInternal
   input String modelName="FaultTriggering.Examples.ActuatorExample.ActuatorFaultBus"
     "Model name";
   input String packageName="Faults.mo";
-  input Integer preAllocationSize=500
-    "pre allocation size of the output matrices";
+//  input Integer preAllocationSize=500
+//    "pre allocation size of the output matrices";
 
   output String[:] name "name of component";
   output String[:] extendsTo "extending to";
@@ -67,10 +67,12 @@ function createFaultPackageInternal
   output Boolean[:] finalVariable "indicates if it is the final extension";
 
 //    FaultTriggering.Utilities.Records.Faults faults "fault record";
+//  constant Integer preAllocationSize = (size(faults.parameterFaults.booleanValue,1) + size(faults.parameterFaults.integerValue,1) + size(faults.parameterFaults.realValue,1) +
+//                               size(faults.variableFaults.booleanFaultMode,1) + size(faults.variableFaults.integerFaultMode,1) + size(faults.variableFaults.realFaultMode,1))*100;
 protected
-  String[preAllocationSize] partialExtends;
+  String[:] partialExtends;
   Integer maxDepth "maximal extension depth";
-  Integer[preAllocationSize] processedNames=zeros(preAllocationSize);
+    Integer[:] processedNames;
   Integer processedNamesIteration=0;
   Integer nameNr;
   Integer nameNr2;
@@ -105,8 +107,7 @@ algorithm
     FaultTriggering.Utilities.Internal.DecomposeFaultsToStrings(
     faultNames,
     faultType,
-    faultChannel,
-    preAllocationSize);
+    faultChannel);
 
   maxDepth := max(extensionDepths);
 // check if file already exist. if not, exit
@@ -269,13 +270,13 @@ assert( not
   Streams.print("equation", packageName);
 
   for nameNr in 1:size(faultNames, 1) loop
-    if faultType[nameNr] == 4 then
+    if faultType[nameNr] == FaultTriggering.Utilities.Types.FaultType.realVar then
       Streams.print("realFault[" + String(faultChannel[nameNr]) + "] = faults."
          + faultNames[nameNr] + ";", packageName);
-    elseif faultType[nameNr] == 5 then
+    elseif faultType[nameNr] == FaultTriggering.Utilities.Types.FaultType.intVar then
       Streams.print("integerFault[" + String(faultChannel[nameNr]) + "] = faults."
          + faultNames[nameNr] + ";", packageName);
-    elseif faultType[nameNr] == 6 then
+    elseif faultType[nameNr] == FaultTriggering.Utilities.Types.FaultType.boolVar then
       Streams.print("booleanFault[" + String(faultChannel[nameNr]) + "] = faults."
          + faultNames[nameNr] + ";", packageName);
     end if;
@@ -314,8 +315,10 @@ Streams.print("extends FaultTriggering.Utilities.Icons.InterfacesPackage;", pack
   Streams.print("expandable connector Faults", packageName); // creates base connector
   Streams.print("extends FaultTriggering.Utilities.Icons.FaultBus;", packageName);
   extendsNr := 0;
+//   partialExtends := FaultTriggering.Utilities.Internal.emptyStringVector(
+//     partialExtends);
   partialExtends := FaultTriggering.Utilities.Internal.emptyStringVector(
-    partialExtends);
+    name);
  // add all "underbusses"
   for nameNr in 1:size(name, 1) loop
     if extensionDepths[nameNr] == 1 and not (
@@ -335,29 +338,31 @@ Streams.print("extends FaultTriggering.Utilities.Icons.InterfacesPackage;", pack
 // --------------------------------------------------------------------------------------------
 
   // create subbusses and "preallocate" then with the subbusses and variables
+ //   processedNames := zeros(size(
+  //  name,1));
   for nameNr2 in 1:size(name, 1) loop
     if FaultTriggering.Utilities.Internal.findIfIntegerVector(processedNames,
         nameNr2) == false then
-      if Strings.compare(extendsTo[nameNr2], "") <> 2 then
+      if Strings.compare(extendsTo[nameNr2], "") <> Modelica.Utilities.Types.Compare.Equal then
         Streams.print("expandable connector " + name[nameNr2], packageName);
         Streams.print("extends FaultTriggering.Utilities.Icons.FaultSubBus;",
           packageName);
-      elseif name_Type[nameNr2] == 1 then
+      elseif name_Type[nameNr2] == FaultTriggering.Utilities.Types.FaultType.realPar then
         Streams.print("type " + name[nameNr2] + " = Real \"Real variable Fault\" ;",
           packageName);
-      elseif name_Type[nameNr2] == 2 then
+      elseif name_Type[nameNr2] == FaultTriggering.Utilities.Types.FaultType.intPar then
         Streams.print("type " + name[nameNr2] + " = Integer \"Integer variable Fault\" ;",
           packageName);
-      elseif name_Type[nameNr2] == 3 then
+      elseif name_Type[nameNr2] == FaultTriggering.Utilities.Types.FaultType.boolPar then
         Streams.print("type " + name[nameNr2] + " = Boolean \"Boolean variable Fault\" ;",
           packageName);
-      elseif name_Type[nameNr2] == 4 then
+      elseif name_Type[nameNr2] == FaultTriggering.Utilities.Types.FaultType.realVar then
         Streams.print("type " + name[nameNr2] + " = Real \"Real parameter Fault\" ;",
           packageName);
-      elseif name_Type[nameNr2] == 5 then
+      elseif name_Type[nameNr2] == FaultTriggering.Utilities.Types.FaultType.intVar then
         Streams.print("type " + name[nameNr2] + " = Integer \"Integer parameter Fault\" ;",
           packageName);
-      elseif name_Type[nameNr2] == 6 then
+      elseif name_Type[nameNr2] == FaultTriggering.Utilities.Types.FaultType.boolVar then
         Streams.print("type " + name[nameNr2] + " = Boolean \"Boolean parameter Fault\" ;",
           packageName);
       end if;
@@ -365,7 +370,7 @@ Streams.print("extends FaultTriggering.Utilities.Icons.InterfacesPackage;", pack
       partialExtends := FaultTriggering.Utilities.Internal.emptyStringVector(
         partialExtends);
       for nameNr in 1:size(name, 1) loop
-        if Strings.compare(name[nameNr2], name[nameNr]) == 2 then
+        if Strings.compare(name[nameNr2], name[nameNr]) == Modelica.Utilities.Types.Compare.Equal then
           if finalVariable[nameNr] == false and not (
               FaultTriggering.Utilities.Internal.checkInString(extendsTo[nameNr],
               partialExtends)) then
@@ -374,16 +379,19 @@ Streams.print("extends FaultTriggering.Utilities.Icons.InterfacesPackage;", pack
             Streams.print(readAfterDot(modelName) + "Package" + ".Interfaces." + extendsTo[nameNr] + " " + extendsTo[
               nameNr] + ";", packageName);
           end if;
-          processedNamesIteration := processedNamesIteration + 1;
-          processedNames[processedNamesIteration] := nameNr;
-
+          processedNames :=cat(
+            1,
+            processedNames,
+            {nameNr});
         end if;
       end for;
-      if Strings.compare(extendsTo[nameNr2], "") <> 2 then
+      if Strings.compare(extendsTo[nameNr2], "") <> Modelica.Utilities.Types.Compare.Equal then
         Streams.print("end " + name[nameNr2] + ";", packageName);
       end if;
-      processedNamesIteration := processedNamesIteration + 1;
-      processedNames[processedNamesIteration] := nameNr;
+                processedNames :=cat(
+            1,
+            processedNames,
+            {nameNr});
     end if;
   end for;
 

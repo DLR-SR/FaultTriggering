@@ -16,7 +16,8 @@ protected
 algorithm
   // traslate model if needed
   if translateFirst then
-    booleanDump := translateModel(modelName);
+    booleanDump := translateModel(modelName)
+                                            annotation(__Dymola_interactive=true);
   end if;
  // cut modelnamelength so that Dymola_Initialization_getAttributes can find the values
   for n in 1:size(faultNames, 1) loop

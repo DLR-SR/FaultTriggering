@@ -4,20 +4,20 @@ record ScalarVariable
   FaultTriggering.Utilities.Internal.Records.FMU.InternalRecords.OptionalString
     description;
   Integer valueReference;
-  FaultTriggering.Utilities.Internal.Records.FMU.Enumerations.Causality causality;
-  FaultTriggering.Utilities.Internal.Records.FMU.Enumerations.Variability variability;
-  FaultTriggering.Utilities.Internal.Records.FMU.Enumerations.Initial initialDefinition;
-  FaultTriggering.Utilities.Internal.Records.FMU.InternalRecords.OptionalInteger
+  FMU.Enumerations.Causality causality;
+  Enumerations.Variability variability;
+  Enumerations.Initial initialDefinition;
+  FMU.InternalRecords.OptionalInteger
     previous;
-  FaultTriggering.Utilities.Internal.Records.FMU.Enumerations.Type variableType;
-  FaultTriggering.Utilities.Internal.Records.FMU.InternalRecords.RealAttributes
+  Enumerations.Type variableType;
+  InternalRecords.RealAttributes
     realAttributes;
-  FaultTriggering.Utilities.Internal.Records.FMU.InternalRecords.IntegerAttributes
+  InternalRecords.IntegerAttributes
     integerAttributes;
-  FaultTriggering.Utilities.Internal.Records.FMU.InternalRecords.BooleanAttributes
+  InternalRecords.BooleanAttributes
     booleanAttributes;
-  FaultTriggering.Utilities.Internal.Records.FMU.InternalRecords.StringAttributes
+  InternalRecords.StringAttributes
     stringAttributes;
-  FaultTriggering.Utilities.Internal.Records.FMU.InternalRecords.IntegerAttributes
+  InternalRecords.IntegerAttributes
     enumerationAttributes;
 end ScalarVariable;

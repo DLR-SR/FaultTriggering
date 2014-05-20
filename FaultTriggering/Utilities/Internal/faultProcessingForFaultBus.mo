@@ -6,7 +6,6 @@ function faultProcessingForFaultBus
   input String modelName="FaultTriggering.Examples.ActuatorExample.Actuator"
     "Model name";
   input String scriptName="SetFaults.mos" "Name of output script";
-  input Integer maxSearchSize=500 "Maximum number of elements in the model ";
   output String[:] realFaultParameterNames;
   output String[:] integerFaultParameterNames;
   output String[:] booleanFaultParameterNames;
@@ -298,7 +297,7 @@ algorithm
       ";//Boolean%", scriptName);
   end for;
 
-  annotation (
+  annotation (__Dymola_interactive=true,
     Icon(graphics),
     Diagram(graphics={Polygon(
           points={{70,90},{-22,10},{0,-10},{-70,-90},{30,-10},{10,10},{70,90}},
