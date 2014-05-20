@@ -72,7 +72,6 @@ algorithm
   end for;
 
   annotation(__Dymola_interactive=true,
-    Icon(graphics),
     Diagram(graphics={
         Rectangle(
           extent={{-80,10},{-60,-10}},

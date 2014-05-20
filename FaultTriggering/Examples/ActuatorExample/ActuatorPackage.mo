@@ -138,7 +138,7 @@ end FaultRecord;
 
 expandable connector FaultsInput = input ActuatorPackage.Interfaces.Faults
     "'input Faults' as connector"                                                                         annotation (Icon(graphics={Rectangle(extent={{-8,4},{10,0}},lineColor={255,0,0},
-            lineThickness=                                                                                                    0.5)}),
+            lineThickness =                                                                                                    0.5)}),
       Documentation(revisions="<html><table border=0 cellspacing=0 cellpadding=0>
   <tr><td valign=\"center\"> <img src=\"modelica://FaultTriggering/Resources/Documentation/Images/logo_dlr.png\" width=60></td>
     <td valign=\"center\"><b>Copyright</b>

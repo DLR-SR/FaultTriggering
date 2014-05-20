@@ -35,288 +35,276 @@ protected
 algorithm
   modelNameLength := Modelica.Utilities.Strings.length(modelName);
 
-  // ----------------------------------------------------------
-  // ----------------- Get Parameter Faults -----------------
-  // ----------------------------------------------------------
+ // ----------------------------------------------------------
+ // ----------------- Get Parameter Faults -----------------
+ // ----------------------------------------------------------
 
-//   // Load the names and component names of the REAL parameter faults
-//   (realFaultParameterPaths,realFaultParameterNames) :=
-//     FaultTriggering.Utilities.Internal.gatherFaults(
-//     modelName,
-//     maxSearchSize,
-//     "Parameter_Fault_Real");
-//   // setup the record with the loaded values
-//   faults.parameterFaults.realFaults :=
-//     FaultTriggering.Utilities.Records.RealFaults(realFaultParameterPaths,
-//     realFaultParameterNames);
-//
-//   // Load the names and component names of the INTEGER parameter faults
-//   (integerFaultParameterPaths,integerFaultParameterNames) :=
-//     FaultTriggering.Utilities.Internal.gatherFaults(
-//     modelName,
-//     maxSearchSize,
-//     "Parameter_Fault_Integer");
-//   // setup the record with the loaded values
-//   faults.parameterFaults.integerFaults :=
-//     FaultTriggering.Utilities.Records.IntegerFaults(integerFaultParameterPaths,
-//     integerFaultParameterNames);
-//
-//   // Load the names and component names of the BOOLEAN parameter faults
-//   (booleanFaultParameterPaths,booleanFaultParameterNames) :=
-//     FaultTriggering.Utilities.Internal.gatherFaults(
-//     modelName,
-//     maxSearchSize,
-//     "Parameter_Fault_Boolean");
-//   // setup the record with the loaded values
-//   faults.parameterFaults.booleanFaults :=
-//     FaultTriggering.Utilities.Records.BooleanFaults(booleanFaultParameterPaths,
-//     booleanFaultParameterNames);
-
-  (booleanFaultParameterPaths,booleanFaultParameterNames,
-    integerFaultParameterPaths,integerFaultParameterNames,
-    realFaultParameterPaths,realFaultParameterNames) :=
-    FaultTriggering.Utilities.Internal.gatherParameterFaults(modelName,
-    maxSearchSize);
+  // Load the names and component names of the REAL parameter faults
+  (realFaultParameterPaths,realFaultParameterNames) :=
+    FaultTriggering.Utilities.Internal.gatherFaults(
+    modelName,
+    maxSearchSize,
+    "Parameter_Fault_Real");
   // setup the record with the loaded values
   faults.parameterFaults.realFaults :=
     FaultTriggering.Utilities.Records.RealFaults(realFaultParameterPaths,
     realFaultParameterNames);
+
+    // Load the names and component names of the INTEGER parameter faults
+  (integerFaultParameterPaths,integerFaultParameterNames) :=
+    FaultTriggering.Utilities.Internal.gatherFaults(
+    modelName,
+    maxSearchSize,
+    "Parameter_Fault_Integer");
+    // setup the record with the loaded values
   faults.parameterFaults.integerFaults :=
     FaultTriggering.Utilities.Records.IntegerFaults(integerFaultParameterPaths,
     integerFaultParameterNames);
+
+     // Load the names and component names of the BOOLEAN parameter faults
+  (booleanFaultParameterPaths,booleanFaultParameterNames) :=
+    FaultTriggering.Utilities.Internal.gatherFaults(
+    modelName,
+    maxSearchSize,
+    "Parameter_Fault_Boolean");
+     // setup the record with the loaded values
   faults.parameterFaults.booleanFaults :=
     FaultTriggering.Utilities.Records.BooleanFaults(booleanFaultParameterPaths,
     booleanFaultParameterNames);
-  // ----------------------------------------------------------
-  // ----------------- Get Variable Faults  -----------------
-  // ----------------------------------------------------------
 
-  // Load the names and component names of the variable REAL faults
+ // ----------------------------------------------------------
+ // ----------------- Get Variable Faults  -----------------
+ // ----------------------------------------------------------
+
+   // Load the names and component names of the variable REAL faults
   (realFaultComponents,realFaultNames) :=
     FaultTriggering.Utilities.Internal.gatherFaults(
     modelName,
     maxSearchSize,
     "Variable_Fault_Real");
-  // setup the record with the loaded values
+   // setup the record with the loaded values
   faults.variableFaults.realFaults :=
     FaultTriggering.Utilities.Records.RealFaults(realFaultComponents,
     realFaultNames);
 
-  // Load the names and component names of the variable INTEGER faults
+       // Load the names and component names of the variable INTEGER faults
   (integerFaultComponents,integerFaultNames) :=
     FaultTriggering.Utilities.Internal.gatherFaults(
     modelName,
     maxSearchSize,
     "Variable_Fault_Integer");
-  // setup the record with the loaded values
+   // setup the record with the loaded values
   faults.variableFaults.integerFaults :=
     FaultTriggering.Utilities.Records.IntegerFaults(integerFaultComponents,
     integerFaultNames);
 
-  // Load the names and component names of the variable BOOLEAN faults
+       // Load the names and component names of the variable BOOLEAN faults
   (booleanFaultComponents,booleanFaultNames) :=
     FaultTriggering.Utilities.Internal.gatherFaults(
     modelName,
     maxSearchSize,
     "Variable_Fault_Boolean");
-  // setup the record with the loaded values
+   // setup the record with the loaded values
   faults.variableFaults.booleanFaults :=
     FaultTriggering.Utilities.Records.BooleanFaults(booleanFaultComponents,
     booleanFaultNames);
 
-  // ----------------------------------------------------------
-  // ----------------- Get Parameter Default Values -----------
-  // ----------------------------------------------------------
+ // ----------------------------------------------------------
+ // ----------------- Get Parameter Default Values -----------
+ // ----------------------------------------------------------
 
-  // setup default REAL values
+   // setup default REAL values
   faults.parameterFaults.realValue :=
     FaultTriggering.Utilities.Internal.getParameterValues(
     realFaultParameterNames,
     modelName,
     true);
 
-  // setup default INTEGER values
+   // setup default INTEGER values
   faults.parameterFaults.integerValue := integer(floor(
     FaultTriggering.Utilities.Internal.getParameterValues(
     integerFaultParameterNames,
     modelName,
     false)));
 
-  // setup default BOOLEAN values
+// setup default BOOLEAN values
 
   tempBooleanValues := FaultTriggering.Utilities.Internal.getParameterValues(
     booleanFaultParameterNames,
     modelName,
     false);
-  faults.parameterFaults.booleanValue := fill(true, size(tempBooleanValues, 1));
-  for i in size(tempBooleanValues, 1):-1:1 loop
-    if tempBooleanValues[i] > 0.5 then
-      faults.parameterFaults.booleanValue[i] := true;
-    else
-      faults.parameterFaults.booleanValue[i] := false;
-    end if;
-  end for;
+     faults.parameterFaults.booleanValue := fill(true,size(tempBooleanValues,1));
+     for i in size(tempBooleanValues, 1):-1:1 loop
+       if tempBooleanValues[i] > 0.5 then
+         faults.parameterFaults.booleanValue[i] := true;
+       else
+         faults.parameterFaults.booleanValue[i] := false;
+       end if;
+     end for;
 
   // ----------------------------------------------------------
   // ----------------- Set Variable Default Values ------------
   // ----------------------------------------------------------
 
-  // set up the channel selections so that each fault is automatically given an own
-  // unique channel
+ // set up the channel selections so that each fault is automatically given an own
+ // unique channel
 
-  // setup default REAL values
-  faults.variableFaults.realFaultSelect := 1:size(realFaultNames, 1);
+    // setup default REAL values
+   faults.variableFaults.realFaultSelect := 1:size(realFaultNames, 1);
 
-  // setup default INTEGER values
-  faults.variableFaults.integerFaultSelect := 1:size(integerFaultNames, 1);
+    // setup default INTEGER values
+   faults.variableFaults.integerFaultSelect := 1:size(integerFaultNames,
+     1);
 
-  // setup default BOOLEAN values
-  faults.variableFaults.booleanFaultSelect := 1:size(booleanFaultNames, 1);
+    // setup default BOOLEAN values
+  faults.variableFaults.booleanFaultSelect := 1:size(booleanFaultNames,
+    1);
 
-  // setup the fault mode selection
-  // Real faults
+     // setup the fault mode selection
+    // Real faults
   faults.variableFaults.realFaultMode := integer(floor(
     FaultTriggering.Utilities.Internal.getVariableMode(
     realFaultNames,
     modelName,
     false)));
-  // Integer Faults
+    // Integer Faults
   faults.variableFaults.integerFaultMode := integer(floor(
     FaultTriggering.Utilities.Internal.getVariableMode(
     integerFaultNames,
     modelName,
     false)));
-  // Boolean Faults
+    // Boolean Faults
   faults.variableFaults.booleanFaultMode := integer(floor(
     FaultTriggering.Utilities.Internal.getVariableMode(
     booleanFaultNames,
     modelName,
     false)));
 
-  // ----------------------------------------
-  // --------------- Start GUI --------------
-  // ----------------------------------------
+ // ----------------------------------------
+ // --------------- Start GUI --------------
+ // ----------------------------------------
 
   // display fault setting GUI where all parameter faults can be set.
   // Variable faults are predefined and need not to be set.
   faults := PromptFor(faults);
 
-  // // ----------------------------------------
-  // // --------------- Apply Results ----------
-  // // ----------------------------------------
-  //
-  // Translate the model so the parameters can be set
-  translateModel(modelName);
+ // // ----------------------------------------
+ // // --------------- Apply Results ----------
+ // // ----------------------------------------
+ //
+   // Translate the model so the parameters can be set
+   translateModel(modelName);
 
-  // ----------------- Variable Faults Setup ----------------
-  // select which fault is bound to which input
-  // check if file already exist. if not, exit
-  assert(not (Modelica.Utilities.Files.exist(scriptName)), scriptName + " already exist: exitting");
-  Modelica.Utilities.Files.remove(scriptName);
-  // REAL Faults
-  loopMax := size(realFaultComponents, 1);
-  for loopNr in 1:loopMax loop
-    subString := Modelica.Utilities.Strings.substring(
-      realFaultNames[loopNr],
-      modelNameLength + 2,
-      Modelica.Utilities.Strings.length(realFaultNames[loopNr]));
-    // Set the faults in the model
-    dumpBoolean := SetVariable((subString + ".faultIndex"), faults.variableFaults.realFaultSelect[
-      loopNr]);
-    dumpBoolean := SetVariable((subString + ".externalFaultOn"), 1);
-    // write to file
-    Modelica.Utilities.Streams.print((subString + ".faultIndex") + "=" + String(
-       faults.variableFaults.realFaultSelect[loopNr]) + ";//RealIndex%",
-      scriptName);
-    Modelica.Utilities.Streams.print((subString + ".faultMode") + "=" + String(
-      faults.variableFaults.realFaultMode[loopNr]) + ";//RealMode%", scriptName);
-    Modelica.Utilities.Streams.print((subString + ".externalFaultOn") + "=1" + ";//Boolean%",
-      scriptName);
-  end for;
-  // INTEGER Faults
-  loopMax := size(integerFaultComponents, 1);
-  for loopNr in 1:loopMax loop
-    subString := Modelica.Utilities.Strings.substring(
-      integerFaultNames[loopNr],
-      modelNameLength + 2,
-      Modelica.Utilities.Strings.length(integerFaultNames[loopNr]));
-    dumpBoolean := SetVariable((subString + ".faultIndex"), faults.variableFaults.integerFaultSelect[
-      loopNr]);
-    dumpBoolean := SetVariable((subString + ".externalFaultOn"), 1);
-    Modelica.Utilities.Streams.print((subString + ".faultIndex") + "=" + String(
-       faults.variableFaults.integerFaultSelect[loopNr]) + ";//IntegerIndex%",
-      scriptName);
-    Modelica.Utilities.Streams.print((subString + ".faultMode") + "=" + String(
-      faults.variableFaults.integerFaultMode[loopNr]) + ";//IntegerMode%",
-      scriptName);
-    Modelica.Utilities.Streams.print((subString + ".externalFaultOn") + "=1" + ";//Boolean%",
-      scriptName);
-  end for;
-  // BOOLEAN Faults
-  loopMax := size(booleanFaultComponents, 1);
-  for loopNr in 1:loopMax loop
-    subString := Modelica.Utilities.Strings.substring(
-      booleanFaultNames[loopNr],
-      modelNameLength + 2,
-      Modelica.Utilities.Strings.length(booleanFaultNames[loopNr]));
-    dumpBoolean := SetVariable((subString + ".faultIndex"), faults.variableFaults.booleanFaultSelect[
-      loopNr]);
-    dumpBoolean := SetVariable((subString + ".externalFaultOn"), 1);
-    Modelica.Utilities.Streams.print((subString + ".faultIndex") + "=" + String(
-       faults.variableFaults.booleanFaultSelect[loopNr]) + ";//BooleanIndex%",
-      scriptName);
-    Modelica.Utilities.Streams.print((subString + ".faultMode") + "=" + String(
-      faults.variableFaults.booleanFaultMode[loopNr]) + ";//BooleanMode%",
-      scriptName);
-    Modelica.Utilities.Streams.print((subString + ".externalFaultOn") + "=1" + ";//Boolean%",
-      scriptName);
-  end for;
+    // ----------------- Variable Faults Setup ----------------
+   // select which fault is bound to which input
+// check if file already exist. if not, exit
+assert( not
+           (Modelica.Utilities.Files.exist(scriptName)), scriptName + " already exist: exitting");
+   Modelica.Utilities.Files.remove(scriptName);
+    // REAL Faults
+   loopMax := size(realFaultComponents, 1);
+   for loopNr in 1:loopMax loop
+     subString := Modelica.Utilities.Strings.substring(
+       realFaultNames[loopNr],
+       modelNameLength + 2,
+       Modelica.Utilities.Strings.length(realFaultNames[loopNr]));
+   // Set the faults in the model
+     dumpBoolean := SetVariable((subString + ".faultIndex"), faults.variableFaults.realFaultSelect[
+       loopNr]);
+     dumpBoolean := SetVariable((subString + ".externalFaultOn"), 1);
+   // write to file
+     Modelica.Utilities.Streams.print((subString + ".faultIndex") + "=" + String(
+        faults.variableFaults.realFaultSelect[loopNr]) + ";//RealIndex%",
+       scriptName);
+     Modelica.Utilities.Streams.print((subString + ".faultMode") + "=" + String(
+        faults.variableFaults.realFaultMode[loopNr]) + ";//RealMode%",
+       scriptName);
+     Modelica.Utilities.Streams.print((subString + ".externalFaultOn") + "=1" + ";//Boolean%",
+       scriptName);
+   end for;
+    // INTEGER Faults
+   loopMax := size(integerFaultComponents, 1);
+   for loopNr in 1:loopMax loop
+     subString := Modelica.Utilities.Strings.substring(
+       integerFaultNames[loopNr],
+       modelNameLength + 2,
+       Modelica.Utilities.Strings.length(integerFaultNames[loopNr]));
+     dumpBoolean := SetVariable((subString + ".faultIndex"), faults.variableFaults.integerFaultSelect[
+       loopNr]);
+     dumpBoolean := SetVariable((subString + ".externalFaultOn"), 1);
+     Modelica.Utilities.Streams.print((subString + ".faultIndex") + "=" + String(
+        faults.variableFaults.integerFaultSelect[loopNr]) + ";//IntegerIndex%",
+       scriptName);
+     Modelica.Utilities.Streams.print((subString + ".faultMode") + "=" + String(
+        faults.variableFaults.integerFaultMode[loopNr]) + ";//IntegerMode%",
+       scriptName);
+     Modelica.Utilities.Streams.print((subString + ".externalFaultOn") + "=1" + ";//Boolean%",
+       scriptName);
+   end for;
+   // BOOLEAN Faults
+    loopMax := size(booleanFaultComponents, 1);
+    for loopNr in 1:loopMax loop
+      subString := Modelica.Utilities.Strings.substring(
+        booleanFaultNames[loopNr],
+        modelNameLength + 2,
+        Modelica.Utilities.Strings.length(booleanFaultNames[loopNr]));
+      dumpBoolean := SetVariable((subString + ".faultIndex"), faults.variableFaults.booleanFaultSelect[
+        loopNr]);
+      dumpBoolean := SetVariable((subString + ".externalFaultOn"), 1);
+      Modelica.Utilities.Streams.print((subString + ".faultIndex") + "=" + String(
+         faults.variableFaults.booleanFaultSelect[loopNr]) + ";//BooleanIndex%",
+        scriptName);
+     Modelica.Utilities.Streams.print((subString + ".faultMode") + "=" + String(
+        faults.variableFaults.booleanFaultMode[loopNr]) + ";//BooleanMode%",
+       scriptName);
+      Modelica.Utilities.Streams.print((subString + ".externalFaultOn") + "=1" + ";//Boolean%",
+        scriptName);
+    end for;
 
-  // ----------------- Parameter Faults Setup ---------------
+    // ----------------- Parameter Faults Setup ---------------
 
-  // REAL parameter Faults
-  loopMax := size(faults.parameterFaults.realValue, 1);
-  for loopNr in 1:loopMax loop
-    subString := Modelica.Utilities.Strings.substring(
-      realFaultParameterNames[loopNr],
-      modelNameLength + 2,
-      Modelica.Utilities.Strings.length(realFaultParameterNames[loopNr]));
-    dumpBoolean := SetVariable(subString, faults.parameterFaults.realValue[
-      loopNr]);
-    Modelica.Utilities.Streams.print((subString + "=" + String(faults.parameterFaults.realValue[
-      loopNr])) + ";//Real%", scriptName);
-  end for;
-  // INTEGER parameter Faults
-  loopMax := size(faults.parameterFaults.integerValue, 1);
-  for loopNr in 1:loopMax loop
-    subString := Modelica.Utilities.Strings.substring(
-      integerFaultParameterNames[loopNr],
-      modelNameLength + 2,
-      Modelica.Utilities.Strings.length(integerFaultParameterNames[loopNr]));
-    dumpBoolean := SetVariable(subString, faults.parameterFaults.integerValue[
-      loopNr]);
-    Modelica.Utilities.Streams.print(subString + "=" + String(faults.parameterFaults.integerValue[
-      loopNr]) + ";//Integer%", scriptName);
-  end for;
-  // BOOLEAN parameter Faults
-  loopMax := size(booleanFaultParameterNames, 1);
-  for loopNr in 1:loopMax loop
-    subString := Modelica.Utilities.Strings.substring(
-      booleanFaultParameterNames[loopNr],
-      modelNameLength + 2,
-      Modelica.Utilities.Strings.length(booleanFaultParameterNames[loopNr]));
-    if faults.parameterFaults.booleanValue[loopNr] then
-      realTemp := 1;
-    else
-      realTemp := 0;
-    end if;
-    dumpBoolean := SetVariable(subString, realTemp);
-    Modelica.Utilities.Streams.print(subString + "=" + String(realTemp) + ";//Boolean%",
-      scriptName);
-  end for;
+    // REAL parameter Faults
+   loopMax := size(faults.parameterFaults.realValue, 1);
+   for loopNr in 1:loopMax loop
+     subString := Modelica.Utilities.Strings.substring(
+       realFaultParameterNames[loopNr],
+       modelNameLength + 2,
+       Modelica.Utilities.Strings.length(realFaultParameterNames[loopNr]));
+     dumpBoolean := SetVariable(subString, faults.parameterFaults.realValue[
+       loopNr]);
+     Modelica.Utilities.Streams.print((subString + "=" + String(faults.parameterFaults.realValue[
+       loopNr])) + ";//Real%", scriptName);
+   end for;
+    // INTEGER parameter Faults
+   loopMax := size(faults.parameterFaults.integerValue, 1);
+   for loopNr in 1:loopMax loop
+     subString := Modelica.Utilities.Strings.substring(
+       integerFaultParameterNames[loopNr],
+       modelNameLength + 2,
+       Modelica.Utilities.Strings.length(integerFaultParameterNames[loopNr]));
+     dumpBoolean := SetVariable(subString, faults.parameterFaults.integerValue[
+       loopNr]);
+     Modelica.Utilities.Streams.print(subString + "=" + String(faults.parameterFaults.integerValue[
+       loopNr]) + ";//Integer%", scriptName);
+   end for;
+   // BOOLEAN parameter Faults
+   loopMax := size(booleanFaultParameterNames, 1);
+   for loopNr in 1:loopMax loop
+     subString := Modelica.Utilities.Strings.substring(
+       booleanFaultParameterNames[loopNr],
+       modelNameLength + 2,
+       Modelica.Utilities.Strings.length(booleanFaultParameterNames[loopNr]));
+       if faults.parameterFaults.booleanValue[
+       loopNr] then
+         realTemp :=1;
+       else
+         realTemp :=0;
+       end if;
+     dumpBoolean := SetVariable(subString, realTemp);
+     Modelica.Utilities.Streams.print(subString + "=" + String(realTemp) + ";//Boolean%", scriptName);
+   end for;
 
   annotation (
-    Icon(graphics),
     Diagram(graphics={Polygon(
           points={{70,90},{-22,10},{0,-10},{-70,-90},{30,-10},{10,10},{70,90}},
           smooth=Smooth.None,
@@ -348,5 +336,4 @@ algorithm
 </tr>
 </table>
 </html>"));
-
 end faultProcessingForFaultBus;
