@@ -2,9 +2,9 @@ within FaultTriggering.Utilities.Internal;
 function gatherParameterFaults
   import Modelica.Utilities.Streams.print;
 
-//   input String className="FaultTriggering.Examples.ActuatorExample.Actuator_ParameterFaults";
+  //   input String className="FaultTriggering.Examples.ActuatorExample.Actuator_ParameterFaults";
   input String className="FaultTriggering.Examples.ActuatorExample.Actuator";
-   input Boolean translateModel = true "If true then model will be translated";
+  input Boolean translateModel=true "If true then model will be translated";
 
   output String[:] BooleanfaultPaths "Path to component";
   output String[:] BooleanfaultNames "Component names";
@@ -37,13 +37,13 @@ algorithm
 
   // translate model to FMU 2.0
   if translateModel then
-  translateModelFMU(
-    className,
-    false,
-    "",
-    "2",
-    "me");
-    end if;
+    translateModelFMU(
+      className,
+      false,
+      "",
+      "2",
+      "me");
+  end if;
   // load results
   vars := importScalarVariables("~FMUOutput\modelDescription.xml");
 
@@ -52,17 +52,18 @@ algorithm
   declaredIntegerType := vars[:].integerAttributes.declaredType;
   declaredRealType := vars[:].booleanAttributes.declaredType;
 
-// Initiate faultNamesList, faultFromNamesList and faultPathList with a string array of the size of the array.
-faultNamesList := componentNames;
-faultFromNamesList := componentNames;
-faultPathList := componentNames;
+  // Initiate faultNamesList, faultFromNamesList and faultPathList with a string array of the size of the array.
+  faultNamesList := componentNames;
+  faultFromNamesList := componentNames;
+  faultPathList := componentNames;
 
   // Get Boolean Faults
-  Counter_Fault:=1;
+  Counter_Fault := 1;
   for Counter_Component in 1:size(componentNames, 1) loop
     componentPath := declaredBooleanType[Counter_Component].Value;
     componentName := componentNames[Counter_Component];
-    Index_LastDotInName := Modelica.Utilities.Strings.findLast(componentPath, ".");
+    Index_LastDotInName := Modelica.Utilities.Strings.findLast(componentPath,
+      ".");
     if declaredBooleanType[Counter_Component].present then
       if Index_LastDotInName > 1 then
         // look if the name FAULT is in the type, if yes ==> FAULT. This is looped for all searchString indexes. If a string is already found, no further string comparison is needed and is skipped.
@@ -85,13 +86,14 @@ faultPathList := componentNames;
   BooleanfaultNames := faultNamesList[1:Counter_Fault - 1];
   BooleanfaultPaths := faultPathList[1:Counter_Fault - 1];
 
-    // Get Integer Faults
-  Counter_Fault:=1;
+  // Get Integer Faults
+  Counter_Fault := 1;
   for Counter_Component in 1:size(componentNames, 1) loop
 
     componentPath := declaredIntegerType[Counter_Component].Value;
     componentName := componentNames[Counter_Component];
-    Index_LastDotInName := Modelica.Utilities.Strings.findLast(componentPath, ".");
+    Index_LastDotInName := Modelica.Utilities.Strings.findLast(componentPath,
+      ".");
     if declaredRealType[Counter_Component].present then
       if Index_LastDotInName > 1 then
         // look if the name FAULT is in the type, if yes ==> FAULT. This is looped for all searchString indexes. If a string is already found, no further string comparison is needed and is skipped.
@@ -115,12 +117,13 @@ faultPathList := componentNames;
   integerFaultPaths := faultPathList[1:Counter_Fault - 1];
 
   // Get Real Faults
-  Counter_Fault:=1;
+  Counter_Fault := 1;
   for Counter_Component in 1:size(componentNames, 1) loop
 
     componentPath := declaredRealType[Counter_Component].Value;
     componentName := componentNames[Counter_Component];
-    Index_LastDotInName := Modelica.Utilities.Strings.findLast(componentPath, ".");
+    Index_LastDotInName := Modelica.Utilities.Strings.findLast(componentPath,
+      ".");
     if declaredRealType[Counter_Component].present then
       if Index_LastDotInName > 1 then
         // look if the name FAULT is in the type, if yes ==> FAULT. This is looped for all searchString indexes. If a string is already found, no further string comparison is needed and is skipped.
@@ -143,5 +146,5 @@ faultPathList := componentNames;
   realFaultNames := faultNamesList[1:Counter_Fault - 1];
   realFaultPaths := faultPathList[1:Counter_Fault - 1];
 
-annotation(__Dymola_interactive=true);
+  annotation (__Dymola_interactive=true);
 end gatherParameterFaults;

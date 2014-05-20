@@ -41,7 +41,7 @@ algorithm
   (booleanFaultParameterPaths,booleanFaultParameterNames,
     integerFaultParameterPaths,integerFaultParameterNames,
     realFaultParameterPaths,realFaultParameterNames) :=
-    FaultTriggering.Utilities.Internal.gatherParameterFaults(modelName);
+    FaultTriggering.Utilities.Internal.gatherParameterFaults(modelName,true);
   // setup the record with the loaded values
   faults.parameterFaults.realFaults :=
     FaultTriggering.Utilities.Records.RealFaults(realFaultParameterPaths,
@@ -58,7 +58,7 @@ algorithm
 
   (booleanFaultComponents,booleanFaultNames,integerFaultComponents,
     integerFaultNames,realFaultComponents,realFaultNames) :=
-    FaultTriggering.Utilities.Internal.gatherVariableFaults(modelName);
+    FaultTriggering.Utilities.Internal.gatherVariableFaults(modelName,false);
 
   // setup the record with the loaded values
   faults.variableFaults.booleanFaults :=
@@ -187,7 +187,7 @@ algorithm
   // // ----------------------------------------
   //
   // Translate the model so the parameters can be set
-  translateModel(modelName);
+  //  translateModel(modelName); - not necessary anymore since already translated.
 
   // ----------------- Variable Faults Setup ----------------
   // select which fault is bound to which input
