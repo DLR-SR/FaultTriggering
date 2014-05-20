@@ -1,6 +1,6 @@
 InternalBooleanFault
 InternalConstantBooleanFault
-InternalConstantIntegerFault
-InternalConstantRealFault
 InternalIntegerFault
+InternalConstantIntegerFault
 InternalRealFault
+InternalConstantRealFault

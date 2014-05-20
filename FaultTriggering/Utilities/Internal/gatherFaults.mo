@@ -54,7 +54,8 @@ algorithm
   faultNames := faultNamesList[1:Counter_Fault - 1];
   faultPaths := faultPathList[1:Counter_Fault - 1];
 
-  annotation (                         Documentation(info="<html>
+  annotation (Icon(graphics),
+                         Documentation(info="<html>
 <p>Select all model compontsfrom <b>modelName</b> which type is equal to <b>searchString</b>. Maximal search depth is <b>maxSearchSize</b>. Output are the string vectors FaultComponents and FaultNames. They represent the component names as well as the path to the component.</p>
 <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\"><tr>
 <td><p><br/><img src=\"modelica://FaultTriggering/Resources/Documentation/Images/logo_dlr.png\"/></p></td>

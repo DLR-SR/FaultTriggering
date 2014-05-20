@@ -10,7 +10,7 @@ protected
 algorithm
 
 for loopNr in 1: size(stringVector,1) loop
-  if Strings.compare(stringIn,stringVector[loopNr])==2 then
+  if Strings.compare(stringIn,stringVector[loopNr])==Modelica.Utilities.Types.Compare.Equal then
     isFound := true;
     break; // break from loop is string is found
   end if;

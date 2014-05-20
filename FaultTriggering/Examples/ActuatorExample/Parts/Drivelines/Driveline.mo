@@ -76,8 +76,7 @@ equation
       points={{21,30},{24,30},{24,11}},
       color={0,0,127},
       smooth=Smooth.None));
-  annotation ( Icon(graphics={
-                                        Text(
+  annotation ( Icon(graphics={          Text(
         extent={{-150,150},{150,110}},
         textString="%name",
         lineColor={0,0,255})}),

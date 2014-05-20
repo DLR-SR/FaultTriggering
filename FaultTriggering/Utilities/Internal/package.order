@@ -7,9 +7,12 @@ getParameterValues
 getVariableMode
 readAfterDot
 readToDot
+readToLastDot
 DecomposeFaultsToStrings
 findInIntegerVector
 findIfIntegerVector
 emptyStringVector
 checkInString
 Records
+gatherParameterFaults
+gatherVariableFaults

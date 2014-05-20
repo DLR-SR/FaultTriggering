@@ -1,7 +1,7 @@
 within FaultTriggering.Utilities.Internal;
 function readAfterDot "reads string after last dot"
 input String  inputString="a.b.c" "string input";
-output String afterDot "part after first dot";
+output String afterDot "part after last dot";
 output Boolean dotFound "true if no dot is found";
 
 protected
