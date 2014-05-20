@@ -2,19 +2,19 @@ within FaultTriggering.UsersGuide.Tutorial;
 class FaultModelling "Fault Modelling"
 extends FaultTriggering.Utilities.Icons.Information;
   annotation (Documentation(info="<html>
-<p><h4>Getting started</h4></p>
-<p>In this chapter is explained how to use the fault models. This will be done using provided examples. The first example will be a boolean parameter fault that models a clutch fault, the second example will be a motor fault, leading to a torque loss. </p>
-<p><h4>1. Fault Modelling</h4></p>
+<h4>Getting started</h4>
+<p>In this chapter is explained how to use the fault models. This will be done using using an example of a driveline. In this example, a boolean parameter fault that models a driveline breakage, and a variable real fault, leading to increased friction. </p>
+<h4>1. Fault Modelling</h4>
 <p>In Figure 1. the driveline of a <a href=\"FaultTriggering.Examples.ActuatorExample.Parts.Drivelines.Driveline\">rotational</a><a href=\"FaultTriggering.Examples.MotorExample.Driveline\"> actuator</a> is shown. Three triggerable faults can be identified:</p>
-<p><ol>
+<ol>
 <li>DrivelineDisconnect (Parameter boolean fault)</li>
 <li>DriveFriction (Variable real fault)</li>
 <li>Sensor fault (internal faults)</li>
-</ol></p>
+</ol>
 <p><img src=\"modelica://FaultTriggering/Resources/Documentation/ClutchFault.png\"/></p>
 <p>Figure 1. Drivetrain Model</p>
 <p>How to implement the faults will be explained below. have a look at the chapter: Parameter and Variable Faults</p>
-<p><ol>
+<ol>
 <li><h4>Parameter boolean fault</h4></li>
 <p>A Boolean parameter fault can be modelled by using the <a href=\"FaultTriggering.FaultOutput.ConstantBooleanFault\">FaultTriggering.FaultOutput.ConstantBooleanFault</a> model and connecting it to the input of the fault case. In this case the boolean to real converter outputs 1 in case that the fault is false, and 0 otherwise. This engages or disconnects the driveline by disconnecting a <a href=\"Modelica.Mechanics.Rotational.Components.Clutch\">clutch</a>.</p>
 <p>In the boolean parameter value block, it is possible to turn the fault on or off (default=off). <b>IMPORTANT:</b> Note that using an parameter to set the faults can lead to problems. See chapter &QUOT;<a href=\"FaultTriggering.UsersGuide.Tutorial.Important\">Important</a>&QUOT; for an explanation.</p>
@@ -29,7 +29,7 @@ extends FaultTriggering.Utilities.Icons.Information;
 <p><img src=\"modelica://FaultTriggering/Resources/Documentation/RealVariableFault_level2.png\"/></p>
 <p><i>Figure 4. Record ExternalFault.</i></p>
 <li><h4>Internal Fault</h4></li>
-</ol></p>
+</ol>
 <p>Using the models in the package <a href=\"FaultTriggering.FaultOutput.Internal\">FaultTriggering.FaultOutput.Internal</a>, it is possible to create broken models by using the &QUOT;<i>extends</i>&QUOT; functionality. An example of this possibility can be found in the sensor model <a href=\"FaultTriggering.Examples.MotorExample.FaultSpeedSensor\">FaultTriggering.Examples.MotorExample.FaultSpeedSensor</a> </p>
 </html>", revisions="<html><table border=0 cellspacing=0 cellpadding=0>
   <tr><td valign=\"center\"> <img src=\"modelica://FaultTriggering/Resources/Documentation/Images/logo_dlr.png\" width=60></td>
