@@ -7,9 +7,13 @@ package FaultTriggering "Library for Fault Triggering"
   import Modelica.Utilities.Strings;
 
 
+
+
+
+
   annotation (uses(Modelica(version="3.2.1"), ModelManagement(version="1.1.1")),
-    version="0.5.0",
-    versionDate="2014-04-02",
+    version="0.6.0",
+    versionDate="2014-05-30",
 preferredView="info",
    Documentation(info="<html>
 <p>The FaultTriggering Library is an open-source Modelica library to aid the user in the modeling of Faults in models. The library is suitable for model developers as well as users of the faulty models. The main features of the library are:</p>
