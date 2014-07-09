@@ -6,6 +6,8 @@ function faultProcessingForFaultBus
   input String modelName="FaultTriggering.Examples.ActuatorExample.Actuator"
     "Model name";
   input String scriptName="SetFaults.mos" "Name of output script";
+  input Boolean overWriteScripts = false
+    "Replaces existing models without propmpting" annotation(choices(checkBox=true));
   output String[:] realFaultParameterNames;
   output String[:] integerFaultParameterNames;
   output String[:] booleanFaultParameterNames;
@@ -191,10 +193,13 @@ algorithm
 
   // ----------------- Variable Faults Setup ----------------
   // select which fault is bound to which input
-  // check if file already exist. if not, exit
+  // check if file already exist. if not, exit when not overWriteScripts
+  if overWriteScripts == false then
   assert(not (Modelica.Utilities.Files.exist(scriptName)), scriptName +
     " already exist: exitting");
+    else
   Modelica.Utilities.Files.remove(scriptName);
+  end if;
   // REAL Faults
   loopMax := size(realFaultComponents, 1);
   for loopNr in 1:loopMax loop

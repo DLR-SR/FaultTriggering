@@ -60,6 +60,8 @@ function createFaultPackageInternal
   input String packageName="Faults.mo";
 //  input Integer preAllocationSize=500
 //    "pre allocation size of the output matrices";
+  input Boolean overWriteScripts = false
+    "Replaces existing models without propmpting" annotation(choices(checkBox=true));
 
   output String[:] name "name of component";
   output String[:] extendsTo "extending to";
@@ -110,11 +112,13 @@ algorithm
     faultChannel);
 
   maxDepth := max(extensionDepths);
-// check if file already exist. if not, exit
+  // check if file already exist. if not, exit
+  if  overWriteScripts == false then
 assert( not
            (Modelica.Utilities.Files.exist(packageName)), packageName + " already exist: exitting");
-
+  else
   Modelica.Utilities.Files.remove(packageName);
+  end if;
 
   Streams.print("package " + readAfterDot(modelName) + "Package", packageName);
   Streams.print("import FaultTriggering;", packageName);
