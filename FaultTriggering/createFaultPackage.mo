@@ -7,7 +7,8 @@ function createFaultPackage
   input String scriptName="SetFaults.mos" "Name of output script";
   input String packageName="Faults.mo"
     "Name of the Fault package created by the function";
-//  input Integer maxSearchSize=500 "Maximum number of elements in the model ";
+  input Boolean overWriteScripts = false
+    "Replaces existing models without propmpting" annotation(choices(checkBox=true));
   output FaultTriggering.Utilities.Records.Faults faults;
 
 protected
@@ -35,7 +36,8 @@ algorithm
     booleanFaultNames,faults) :=
     FaultTriggering.Utilities.Internal.faultProcessingForFaultBus(
     modelName,
-    scriptName);
+    scriptName,
+    overWriteScripts);
 
 // ---  remove modelname from string ---
 for faultNr in 1: size(realFaultNames,1) loop
@@ -82,7 +84,8 @@ faultSizes :={size(realFaultNames, 1),size(integerFaultNames, 1),size(
     faultSizes,
     faults,
     modelName,
-    packageName);
+    packageName,
+    overWriteScripts);
 
   annotation (   Documentation(info="<html>
 <p>This Function gathers all the faults in the model <b>modelName</b>, sets the values of the faults and saves it into the modelica script <b>scriptName</b>. The Integer <b>maxSearchSize</b> is needed to preallocate the number of searched elements.</p>
