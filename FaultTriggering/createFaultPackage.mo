@@ -7,7 +7,7 @@ function createFaultPackage
   input String scriptName="SetFaults.mos" "Name of output script";
   input String packageName="Faults.mo"
     "Name of the Fault package created by the function";
-  input Boolean overWriteScripts = false
+  input Boolean overWriteScripts = true
     "Replaces existing models without propmpting" annotation(choices(checkBox=true));
   output FaultTriggering.Utilities.Records.Faults faults;
 
