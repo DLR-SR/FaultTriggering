@@ -308,7 +308,7 @@ assert( not
 // ----------   setup Simulink fault Input Connector ----------------------------------------------------------------
 // --------------------------------------------------------------------------------------------
 
-  Streams.print("expandable connector FaultsInput = input " + readAfterDot(modelName) + "Package" + ".Interfaces.Faults \"'input Faults' as connector\"  annotation (Icon(graphics={Rectangle(extent={{-8,4},{10,0}},lineColor={255,0,0},lineThickness=0.5)}));",
+  Streams.print("connector FaultsInput = input " + readAfterDot(modelName) + "Package" + ".Interfaces.Faults \"'input Faults' as connector\"  annotation (Icon(graphics={Rectangle(extent={{-8,4},{10,0}},lineColor={255,0,0},lineThickness=0.5)}));",
     packageName);
 //  Streams.print("end FaultsInput;",packageName);
 Streams.print("package Interfaces", packageName);
@@ -316,7 +316,7 @@ Streams.print("extends FaultTriggering.Utilities.Icons.InterfacesPackage;", pack
 // --------------------------------------------------------------------------------------------
 // ----------   setup base bus ----------------------------------------------------------------
 // --------------------------------------------------------------------------------------------
-  Streams.print("expandable connector Faults", packageName); // creates base connector
+  Streams.print("connector Faults", packageName); // creates base connector
   Streams.print("extends FaultTriggering.Utilities.Icons.FaultBus;", packageName);
   extendsNr := 0;
 //   partialExtends := FaultTriggering.Utilities.Internal.emptyStringVector(
@@ -348,26 +348,26 @@ Streams.print("extends FaultTriggering.Utilities.Icons.InterfacesPackage;", pack
     if FaultTriggering.Utilities.Internal.findIfIntegerVector(processedNames,
         nameNr2) == false then
       if Strings.compare(extendsTo[nameNr2], "") <> Modelica.Utilities.Types.Compare.Equal then
-        Streams.print("expandable connector " + name[nameNr2], packageName);
+        Streams.print("connector " + name[nameNr2], packageName);
         Streams.print("extends FaultTriggering.Utilities.Icons.FaultSubBus;",
           packageName);
       elseif name_Type[nameNr2] == FaultTriggering.Utilities.Types.FaultType.realPar then
-        Streams.print("type " + name[nameNr2] + " = Real \"Real variable Fault\" ;",
-          packageName);
-      elseif name_Type[nameNr2] == FaultTriggering.Utilities.Types.FaultType.intPar then
-        Streams.print("type " + name[nameNr2] + " = Integer \"Integer variable Fault\" ;",
-          packageName);
-      elseif name_Type[nameNr2] == FaultTriggering.Utilities.Types.FaultType.boolPar then
-        Streams.print("type " + name[nameNr2] + " = Boolean \"Boolean variable Fault\" ;",
-          packageName);
-      elseif name_Type[nameNr2] == FaultTriggering.Utilities.Types.FaultType.realVar then
         Streams.print("type " + name[nameNr2] + " = Real \"Real parameter Fault\" ;",
           packageName);
-      elseif name_Type[nameNr2] == FaultTriggering.Utilities.Types.FaultType.intVar then
+      elseif name_Type[nameNr2] == FaultTriggering.Utilities.Types.FaultType.intPar then
         Streams.print("type " + name[nameNr2] + " = Integer \"Integer parameter Fault\" ;",
           packageName);
-      elseif name_Type[nameNr2] == FaultTriggering.Utilities.Types.FaultType.boolVar then
+      elseif name_Type[nameNr2] == FaultTriggering.Utilities.Types.FaultType.boolPar then
         Streams.print("type " + name[nameNr2] + " = Boolean \"Boolean parameter Fault\" ;",
+          packageName);
+      elseif name_Type[nameNr2] == FaultTriggering.Utilities.Types.FaultType.realVar then
+        Streams.print("connector " + name[nameNr2] + " = input Real \"Real variable Fault\" ;",
+          packageName);
+      elseif name_Type[nameNr2] == FaultTriggering.Utilities.Types.FaultType.intVar then
+        Streams.print("connector " + name[nameNr2] + " = input Integer \"Integer variable Fault\" ;",
+          packageName);
+      elseif name_Type[nameNr2] == FaultTriggering.Utilities.Types.FaultType.boolVar then
+        Streams.print("connector " + name[nameNr2] + " = input Boolean \"Boolean variable Fault\" ;",
           packageName);
       end if;
       extendsNr := 0;
