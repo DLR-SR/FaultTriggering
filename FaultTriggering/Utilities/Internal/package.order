@@ -16,3 +16,4 @@ checkInString
 Records
 gatherParameterFaults
 gatherVariableFaults
+isWindows
