@@ -45,7 +45,11 @@ algorithm
       "me");
   end if;
   // load results
-  vars := importScalarVariables("~FMUOutput\modelDescription.xml");
+  if FaultTriggering.Utilities.Internal.isWindows() then
+    vars := importScalarVariables("~FMUOutput/modelDescription.xml");
+  else
+    vars := importScalarVariables("FMUOutput/modelDescription.xml");
+  end if;
 
   componentNames := vars[:].name;
   declaredBooleanType := vars[:].realAttributes.declaredType;
