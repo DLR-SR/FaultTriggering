@@ -48,7 +48,7 @@ algorithm
   if FaultTriggering.Utilities.Internal.isWindows() then
     vars := importScalarVariables("~FMUOutput/modelDescription.xml");
   else
-    vars := importScalarVariables("FMUOutput/modelDescription.xml");
+    vars := importScalarVariables(".FMUOutput/modelDescription.xml");
   end if;
 
   componentNames := vars[:].name;
