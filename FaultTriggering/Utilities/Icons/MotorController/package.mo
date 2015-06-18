@@ -1,5 +1,5 @@
 within FaultTriggering.Utilities.Icons;
-partial package MotorController
+partial package MotorController 
   extends FaultTriggering.Utilities.Icons.Package;
 
 
