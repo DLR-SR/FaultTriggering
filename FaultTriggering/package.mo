@@ -11,9 +11,9 @@ package FaultTriggering "Library for Fault Triggering"
 
 
 
-  annotation (uses(Modelica(version="3.2.1"), ModelManagement(version="1.1.1")),
-    version="0.6.0", conversion(noneFromVersion="0.5.0"),
-    versionDate="2014-05-30",
+  annotation (uses(Modelica(version="3.2.1")),
+    version="0.6.3", conversion(noneFromVersion="0.5.0"),
+    versionDate="2015-06-18",
 preferredView="info",
    Documentation(info="<html>
 <p>The FaultTriggering Library is an open-source Modelica library to aid the user in the modeling of Faults in models. The library is suitable for model developers as well as users of the faulty models. The main features of the library are:</p>
@@ -62,9 +62,13 @@ preferredView="info",
 <td><p>0.5</p></td>
 <td><p>2014-04-02: Release to Github, Included Licence information and copyrights </p></td>
 </tr>
+<tr>
+<td><p>0.6.3</p></td>
+<td><p>2015-18-52: Works from Dymola 2015 and higher. Removed ModelManagement need. 0.6.1 Branch works now under Linux </p></td>
+</tr>
 </table>
 <p><br><br><br><br><br><b>Licensed by the DLR Institute of System Dynamics and Control under the Modelica License 2</b></p>
-<p>Copyright &copy; 2014, DLR Institute of System Dynamics and Control </p>
+<p>Copyright &copy; 2015, DLR Institute of System Dynamics and Control </p>
 <p><i>This Modelica package is <u>free</u> software and the use is completely at <u>your own risk</u>; it can be redistributed and/or modified under the terms of the Modelica License 2. For license conditions (including the disclaimer of warranty) see <a href=\"modelica://Modelica.UsersGuide.ModelicaLicense2\">Modelica.UsersGuide.ModelicaLicense2</a> or visit <a href=\"https://www.modelica.org/licenses/ModelicaLicense2\">https://www.modelica.org/licenses/ModelicaLicense2</a>.</i> </p>
 <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\"><tr>
 <td></td>
@@ -74,7 +78,7 @@ preferredView="info",
 </html>", revisions="<html><table border=0 cellspacing=0 cellpadding=0>
   <tr><td valign=\"center\"> <img src=\"modelica://FaultTriggering/Resources/Documentation/Images/logo_dlr.png\" width=60></td>
     <td valign=\"center\"><b>Copyright</b>
-      <br><b>&copy; 2012-2014, DLR Institute of System Dynamics and Control</b></td>
+      <br><b>&copy; 2012-2015, DLR Institute of System Dynamics and Control</b></td>
   </tr>
  </table>
 </html>"),

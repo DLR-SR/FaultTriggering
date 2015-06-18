@@ -1,9 +1,9 @@
 faultProcessingForFaultBus
 createFaultPackageInternal
-gatherFaults
-getAllModelComponents
-getVariableValues
+gatherParameterFaults
 getParameterValues
+gatherVariableFaults
+getVariableValues
 getVariableMode
 readAfterDot
 readToDot
@@ -13,7 +13,5 @@ findInIntegerVector
 findIfIntegerVector
 emptyStringVector
 checkInString
-Records
-gatherParameterFaults
-gatherVariableFaults
 isWindows
+Records

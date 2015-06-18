@@ -391,8 +391,7 @@ Streams.print("extends FaultTriggering.Utilities.Icons.InterfacesPackage;", pack
       end for;
       if Strings.compare(extendsTo[nameNr2], "") <> Modelica.Utilities.Types.Compare.Equal then
         Streams.print("end " + name[nameNr2] + ";", packageName);
-      end if;
-                processedNames :=cat(
+      end if;   processedNames :=cat(
             1,
             processedNames,
             {nameNr});

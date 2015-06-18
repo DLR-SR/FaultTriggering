@@ -1,5 +1,5 @@
 within FaultTriggering.Utilities.Icons;
-package Package
+package Package 
 
 
 annotation (Icon(graphics={

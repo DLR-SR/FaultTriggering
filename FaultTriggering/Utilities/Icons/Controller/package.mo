@@ -1,5 +1,5 @@
 within FaultTriggering.Utilities.Icons;
-partial package Controller
+partial package Controller 
   extends FaultTriggering.Utilities.Icons.Package;
 
 
