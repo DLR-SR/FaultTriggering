@@ -9,9 +9,10 @@ block InternalBooleanFault "Generate variable Fault of type Boolean"
                                                        externalBooleanFault = FaultTriggering.Utilities.Types.Variable_Fault_Boolean()
     "External Fault Triggering parameters";
   Modelica.Blocks.Interfaces.BooleanOutput fault "Final fault value";
-protected
-  FaultTriggering.Utilities.Types.Fault_SelectBooleanFault
-                                                   faultNumber;
+
+  FaultTriggering.Utilities.Types.Fault_SelectBooleanFault faultNumber
+    "Internal variable automatically set by the FaultTriggering library. Do NOT change!"
+                                                                                         annotation(Dialog(tab="Advanced", enable=false));
 equation
   faultNumber = externalBooleanFault.faultIndex;
   fault = if externalBooleanFault.externalFaultOn then faultTrigger.booleanFault[faultNumber] else

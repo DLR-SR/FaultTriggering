@@ -12,8 +12,8 @@ package FaultTriggering "Library for Fault Triggering"
 
 
   annotation (uses(Modelica(version="3.2.1")),
-    version="0.6.3", conversion(noneFromVersion="0.5.0"),
-    versionDate="2015-06-18",
+    version="0.6.4", conversion(noneFromVersion="0.5.0"),
+    versionDate="2015-07-15",
 preferredView="info",
    Documentation(info="<html>
 <p>The FaultTriggering Library is an open-source Modelica library to aid the user in the modeling of Faults in models. The library is suitable for model developers as well as users of the faulty models. The main features of the library are:</p>
@@ -64,7 +64,12 @@ preferredView="info",
 </tr>
 <tr>
 <td><p>0.6.3</p></td>
-<td><p>2015-18-52: Works from Dymola 2015 and higher. Removed ModelManagement need. 0.6.1 Branch works now under Linux </p></td>
+<td><p>2015-18-06: Works from Dymola 2015 and higher. Removed ModelManagement need. 0.6.3 Branch works now under Linux </p></td>
+</tr>
+</tr>
+<tr>
+<td><p>0.6.4</p></td>
+<td><p>2015-07-15: Enabled working on Dymola 2016 </p></td>
 </tr>
 </table>
 <p><br><br><br><br><br><b>Licensed by the DLR Institute of System Dynamics and Control under the Modelica License 2</b></p>

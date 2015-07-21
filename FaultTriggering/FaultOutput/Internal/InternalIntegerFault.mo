@@ -10,9 +10,10 @@ block InternalIntegerFault "Generate variable Fault of type Integer"
     "External Fault Triggering parameters";
   Modelica.Blocks.Interfaces.IntegerOutput fault "Final fault value";
 
-protected
   FaultTriggering.Utilities.Types.Fault_SelectIntegerFault
-                                                   faultNumber;
+                                                   faultNumber
+    "Internal variable automatically set by the FaultTriggering library. Do NOT change!"
+                                                                                                        annotation(Dialog(tab="Advanced", enable=false));
 equation
   faultNumber = externalIntegerFault.faultIndex;
   fault = if externalIntegerFault.externalFaultOn then faultTrigger.integerFault[faultNumber] else

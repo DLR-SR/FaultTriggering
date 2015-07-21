@@ -9,9 +9,10 @@ block InternalRealFault "Generate variable Fault of type Real"
     "External Fault Triggering parameters";
   Modelica.Blocks.Interfaces.RealOutput fault "Final fault value";
 
-protected
   FaultTriggering.Utilities.Types.Fault_SelectRealFault
-                                                faultNumber;
+                                                faultNumber
+    "Internal variable automatically set by the FaultTriggering library. Do NOT change!"
+                                                                                                        annotation(Dialog(tab="Advanced", enable=false));
 equation
   faultNumber = externalRealFault.faultIndex;
   fault = if externalRealFault.externalFaultOn then faultTrigger.realFault[faultNumber] else
