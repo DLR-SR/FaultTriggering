@@ -1,11 +1,11 @@
 within FaultTriggering.FaultOutput;
 partial model Partial_FaultTrigger "partial model defining the fault classes"
   extends FaultTriggering.Utilities.Icons.FaultModel;
-  parameter Integer realFaultSize(    min=0)=4
+  parameter Integer realFaultSize(    min=0)=0
     "Number of real fault channels in the model"                                            annotation(Dialog(enable = tue, tab = "Advanced"));
-  parameter Integer integerFaultSize( min=0)=4
+  parameter Integer integerFaultSize( min=0)=0
     "Number of integer fault channels in the model"                                            annotation(Dialog(enable = tue, tab = "Advanced"));
-  parameter Integer booleanFaultSize( min=0)=4
+  parameter Integer booleanFaultSize( min=0)=0
     "Number of boolean fault channels in the model"                                            annotation(Dialog(enable = tue, tab = "Advanced"));
 
   Real    realFault[realFaultSize] "Real Fault trigger";
