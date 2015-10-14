@@ -1,0 +1,43 @@
+//TestScript to perform batch processing of selected failures
+translateModel("FailureTriggering.AutoTest.Examples.ActuatorTest");
+finalOutputScriptName = "TestResults.m";
+//Start 1. Test
+writeFailures.testRun = 1;
+actuatorInternalFault.driveline.DriveFriction.externalRealFault.externalFaultOn=1;
+actuatorInternalFault.motor.motorKtFailure.externalIntegerFault.externalFaultOn=0;
+actuatorInternalFault.motor.speedSensor.externalBooleanFault.externalFaultOn=0;
+actuatorInternalFault.driveline.speedSensor.externalBooleanFault.externalFaultOn=0;
+actuatorInternalFault.driveline.DrivelineDisconnect.constBooleanFault=0;
+simulateModel("FailureTriggering.AutoTest.Examples.ActuatorTest", startTime=0, stopTime=1, tolerance=1e-005);
+//Start 2. Test
+writeFailures.testRun = 2;
+actuatorInternalFault.driveline.DriveFriction.externalRealFault.externalFaultOn=0;
+actuatorInternalFault.motor.motorKtFailure.externalIntegerFault.externalFaultOn=1;
+actuatorInternalFault.motor.speedSensor.externalBooleanFault.externalFaultOn=0;
+actuatorInternalFault.driveline.speedSensor.externalBooleanFault.externalFaultOn=0;
+actuatorInternalFault.driveline.DrivelineDisconnect.constBooleanFault=0;
+simulateModel("FailureTriggering.AutoTest.Examples.ActuatorTest", startTime=0, stopTime=1, tolerance=1e-005);
+//Start 3. Test
+writeFailures.testRun = 3;
+actuatorInternalFault.driveline.DriveFriction.externalRealFault.externalFaultOn=0;
+actuatorInternalFault.motor.motorKtFailure.externalIntegerFault.externalFaultOn=0;
+actuatorInternalFault.motor.speedSensor.externalBooleanFault.externalFaultOn=1;
+actuatorInternalFault.driveline.speedSensor.externalBooleanFault.externalFaultOn=0;
+actuatorInternalFault.driveline.DrivelineDisconnect.constBooleanFault=0;
+simulateModel("FailureTriggering.AutoTest.Examples.ActuatorTest", startTime=0, stopTime=1, tolerance=1e-005);
+//Start 4. Test
+writeFailures.testRun = 4;
+actuatorInternalFault.driveline.DriveFriction.externalRealFault.externalFaultOn=0;
+actuatorInternalFault.motor.motorKtFailure.externalIntegerFault.externalFaultOn=0;
+actuatorInternalFault.motor.speedSensor.externalBooleanFault.externalFaultOn=0;
+actuatorInternalFault.driveline.speedSensor.externalBooleanFault.externalFaultOn=1;
+actuatorInternalFault.driveline.DrivelineDisconnect.constBooleanFault=0;
+simulateModel("FailureTriggering.AutoTest.Examples.ActuatorTest", startTime=0, stopTime=1, tolerance=1e-005);
+//Start 5. Test
+writeFailures.testRun = 5;
+actuatorInternalFault.driveline.DriveFriction.externalRealFault.externalFaultOn=0;
+actuatorInternalFault.motor.motorKtFailure.externalIntegerFault.externalFaultOn=0;
+actuatorInternalFault.motor.speedSensor.externalBooleanFault.externalFaultOn=0;
+actuatorInternalFault.driveline.speedSensor.externalBooleanFault.externalFaultOn=0;
+actuatorInternalFault.driveline.DrivelineDisconnect.constBooleanFault=1;
+simulateModel("FailureTriggering.AutoTest.Examples.ActuatorTest", startTime=0, stopTime=1, tolerance=1e-005);

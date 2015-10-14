@@ -1,0 +1,6 @@
+InternalBooleanFault
+InternalConstantBooleanFault
+InternalIntegerFault
+InternalConstantIntegerFault
+InternalRealFault
+InternalConstantRealFault
