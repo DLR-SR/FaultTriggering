@@ -1,5 +1,0 @@
-driveline.DriveFriction.constRealFault=0;//Real%
-motor.motorKtFailure.constIntegerFault=1;//Integer%
-motor.speedSensor.constBooleanFault=0;//Boolean%
-driveline.DrivelineDisconnect.constBooleanFault=0;//Boolean%
-driveline.speedSensor.constBooleanFault=0;//Boolean%
