@@ -1,6 +1,6 @@
 within FaultTriggering.UsersGuide.Tutorial;
 model Important "Important Notes"
-  extends FaultTriggering.Utilities.Icons.Information;
+  extends Modelica.Icons.Information;
 
   annotation (Documentation(info="<html>
 <p><h4>Important notes</h4></p>

@@ -206,8 +206,8 @@ assert( not
 
     Modelica.Utilities.Streams.print(subString + "=FaultTriggering.Utilities.Types.Variable_Fault_Real(
             externalFaultOn=true," + "faultIndex=" + String(faults.variableFaults.realFaultSelect[
-        loopNr]) + ","+  "faultMode=" + String(faults.variableFaults.realFaultMode[
-        loopNr]) + ")", packageName);
+        loopNr]) + ","+  "faultMode=faultTrigger.faultRecord.variableFaults.realFaultMode[" + String(faults.variableFaults.realFaultSelect[
+        loopNr]) + "])", packageName);
   end for;
 // INTEGER variable Faults
   loopMax := size(faults.variableFaults.integerFaults, 1);
@@ -226,8 +226,8 @@ assert( not
 
     Modelica.Utilities.Streams.print(subString + "=FaultTriggering.Utilities.Types.Variable_Fault_Integer(
             externalFaultOn=true," + "faultIndex=" + String(faults.variableFaults.integerFaultSelect[
-        loopNr]) + ","+  "faultMode=" + String(faults.variableFaults.integerFaultMode[
-        loopNr]) + ")", packageName);
+        loopNr]) + ","+  "faultMode=faultTrigger.faultRecord.variableFaults.integerFaultMode[" + String(faults.variableFaults.integerFaultSelect[
+        loopNr]) + "])", packageName);
   end for;
 // BOOLEAN variable Faults
   loopMax := size(faults.variableFaults.booleanFaults, 1);
@@ -246,8 +246,8 @@ assert( not
 
     Modelica.Utilities.Streams.print(subString + "=FaultTriggering.Utilities.Types.Variable_Fault_Boolean(
             externalFaultOn=true," + "faultIndex=" + String(faults.variableFaults.booleanFaultSelect[
-        loopNr]) + ","+  "faultMode=" + String(faults.variableFaults.booleanFaultMode[
-        loopNr]) + ")", packageName);
+        loopNr]) + ","+  "faultMode=faultTrigger.faultRecord.variableFaults.booleanFaultMode[" + String(faults.variableFaults.booleanFaultSelect[
+        loopNr]) + "])", packageName);
   end for;
   Streams.print(");", packageName);
 

@@ -116,6 +116,5 @@ algorithm
                -&GT; str3 = &QUOT; 314.15927     &QUOT;
                -&GT; str4 = &QUOT;   0.03142     &QUOT;
                -&GT; str5 = &QUOT;   3.14159e-3  &QUOT;              </pre></blockquote>
-</html>"),
-       uses(Modelica(version="3.2")));
+</html>"));
 end FormatReal;

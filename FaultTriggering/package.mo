@@ -30,6 +30,10 @@ preferredView="info",
 <li><b>Utilities</b>: Internal library functions.</li>
 </ul>
 <p><img src=\"modelica://FaultTriggering/Resources/Documentation/LibraryTree.png\"/></p>
+<h4>Literature</h4>
+<ol>
+<li>Linden, F. L. J. van der. (2014). General fault triggering architecture to trigger model faults in Modelica using a standardized blockset. In <i>Proceedings of the 10th Modelica conference</i> (pp. 427&ndash;436). <a href=\"http://doi.org/10.3384/ecp14096427\">doi:10.3384/ecp14096427</a> </li>
+</ol>
 <h4>Acknowledgement</h4>
 <p>The research leading to these results has received funding from the European Union&rsquo;s Seventh Framework Program (FP7-284916) for ACTUATION 2015 under grant agreement no. 284915.</p>
 <p>&nbsp; </p>
@@ -66,14 +70,18 @@ preferredView="info",
 <td><p>0.6.3</p></td>
 <td><p>2015-18-06: Works from Dymola 2015 and higher. Removed ModelManagement need. 0.6.3 Branch works now under Linux </p></td>
 </tr>
-</tr>
 <tr>
 <td><p>0.6.4</p></td>
 <td><p>2015-07-15: Enabled working on Dymola 2016 </p></td>
 </tr>
+<tr>
+<td><p>0.6.5</p></td>
+<td><p>2016-04-20: Allow custom modes switching in the FaultTrigger gontroller </p></td>
+</tr>
 </table>
-<p><br><br><br><br><br><b>Licensed by the DLR Institute of System Dynamics and Control under the Modelica License 2</b></p>
-<p>Copyright &copy; 2015, DLR Institute of System Dynamics and Control </p>
+
+<h4>Licensed by the DLR Institute of System Dynamics and Control under the Modelica License 2 </h4>
+<p>Copyright &copy; 2016, DLR Institute of System Dynamics and Control </p>
 <p><i>This Modelica package is <u>free</u> software and the use is completely at <u>your own risk</u>; it can be redistributed and/or modified under the terms of the Modelica License 2. For license conditions (including the disclaimer of warranty) see <a href=\"modelica://Modelica.UsersGuide.ModelicaLicense2\">Modelica.UsersGuide.ModelicaLicense2</a> or visit <a href=\"https://www.modelica.org/licenses/ModelicaLicense2\">https://www.modelica.org/licenses/ModelicaLicense2</a>.</i> </p>
 <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\"><tr>
 <td></td>

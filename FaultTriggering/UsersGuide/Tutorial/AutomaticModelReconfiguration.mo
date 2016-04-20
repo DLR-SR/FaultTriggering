@@ -1,6 +1,6 @@
 within FaultTriggering.UsersGuide.Tutorial;
 model AutomaticModelReconfiguration "Automatic Model Reconfiguration"
-  extends FaultTriggering.Utilities.Icons.Information;
+  extends Modelica.Icons.Information;
 
   annotation (Documentation(info="<html>
 <h4><span style=\"color:#008000\">Model reconfiguration</span></h4>
