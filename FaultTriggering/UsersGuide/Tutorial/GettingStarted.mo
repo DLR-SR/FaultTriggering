@@ -1,6 +1,6 @@
 within FaultTriggering.UsersGuide.Tutorial;
 class GettingStarted "Getting started"
-extends FaultTriggering.Utilities.Icons.Information;
+extends Modelica.Icons.Information;
     annotation (Documentation(info="<html>
 <p>The <b>FaultTriggering</b> Toolbox accomodates 2 fault types;</p>
 <p><ol>

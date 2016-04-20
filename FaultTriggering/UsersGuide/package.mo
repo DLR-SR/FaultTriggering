@@ -1,6 +1,6 @@
 within FaultTriggering;
 package UsersGuide "User's guide"
-  extends FaultTriggering.Utilities.Icons.InformationPackage;
+  extends Modelica.Icons.Information;
 
 
   annotation (__Dymola_DocumentationClass=true, Documentation(info="<html>

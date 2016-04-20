@@ -1,6 +1,6 @@
 within FaultTriggering.UsersGuide.Tutorial;
 model ParameterAndVariableFaults "Parameter and Variable Faults"
-  extends FaultTriggering.Utilities.Icons.Information;
+  extends Modelica.Icons.Information;
   annotation (Documentation(info="<html>
 <p><b><font style=\"color: #008000; \">How to select the right FaultOutput block from the <a href=\"modelica://FaultTriggering.FaultOutput\">FaultOutput</a> package?</font></b></p>
 <p>In the FaultOutput package, you will find several fault output models. To trigger the faults, the models ConstantRealFault up to VariableBooleanFault can be selected to trigger any faults.</p>

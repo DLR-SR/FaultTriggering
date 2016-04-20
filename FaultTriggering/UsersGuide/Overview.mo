@@ -1,6 +1,6 @@
 within FaultTriggering.UsersGuide;
 class Overview
-  extends FaultTriggering.Utilities.Icons.Information;
+  extends Modelica.Icons.Information;
   annotation (__Dymola_DocumentationClass=true, Documentation(info="<html>
 <p>In this package, models are supplied to trigger faults in an consistent way. Several types of faults are included: </p>
 <ul>

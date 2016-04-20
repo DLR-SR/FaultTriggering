@@ -1,6 +1,6 @@
 within FaultTriggering.UsersGuide.Tutorial;
 class FaultModelSetup "Fault model setup"
-extends FaultTriggering.Utilities.Icons.Information;
+extends Modelica.Icons.Information;
     annotation (Documentation(info="<html>
 <p>To show how the FaultTriggering toolbox works, a complete rotational actuator <a href=\"FaultTriggering.Examples.ActuatorExample.Actuator\">model</a> with faults including a load is prepared.</p>
 <p><h4><font color=\"#008000\">General Model</font></h4></p>

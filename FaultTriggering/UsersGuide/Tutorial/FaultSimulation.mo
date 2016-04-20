@@ -1,6 +1,6 @@
 within FaultTriggering.UsersGuide.Tutorial;
 class FaultSimulation "Fault Simulation"
-extends FaultTriggering.Utilities.Icons.Information;
+extends Modelica.Icons.Information;
     annotation (Documentation(info="<html>
 <p><h4><font color=\"#008000\">Modelica fault injection</font></h4></p>
 <p>After the model setup and the wrapper generation using <a href=\"modelica://FaultTriggering.createFaultPackage\">FaultTriggering.createFaultPackage</a>, the variable faults have to be connected to supply the variable values to the model. These faults all have to be fed into the hierarchical faultbus. The connector model from the FaultBus Package &QUOT;<a href=\"modelica://FaultBus.FaultTriggerController\">FaultTriggerController</a>&QUOT; has to be set up. Connecting a source to the bus, brings up a GUI where the user can select the individual fault to which this source should be coupled. Below an example of the GUI from Dymola is shown:</p>
