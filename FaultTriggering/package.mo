@@ -7,10 +7,6 @@ package FaultTriggering "Library for Fault Triggering"
   import Modelica.Utilities.Strings;
 
 
-
-
-
-
   annotation (uses(Modelica(version="3.2.1")),
     version="0.6.4", conversion(noneFromVersion="0.5.0"),
     versionDate="2015-07-15",

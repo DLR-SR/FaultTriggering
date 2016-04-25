@@ -8,6 +8,7 @@ function faultProcessingForFaultBus
   input String scriptName="SetFaults.mos" "Name of output script";
   input Boolean overWriteScripts = false
     "Replaces existing models without propmpting" annotation(choices(checkBox=true));
+
   output String[:] realFaultParameterNames;
   output String[:] integerFaultParameterNames;
   output String[:] booleanFaultParameterNames;
@@ -15,7 +16,6 @@ function faultProcessingForFaultBus
   output String[:] integerFaultNames;
   output String[:] booleanFaultNames;
   output FaultTriggering.Utilities.Records.Faults faults;
-
 protected
   String[:] realFaultParameterPaths;
   String[:] integerFaultParameterPaths;
@@ -37,6 +37,84 @@ algorithm
   modelNameLength := Modelica.Utilities.Strings.length(modelName);
 
   // ----------------------------------------------------------
+  // ----------------- Get Variable Faults  -----------------
+  // ----------------------------------------------------------
+
+  (booleanFaultComponents,booleanFaultNames,integerFaultComponents,
+    integerFaultNames,realFaultComponents,realFaultNames) :=
+    FaultTriggering.Utilities.Internal.gatherVariableFaults(modelName,true);
+
+  // -----------------------------------------------------------
+  // ----------------- Initialize fault record -----------------
+  // -----------------------------------------------------------
+
+  // setup the record with the loaded values
+  faults.variableFaults.booleanFaults :=
+    FaultTriggering.Utilities.Records.BooleanFaults(booleanFaultComponents,
+    booleanFaultNames);
+  faults.variableFaults.integerFaults :=
+    FaultTriggering.Utilities.Records.IntegerFaults(integerFaultComponents,
+    integerFaultNames);
+  faults.variableFaults.realFaults :=
+    FaultTriggering.Utilities.Records.RealFaults(realFaultComponents,
+    realFaultNames);
+
+  // ----------------------------------------------------------
+  // ----------------- Set Variable Default Values ------------
+  // ----------------------------------------------------------
+
+  // set up the channel selections so that each fault is automatically given an own
+  // unique channel
+
+  // setup default REAL values
+  faults.variableFaults.realFaultSelect := 1:size(realFaultNames, 1);
+  faults.variableFaults.realFaultDefault := 1:size(realFaultNames, 1);
+
+  // setup default INTEGER values
+  faults.variableFaults.integerFaultSelect := 1:size(integerFaultNames, 1);
+  faults.variableFaults.integerFaultDefault := 1:size(integerFaultNames, 1);
+
+  // setup default BOOLEAN values
+  faults.variableFaults.booleanFaultSelect := 1:size(booleanFaultNames, 1);
+  faults.variableFaults.booleanFaultDefault := fill(true,size(booleanFaultNames, 1));
+
+  // setup the fault mode selection
+  // Real faults
+  faults.variableFaults.realFaultMode := integer(floor(
+    FaultTriggering.Utilities.Internal.getVariableMode(
+    realFaultNames,
+    modelName,
+    false)));
+  faults.variableFaults.realFaultDefault :=
+    FaultTriggering.Utilities.Internal.getVariableValues(
+    realFaultNames,
+    modelName,
+    false);
+
+  // Integer Faults
+  faults.variableFaults.integerFaultMode := integer(floor(
+    FaultTriggering.Utilities.Internal.getVariableMode(
+    integerFaultNames,
+    modelName,
+    false)));
+  faults.variableFaults.integerFaultDefault := integer(floor(
+    FaultTriggering.Utilities.Internal.getVariableValues(
+    integerFaultNames,
+    modelName,
+    false)));
+  // Boolean Faults
+  faults.variableFaults.booleanFaultMode := integer(floor(
+    FaultTriggering.Utilities.Internal.getVariableMode(
+    booleanFaultNames,
+    modelName,
+    false)));
+  faults.variableFaults.booleanFaultDefault := Real2BooleanVector(
+    FaultTriggering.Utilities.Internal.getVariableValues(
+    booleanFaultNames,
+    modelName,
+    false));
+
+  // ----------------------------------------------------------
   // ----------------- Get Parameter Faults -----------------
   // ----------------------------------------------------------
 
@@ -54,58 +132,6 @@ algorithm
   faults.parameterFaults.booleanFaults :=
     FaultTriggering.Utilities.Records.BooleanFaults(booleanFaultParameterPaths,
     booleanFaultParameterNames);
-  // ----------------------------------------------------------
-  // ----------------- Get Variable Faults  -----------------
-  // ----------------------------------------------------------
-
-  (booleanFaultComponents,booleanFaultNames,integerFaultComponents,
-    integerFaultNames,realFaultComponents,realFaultNames) :=
-    FaultTriggering.Utilities.Internal.gatherVariableFaults(modelName,false);
-
-  // setup the record with the loaded values
-  faults.variableFaults.booleanFaults :=
-    FaultTriggering.Utilities.Records.BooleanFaults(booleanFaultComponents,
-    booleanFaultNames);
-  faults.variableFaults.integerFaults :=
-    FaultTriggering.Utilities.Records.IntegerFaults(integerFaultComponents,
-    integerFaultNames);
-  faults.variableFaults.realFaults :=
-    FaultTriggering.Utilities.Records.RealFaults(realFaultComponents,
-    realFaultNames);
-
-  //   // Load the names and component names of the variable REAL faults
-  //   (realFaultComponents,realFaultNames) :=
-  //     FaultTriggering.Utilities.Internal.gatherFaults(
-  //     modelName,
-  //     maxSearchSize,
-  //     "Variable_Fault_Real");
-  //   // setup the record with the loaded values
-  //   faults.variableFaults.realFaults :=
-  //     FaultTriggering.Utilities.Records.RealFaults(realFaultComponents,
-  //     realFaultNames);
-  //
-  //   // Load the names and component names of the variable INTEGER faults
-  //   (integerFaultComponents,integerFaultNames) :=
-  //     FaultTriggering.Utilities.Internal.gatherFaults(
-  //     modelName,
-  //     maxSearchSize,
-  //     "Variable_Fault_Integer");
-  //
-  //   // setup the record with the loaded values
-  //   faults.variableFaults.integerFaults :=
-  //     FaultTriggering.Utilities.Records.IntegerFaults(integerFaultComponents,
-  //     integerFaultNames);
-  //
-  //   // Load the names and component names of the variable BOOLEAN faults
-  //   (booleanFaultComponents,booleanFaultNames) :=
-  //     FaultTriggering.Utilities.Internal.gatherFaults(
-  //     modelName,
-  //     maxSearchSize,
-  //     "Variable_Fault_Boolean");
-  //   // setup the record with the loaded values
-  //   faults.variableFaults.booleanFaults :=
-  //     FaultTriggering.Utilities.Records.BooleanFaults(booleanFaultComponents,
-  //     booleanFaultNames);
 
   // ----------------------------------------------------------
   // ----------------- Get Parameter Default Values -----------
@@ -140,49 +166,13 @@ algorithm
     end if;
   end for;
 
-  // ----------------------------------------------------------
-  // ----------------- Set Variable Default Values ------------
-  // ----------------------------------------------------------
-
-  // set up the channel selections so that each fault is automatically given an own
-  // unique channel
-
-  // setup default REAL values
-  faults.variableFaults.realFaultSelect := 1:size(realFaultNames, 1);
-
-  // setup default INTEGER values
-  faults.variableFaults.integerFaultSelect := 1:size(integerFaultNames, 1);
-
-  // setup default BOOLEAN values
-  faults.variableFaults.booleanFaultSelect := 1:size(booleanFaultNames, 1);
-
-  // setup the fault mode selection
-  // Real faults
-  faults.variableFaults.realFaultMode := integer(floor(
-    FaultTriggering.Utilities.Internal.getVariableMode(
-    realFaultNames,
-    modelName,
-    false)));
-  // Integer Faults
-  faults.variableFaults.integerFaultMode := integer(floor(
-    FaultTriggering.Utilities.Internal.getVariableMode(
-    integerFaultNames,
-    modelName,
-    false)));
-  // Boolean Faults
-  faults.variableFaults.booleanFaultMode := integer(floor(
-    FaultTriggering.Utilities.Internal.getVariableMode(
-    booleanFaultNames,
-    modelName,
-    false)));
-
   // ----------------------------------------
   // --------------- Start GUI --------------
   // ----------------------------------------
 
   // display fault setting GUI where all parameter faults can be set.
   // Variable faults are predefined and need not to be set.
-  faults := PromptFor(faults);
+   faults := PromptFor(faults);
 
   // // ----------------------------------------
   // // --------------- Apply Results ----------

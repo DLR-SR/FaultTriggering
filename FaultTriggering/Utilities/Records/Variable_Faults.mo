@@ -7,7 +7,7 @@ record Variable_Faults "Variable Faults"
 
 // ------- Real Variable Faults ------------
  FaultTriggering.Utilities.Records.RealFaults realFaults[:] annotation (Dialog(
-      label="Real Parameter Fault names",
+      label="Real Variable Fault names",
       button="Select parameters",
       onlyStart=true,
       fields(name=initialName, unit=initialValue.path)));
@@ -16,7 +16,6 @@ record Variable_Faults "Variable Faults"
     "Real Fault Index" annotation (Dialog(
       tab="Advanced",
       treeView=false,
-      label="Real Parameter Fault names",
       label="Real Variable Fault values",
       rowHeadings=realFaults.path,
       columnHeadings={"Real Fault"}));
@@ -26,11 +25,18 @@ record Variable_Faults "Variable Faults"
       treeView=true,
       rowHeadings=realFaults.path,
       columnHeadings={"Real Fault"}));
+
+  FaultTriggering.Utilities.Records.RealFaultValue  realFaultDefault[:]
+    "Default Real Fault Values" annotation (Dialog(
+      label="Default Variable Fault values",
+      treeView=true,
+      rowHeadings=realFaults.path,
+      columnHeadings={"Default Real Fault"}));                      //[size(realFaultMode, 1)] =  fill(1,size(realFaults, 1))
+
 // ------- Integer Variable Faults ------------
  FaultTriggering.Utilities.Records.IntegerFaults integerFaults[:] annotation (
       Dialog(
-      label="Integer Parameter Fault names",
-      label="Integer Parameter Fault names",
+      label="Integer Variable Fault names",
       button="Select parameters",
       onlyStart=true,
       fields(name=initialName, unit=initialValue.path)));
@@ -39,7 +45,6 @@ record Variable_Faults "Variable Faults"
     "Integer Fault Index" annotation (Dialog(
       tab="Advanced",
       treeView=false,
-      label="Integer Parameter Fault names",
       label="Integer Variable Fault values",
       rowHeadings=integerFaults.path,
       columnHeadings={"Integer Fault"}));
@@ -49,6 +54,13 @@ record Variable_Faults "Variable Faults"
       treeView=true,
       rowHeadings=integerFaults.path,
       columnHeadings={"Integer Fault"}));
+   FaultTriggering.Utilities.Records.IntegerFaultValue    integerFaultDefault[:]
+    "Default Real Fault Values" annotation (Dialog(
+      label="Default Variable Fault values",
+      treeView=true,
+      rowHeadings=integerFaults.path,
+      columnHeadings={"Default Integer Fault"}));                            //[size(integerFaults, 1)] =   fill(1,size(integerFaults, 1))
+
 // ------- Boolean Variable Faults ------------
  FaultTriggering.Utilities.Records.BooleanFaults booleanFaults[:] annotation (
       Dialog(
@@ -62,7 +74,6 @@ record Variable_Faults "Variable Faults"
     "Boolean Fault Index" annotation (Dialog(
       tab="Advanced",
       treeView=false,
-      label="Boolean Parameter Fault names",
       label="Boolean Variable Fault values",
       treeView=true,
       rowHeadings=booleanFaults.path,
@@ -73,6 +84,12 @@ record Variable_Faults "Variable Faults"
       treeView=true,
       rowHeadings=booleanFaults.path,
       columnHeadings={"Boolean Fault"}));
+  FaultTriggering.Utilities.Records.BooleanFaultValue     booleanFaultDefault[:]
+    "Default Real Fault Values" annotation (Dialog(
+      label="Default Variable Fault values",
+      treeView=true,
+      rowHeadings=booleanFaults.path,
+      columnHeadings={"Default Boolean Fault"}));                            //[size(booleanFaults, 1)] =  fill(true,size(booleanFaults, 1))
 
   annotation (Icon(graphics={Text(
           extent={{-100,100},{100,-100}},
