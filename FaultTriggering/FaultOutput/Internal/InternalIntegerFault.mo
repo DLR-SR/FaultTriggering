@@ -12,7 +12,8 @@ block InternalIntegerFault "Generate variable Fault of type Integer"
 
   FaultTriggering.Utilities.Types.Fault_SelectIntegerFault
                                                    faultNumber
-    "Internal variable automatically set by the FaultTriggering library. Do NOT change!"                annotation(Dialog(tab="Advanced", enable=false));
+    "Internal variable automatically set by the FaultTriggering library. Do NOT change!"
+                                                                                                        annotation(Dialog(tab="Advanced", enable=false));
 equation
   faultNumber = externalIntegerFault.faultIndex;
   fault = if externalIntegerFault.externalFaultOn then faultTrigger.integerFault[faultNumber] else

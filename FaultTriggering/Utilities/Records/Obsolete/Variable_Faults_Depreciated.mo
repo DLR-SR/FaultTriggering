@@ -1,5 +1,6 @@
-within FaultTriggering.Utilities.Records;
-record Variable_Faults "Variable Faults"
+within FaultTriggering.Utilities.Records.Obsolete;
+record Variable_Faults_Depreciated "Variable Faults"
+  extends Modelica.Icons.ObsoleteModel;
 
 // ------- --------------------------------------------
 // ------- Variable Faults -------------------------
@@ -26,13 +27,13 @@ record Variable_Faults "Variable Faults"
       rowHeadings=realFaults.path,
       columnHeadings={"Real Fault"}));
 
-  FaultTriggering.Utilities.Records.RealFaultValue  realFaultDefault[:]
+/* final parameter FaultTriggering.Utilities.Records.RealFaultValue  realFaultDefault[size(realFaultMode, 1)] =  fill(1,size(realFaults, 1)) 
     "Default Real Fault Values" annotation (Dialog(
       label="Default Variable Fault values",
       treeView=true,
       rowHeadings=realFaults.path,
-      columnHeadings={"Default Real Fault"}));                      //[size(realFaultMode, 1)] =  fill(1,size(realFaults, 1))
-
+      columnHeadings={"Default Real Fault"}));
+*/
 // ------- Integer Variable Faults ------------
  FaultTriggering.Utilities.Records.IntegerFaults integerFaults[:] annotation (
       Dialog(
@@ -54,13 +55,13 @@ record Variable_Faults "Variable Faults"
       treeView=true,
       rowHeadings=integerFaults.path,
       columnHeadings={"Integer Fault"}));
-   FaultTriggering.Utilities.Records.IntegerFaultValue    integerFaultDefault[:]
+/*  final parameter  FaultTriggering.Utilities.Records.IntegerFaultValue    integerFaultDefault[size(integerFaults, 1)] =   fill(1,size(integerFaults, 1)) 
     "Default Real Fault Values" annotation (Dialog(
       label="Default Variable Fault values",
       treeView=true,
       rowHeadings=integerFaults.path,
-      columnHeadings={"Default Integer Fault"}));                            //[size(integerFaults, 1)] =   fill(1,size(integerFaults, 1))
-
+      columnHeadings={"Default Integer Fault"}));
+*/
 // ------- Boolean Variable Faults ------------
  FaultTriggering.Utilities.Records.BooleanFaults booleanFaults[:] annotation (
       Dialog(
@@ -84,13 +85,13 @@ record Variable_Faults "Variable Faults"
       treeView=true,
       rowHeadings=booleanFaults.path,
       columnHeadings={"Boolean Fault"}));
-  FaultTriggering.Utilities.Records.BooleanFaultValue     booleanFaultDefault[:]
+/*  final parameter FaultTriggering.Utilities.Records.BooleanFaultValue     booleanFaultDefault[size(booleanFaults, 1)] =  fill(true,size(booleanFaults, 1)) 
     "Default Real Fault Values" annotation (Dialog(
       label="Default Variable Fault values",
       treeView=true,
       rowHeadings=booleanFaults.path,
-      columnHeadings={"Default Boolean Fault"}));                            //[size(booleanFaults, 1)] =  fill(true,size(booleanFaults, 1))
-
+      columnHeadings={"Default Boolean Fault"}));
+*/
   annotation (Icon(graphics={Text(
           extent={{-100,100},{100,-100}},
           lineColor={0,0,0},
@@ -105,5 +106,8 @@ record Variable_Faults "Variable Faults"
       <br><b>&copy; 2012-2015, DLR Institute of System Dynamics and Control</b></td>
   </tr>
  </table>
+</html>",
+        info="<html>
+<p><span style=\"font-family: MS Shell Dlg 2;\">Legacy version of the Variable Fault Record without default variable values.</span></p>
 </html>"));
-end Variable_Faults;
+end Variable_Faults_Depreciated;

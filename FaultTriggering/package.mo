@@ -12,7 +12,7 @@ package FaultTriggering "Library for Fault Triggering"
 
 
   annotation (uses(Modelica(version="3.2.1")),
-    version="0.6.4", conversion(noneFromVersion="0.5.0"),
+    version="0.6.5", conversion(from(version="0.6.4", to="0.6.5", script="modelica://FaultTriggering/Resources/Scripts/Convert_from_0.6.4_to_0.6.5.mos")),
     versionDate="2015-07-15",
 preferredView="info",
    Documentation(info="<html>

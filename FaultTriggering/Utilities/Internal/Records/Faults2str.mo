@@ -24,11 +24,13 @@ function Faults2str
         "FaultTriggering.Examples.ActuatorExample.ActuatorFaultBus.driveline.friction.externalRealFault")},
       realFaultSelect={1},
       realFaultMode={1},
+      realFaultDefault=  {0.0},
       integerFaults={FaultTriggering.Utilities.Records.IntegerFaults(name=
         "FaultTriggering.Utilities.Types.Variable_Fault_Integer", path=
         "FaultTriggering.Examples.ActuatorExample.ActuatorFaultBus.motor.ktFault.externalIntegerFault")},
       integerFaultSelect={1},
       integerFaultMode={1},
+      integerFaultDefault=  {1},
       booleanFaults={FaultTriggering.Utilities.Records.BooleanFaults(name=
         "FaultTriggering.Utilities.Types.Variable_Fault_Boolean", path=
         "FaultTriggering.Examples.ActuatorExample.ActuatorFaultBus.loadSpeedSensor.externalBooleanFault"),
@@ -42,7 +44,8 @@ function Faults2str
         "FaultTriggering.Utilities.Types.Variable_Fault_Boolean", path=
         "FaultTriggering.Examples.ActuatorExample.ActuatorFaultBus.driveline.bearing.fault.externalBooleanFault")},
       booleanFaultSelect={1,2,3,4},
-      booleanFaultMode={1,1,1,1}));
+      booleanFaultMode={1,1,1,1},
+      booleanFaultDefault={true,true,false,false}));
   input String comma=",";
   input Integer level=0;
   output String y[:];
@@ -346,6 +349,11 @@ algorithm
     y,
     {Indention(level + 2) + "realFaultMode = " + RealVector2str(faults.variableFaults.realFaultMode)
        + ","});
+  y := cat(
+    1,
+    y,
+    {Indention(level + 2) + "realFaultDefault = " + RealVector2str(faults.variableFaults.realFaultDefault)
+       + ","});
 
   // ---------------------------------------------------
   // ------------------- Integer faults --------------
@@ -416,6 +424,11 @@ algorithm
     y,
     {Indention(level + 2) + "integerFaultMode = " + RealVector2str(faults.variableFaults.integerFaultMode)
        + ","});
+  y := cat(
+    1,
+    y,
+    {Indention(level + 2) + "integerFaultDefault = " + RealVector2str(faults.variableFaults.integerFaultDefault)
+       + ","});
 
   // ---------------------------------------------------
   // ------------------- Boolean faults --------------
@@ -485,7 +498,12 @@ algorithm
   y := cat(
     1,
     y,
-    {Indention(level + 2) + "booleanFaultMode = " + RealVector2str(faults.variableFaults.booleanFaultMode)});
+    {Indention(level + 2) + "booleanFaultMode = " + RealVector2str(faults.variableFaults.booleanFaultMode)
+       + ","});
+  y := cat(
+    1,
+    y,
+    {Indention(level + 2) + "booleanFaultDefault = " + BooleanVector2str(faults.variableFaults.booleanFaultDefault)});
 
  // close variable faults
   y := cat(
