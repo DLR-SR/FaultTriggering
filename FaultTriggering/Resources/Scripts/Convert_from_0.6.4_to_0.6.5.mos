@@ -1,0 +1,7 @@
+// Convert from FaultTriggering 0.6.4 to FaultTriggering 0.6.5
+// clear
+convertClear();
+convertClass("FaultTriggering.Utilities.Records.Faults",
+			 "FaultTriggering.Utilities.Records.Obsolete.Faults_Depreciated");
+convertClass("FaultTriggering.Utilities.Records.Variable_Faults", 
+			 "FaultTriggering.Utilities.Records.Obsolete.Variable_Faults_Depreciated");	

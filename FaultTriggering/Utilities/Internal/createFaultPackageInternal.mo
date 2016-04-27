@@ -282,13 +282,15 @@ totalVariableFaults :=size(faults.variableFaults.realFaults, 1) + size(faults.va
   for nameNr in 1:size(faultNames, 1) loop
     if faultType[nameNr] == FaultTriggering.Utilities.Types.FaultType.realVar then
     Streams.print("Modelica.Blocks.Sources.Constant " +  Strings.replace(readToLastDot(faultNames[nameNr]),".","") +
+    "(k = faultRecord.variableFaults.realFaultDefault["+ String(faultChannel[nameNr]) + "])" +
     " annotation (Placement(transformation(extent={{-80," + String(70-(nameNr-1)/(totalVariableFaults-1)*160) + "},{-60," + String(90-(nameNr-1)/(totalVariableFaults-1)*160) + "}})));", packageName);
-//    "(k=" + String(faults.variableFaults.realFaultDefault[1]) + ")" +
     elseif faultType[nameNr] == FaultTriggering.Utilities.Types.FaultType.intVar then
     Streams.print("Modelica.Blocks.Sources.IntegerConstant " +  Strings.replace(readToLastDot(faultNames[nameNr]),".","") +
+    "(k = faultRecord.variableFaults.integerFaultDefault["+ String(faultChannel[nameNr]) + "])" +
     " annotation (Placement(transformation(extent={{-80," + String(70-(nameNr-1)/(totalVariableFaults-1)*160) + "},{-60," + String(90-(nameNr-1)/(totalVariableFaults-1)*160) + "}})));", packageName);
     elseif faultType[nameNr] == FaultTriggering.Utilities.Types.FaultType.boolVar then
     Streams.print("Modelica.Blocks.Sources.BooleanConstant " +  Strings.replace(readToLastDot(faultNames[nameNr]),".","") +
+    "(k = faultRecord.variableFaults.booleanFaultDefault["+ String(faultChannel[nameNr]) + "])" +
     " annotation (Placement(transformation(extent={{-80," + String(70-(nameNr-1)/(totalVariableFaults-1)*160) + "},{-60," + String(90-(nameNr-1)/(totalVariableFaults-1)*160) + "}})));", packageName);
     end if;
   end for;
