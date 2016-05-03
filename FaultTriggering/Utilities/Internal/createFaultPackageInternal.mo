@@ -279,24 +279,26 @@ assert( not
 totalVariableFaults :=size(faults.variableFaults.realFaults, 1) + size(faults.variableFaults.integerFaults,
     1) + size(faults.variableFaults.booleanFaults, 1);
 
+  // -------------------------- add default blocks -------------------------------
+
   for nameNr in 1:size(faultNames, 1) loop
     if faultType[nameNr] == FaultTriggering.Utilities.Types.FaultType.realVar then
-    Streams.print("Modelica.Blocks.Sources.Constant " +  Strings.replace(readToLastDot(faultNames[nameNr]),".","") +
+    Streams.print("Modelica.Blocks.Sources.Constant " +  Strings.replace(readToLastDot(faultNames[nameNr]),".","_") +
     "(k = faultRecord.variableFaults.realFaultDefault["+ String(faultChannel[nameNr]) + "])" +
     " annotation (Placement(transformation(extent={{-80," + String(70-(nameNr-1)/(totalVariableFaults-1)*160) + "},{-60," + String(90-(nameNr-1)/(totalVariableFaults-1)*160) + "}})));", packageName);
     elseif faultType[nameNr] == FaultTriggering.Utilities.Types.FaultType.intVar then
-    Streams.print("Modelica.Blocks.Sources.IntegerConstant " +  Strings.replace(readToLastDot(faultNames[nameNr]),".","") +
+    Streams.print("Modelica.Blocks.Sources.IntegerConstant " +  Strings.replace(readToLastDot(faultNames[nameNr]),".","_") +
     "(k = faultRecord.variableFaults.integerFaultDefault["+ String(faultChannel[nameNr]) + "])" +
     " annotation (Placement(transformation(extent={{-80," + String(70-(nameNr-1)/(totalVariableFaults-1)*160) + "},{-60," + String(90-(nameNr-1)/(totalVariableFaults-1)*160) + "}})));", packageName);
     elseif faultType[nameNr] == FaultTriggering.Utilities.Types.FaultType.boolVar then
-    Streams.print("Modelica.Blocks.Sources.BooleanConstant " +  Strings.replace(readToLastDot(faultNames[nameNr]),".","") +
+    Streams.print("Modelica.Blocks.Sources.BooleanConstant " +  Strings.replace(readToLastDot(faultNames[nameNr]),".","_") +
     "(k = faultRecord.variableFaults.booleanFaultDefault["+ String(faultChannel[nameNr]) + "])" +
     " annotation (Placement(transformation(extent={{-80," + String(70-(nameNr-1)/(totalVariableFaults-1)*160) + "},{-60," + String(90-(nameNr-1)/(totalVariableFaults-1)*160) + "}})));", packageName);
     end if;
   end for;
 
   Streams.print("equation", packageName);
-  // add default blocks
+
   for nameNr in 1:size(faultNames, 1) loop
     if faultType[nameNr] == FaultTriggering.Utilities.Types.FaultType.realVar then
       Streams.print("realFault[" + String(faultChannel[nameNr]) + "] = faults."
@@ -312,19 +314,19 @@ totalVariableFaults :=size(faults.variableFaults.realFaults, 1) + size(faults.va
    // connect blocks to bus
     for nameNr in 1:size(faultNames, 1) loop
     if faultType[nameNr] == FaultTriggering.Utilities.Types.FaultType.realVar then
-      Streams.print("connect( " +  Strings.replace(readToLastDot(faultNames[nameNr]),".","") + ".y, faults."
+      Streams.print("connect( " +  Strings.replace(readToLastDot(faultNames[nameNr]),".","_") + ".y, faults."
          + faultNames[nameNr] + ") annotation(Line(points=
         {{-60," + String(80-(nameNr-1)/(totalVariableFaults-1)*160) + "}," +
         "{ 0 ," + String(80-(nameNr-1)/(totalVariableFaults-1)*160) + "}," +
         "{0,0},{100,0}},  color={0,0,127}, smooth=None));", packageName);
     elseif faultType[nameNr] == FaultTriggering.Utilities.Types.FaultType.intVar then
-      Streams.print("connect( " +  Strings.replace(readToLastDot(faultNames[nameNr]),".","") + ".y, faults."
+      Streams.print("connect( " +  Strings.replace(readToLastDot(faultNames[nameNr]),".","_") + ".y, faults."
          + faultNames[nameNr] + ") annotation(Line(points=
         {{-60," + String(80-(nameNr-1)/(totalVariableFaults-1)*160) + "}," +
         "{ 0 ," + String(80-(nameNr-1)/(totalVariableFaults-1)*160) + "}," +
         "{0,0},{100,0}},  color={255,127,0}, smooth=None));", packageName);
     elseif faultType[nameNr] == FaultTriggering.Utilities.Types.FaultType.boolVar then
-      Streams.print("connect( " +  Strings.replace(readToLastDot(faultNames[nameNr]),".","") + ".y, faults."
+      Streams.print("connect( " +  Strings.replace(readToLastDot(faultNames[nameNr]),".","_") + ".y, faults."
          + faultNames[nameNr] + ") annotation(Line(points=
         {{-60," + String(80-(nameNr-1)/(totalVariableFaults-1)*160) + "}," +
         "{ 0 ," + String(80-(nameNr-1)/(totalVariableFaults-1)*160) + "}," +

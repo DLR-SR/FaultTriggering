@@ -7,10 +7,6 @@ package FaultTriggering "Library for Fault Triggering"
   import Modelica.Utilities.Strings;
 
 
-
-
-
-
   annotation (uses(Modelica(version="3.2.1")),
     version="0.6.5", conversion(from(version="0.6.4", to="0.6.5", script="modelica://FaultTriggering/Resources/Scripts/Convert_from_0.6.4_to_0.6.5.mos")),
     versionDate="2015-07-15",
@@ -36,9 +32,11 @@ preferredView="info",
 </ol>
 <h4>Acknowledgement</h4>
 <p>The research leading to these results has received funding from the European Union&rsquo;s Seventh Framework Program (FP7-284916) for ACTUATION 2015 under grant agreement no. 284915.</p>
-<p>&nbsp; </p>
+<p><img src=\"modelica://FaultTriggering/Resources/Documentation/Images/logo_EU.png\"/>&nbsp; </p>
+
 <p><b><a name=\"sec_release_notes\">R</a>elease Notes</b></p>
-<table cellspacing=\"2\" cellpadding=\"0\" border=\"0\"><tr>
+<table cellspacing=\"2\" cellpadding=\"0\" border=\"0\">
+<tr>
 <td><p><b>Version</b>&nbsp;&nbsp;</p></td>
 <td><h4>Comments</h4></td>
 </tr>
@@ -76,24 +74,18 @@ preferredView="info",
 </tr>
 <tr>
 <td><p>0.6.5</p></td>
-<td><p>2016-04-20: Allow custom modes switching in the FaultTrigger gontroller </p></td>
+<td><p>2016-04-20: Allow custom modes switching in the FaultTrigger controller</p></td>
 </tr>
 </table>
 
-<h4>Licensed by the DLR Institute of System Dynamics and Control under the Modelica License 2 </h4>
-<p>Copyright &copy; 2016, DLR Institute of System Dynamics and Control </p>
-<p><i>This Modelica package is <u>free</u> software and the use is completely at <u>your own risk</u>; it can be redistributed and/or modified under the terms of the Modelica License 2. For license conditions (including the disclaimer of warranty) see <a href=\"modelica://Modelica.UsersGuide.ModelicaLicense2\">Modelica.UsersGuide.ModelicaLicense2</a> or visit <a href=\"https://www.modelica.org/licenses/ModelicaLicense2\">https://www.modelica.org/licenses/ModelicaLicense2</a>.</i> </p>
-<table cellspacing=\"0\" cellpadding=\"0\" border=\"0\"><tr>
-<td></td>
-<td></td>
+ </p><h4>Licensed by the DLR Institute of System Dynamics and Control under the Modelica License 2 </h4><p>Copyright &copy; 2016, DLR Institute of System Dynamics and Control </p><p><i>This Modelica package is <u>free</u> software and the use is completely at <u>your own risk</u>; it can be redistributed and/or modified under the terms of the Modelica License 2. For license conditions (including the disclaimer of warranty) see <a href=\"modelica://Modelica.UsersGuide.ModelicaLicense2\">Modelica.UsersGuide.ModelicaLicense2</a> or visit <a href=\"https://www.modelica.org/licenses/ModelicaLicense2\">https://www.modelica.org/licenses/ModelicaLicense2</a>.</i> </p></td>
+
+</html>", revisions="<html>
+<table cellspacing=\"0\" cellpadding=\"0\" border=\"0\"<tr>
+<td><p><img src=\"modelica://FaultTriggering/Resources/Documentation/Images/logo_dlr.png\"/></p></td>
+<td><p><b>Copyright</b> </p><p><b>&copy; 2012-2016, DLR Institute of System Dynamics and Control</b></p></td>
 </tr>
 </table>
-</html>", revisions="<html><table border=0 cellspacing=0 cellpadding=0>
-  <tr><td valign=\"center\"> <img src=\"modelica://FaultTriggering/Resources/Documentation/Images/logo_dlr.png\" width=60></td>
-    <td valign=\"center\"><b>Copyright</b>
-      <br><b>&copy; 2012-2015, DLR Institute of System Dynamics and Control</b></td>
-  </tr>
- </table>
 </html>"),
   Icon(graphics={
     Polygon(
