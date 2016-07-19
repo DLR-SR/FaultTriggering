@@ -36,11 +36,13 @@ function createFaultPackageInternal
         "FaultTriggering.Examples.ActuatorExample.ActuatorFaultBus.driveline.friction.externalRealFault")},
       realFaultSelect={1},
       realFaultMode={1},
+      realFaultDefault=  {0.0},
       integerFaults={FaultTriggering.Utilities.Records.IntegerFaults(name=
         "FaultTriggering.Utilities.Types.Variable_Fault_Integer", path=
         "FaultTriggering.Examples.ActuatorExample.ActuatorFaultBus.motor.ktFault.externalIntegerFault")},
       integerFaultSelect={1},
       integerFaultMode={1},
+      integerFaultDefault={1},
       booleanFaults={FaultTriggering.Utilities.Records.BooleanFaults(name=
         "FaultTriggering.Utilities.Types.Variable_Fault_Boolean", path=
         "FaultTriggering.Examples.ActuatorExample.ActuatorFaultBus.loadSpeedSensor.externalBooleanFault"),
@@ -54,7 +56,8 @@ function createFaultPackageInternal
         "FaultTriggering.Utilities.Types.Variable_Fault_Boolean", path=
         "FaultTriggering.Examples.ActuatorExample.ActuatorFaultBus.driveline.bearing.fault.externalBooleanFault")},
       booleanFaultSelect={1,2,3,4},
-      booleanFaultMode={1,1,1,1}));
+      booleanFaultMode={1,1,1,1},
+      booleanFaultDefault={true,true,false,false}));
   input String modelName="FaultTriggering.Examples.ActuatorExample.ActuatorFaultBus"
     "Model name";
   input String packageName="Faults.mo";
@@ -83,6 +86,7 @@ protected
   Integer dummyI;
   FaultTriggering.Utilities.Types.FaultType name_Type[:] "type of the fault";
   Integer loopMax;
+  Integer totalVariableFaults "total number of variable faults";
   Integer modelNameLength;
   String[:] realFaultParameterPaths;
   String[:] integerFaultParameterPaths;
@@ -271,6 +275,28 @@ assert( not
   Streams.print("protected", packageName);
   Streams.print(readAfterDot(modelName) + "Package" + ".Interfaces.Faults faults annotation (Placement(transformation(extent={{84,-20},{124,20}})));",
     packageName);
+
+totalVariableFaults :=size(faults.variableFaults.realFaults, 1) + size(faults.variableFaults.integerFaults,
+    1) + size(faults.variableFaults.booleanFaults, 1);
+
+  // -------------------------- add default blocks -------------------------------
+
+  for nameNr in 1:size(faultNames, 1) loop
+    if faultType[nameNr] == FaultTriggering.Utilities.Types.FaultType.realVar then
+    Streams.print("Modelica.Blocks.Sources.Constant " +  Strings.replace(readToLastDot(faultNames[nameNr]),".","_") +
+    "(k = faultRecord.variableFaults.realFaultDefault["+ String(faultChannel[nameNr]) + "])" +
+    " annotation (Placement(transformation(extent={{-80," + String(70-(nameNr-1)/(totalVariableFaults-1)*160) + "},{-60," + String(90-(nameNr-1)/(totalVariableFaults-1)*160) + "}})));", packageName);
+    elseif faultType[nameNr] == FaultTriggering.Utilities.Types.FaultType.intVar then
+    Streams.print("Modelica.Blocks.Sources.IntegerConstant " +  Strings.replace(readToLastDot(faultNames[nameNr]),".","_") +
+    "(k = faultRecord.variableFaults.integerFaultDefault["+ String(faultChannel[nameNr]) + "])" +
+    " annotation (Placement(transformation(extent={{-80," + String(70-(nameNr-1)/(totalVariableFaults-1)*160) + "},{-60," + String(90-(nameNr-1)/(totalVariableFaults-1)*160) + "}})));", packageName);
+    elseif faultType[nameNr] == FaultTriggering.Utilities.Types.FaultType.boolVar then
+    Streams.print("Modelica.Blocks.Sources.BooleanConstant " +  Strings.replace(readToLastDot(faultNames[nameNr]),".","_") +
+    "(k = faultRecord.variableFaults.booleanFaultDefault["+ String(faultChannel[nameNr]) + "])" +
+    " annotation (Placement(transformation(extent={{-80," + String(70-(nameNr-1)/(totalVariableFaults-1)*160) + "},{-60," + String(90-(nameNr-1)/(totalVariableFaults-1)*160) + "}})));", packageName);
+    end if;
+  end for;
+
   Streams.print("equation", packageName);
 
   for nameNr in 1:size(faultNames, 1) loop
@@ -283,6 +309,28 @@ assert( not
     elseif faultType[nameNr] == FaultTriggering.Utilities.Types.FaultType.boolVar then
       Streams.print("booleanFault[" + String(faultChannel[nameNr]) + "] = faults."
          + faultNames[nameNr] + ";", packageName);
+    end if;
+  end for;
+   // connect blocks to bus
+    for nameNr in 1:size(faultNames, 1) loop
+    if faultType[nameNr] == FaultTriggering.Utilities.Types.FaultType.realVar then
+      Streams.print("connect( " +  Strings.replace(readToLastDot(faultNames[nameNr]),".","_") + ".y, faults."
+         + faultNames[nameNr] + ") annotation(Line(points=
+        {{-60," + String(80-(nameNr-1)/(totalVariableFaults-1)*160) + "}," +
+        "{ 0 ," + String(80-(nameNr-1)/(totalVariableFaults-1)*160) + "}," +
+        "{0,0},{100,0}},  color={0,0,127}, smooth=None));", packageName);
+    elseif faultType[nameNr] == FaultTriggering.Utilities.Types.FaultType.intVar then
+      Streams.print("connect( " +  Strings.replace(readToLastDot(faultNames[nameNr]),".","_") + ".y, faults."
+         + faultNames[nameNr] + ") annotation(Line(points=
+        {{-60," + String(80-(nameNr-1)/(totalVariableFaults-1)*160) + "}," +
+        "{ 0 ," + String(80-(nameNr-1)/(totalVariableFaults-1)*160) + "}," +
+        "{0,0},{100,0}},  color={255,127,0}, smooth=None));", packageName);
+    elseif faultType[nameNr] == FaultTriggering.Utilities.Types.FaultType.boolVar then
+      Streams.print("connect( " +  Strings.replace(readToLastDot(faultNames[nameNr]),".","_") + ".y, faults."
+         + faultNames[nameNr] + ") annotation(Line(points=
+        {{-60," + String(80-(nameNr-1)/(totalVariableFaults-1)*160) + "}," +
+        "{ 0 ," + String(80-(nameNr-1)/(totalVariableFaults-1)*160) + "}," +
+        "{0,0},{100,0}},  color={255,0,255}, smooth=None));", packageName);
     end if;
   end for;
 

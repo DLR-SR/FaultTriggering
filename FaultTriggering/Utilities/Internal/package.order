@@ -13,5 +13,6 @@ findInIntegerVector
 findIfIntegerVector
 emptyStringVector
 checkInString
+Real2BooleanVector
 isWindows
 Records

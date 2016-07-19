@@ -34,3 +34,9 @@ The library was developed by the **DLR** German Aerospace Center contributors:
 You may report any issues with using the [Issues](../../issues) button.
 
 Contributions in shape of [Pull Requests](../../pulls) are always welcome.
+
+## Acknowledgement
+
+The research leading to these results has received funding from the European Union’s Seventh Framework Program (FP7-284916) for ACTUATION 2015 under grant agreement no. 284915.
+
+![EU-Logo](/FaultTriggering/Resources/Documentation/Images/logo_EU.png)

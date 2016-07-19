@@ -1,5 +1,5 @@
 within FaultTriggering.Utilities.Icons;
-partial class Motors
+partial package Motors
   extends FaultTriggering.Utilities.Icons.Package;
 
   annotation (Icon(graphics={

@@ -1,8 +1,8 @@
 within FaultTriggering.Utilities.Internal;
 function getVariableValues "gets the variable default values from the model"
 
-  input String[:] faultNames={"FaultTriggering.Examples.ActuatorExample.ActuatorExternalFault.driveline.SpeedSensor.externalFault"};
-  input String modelName="FaultTriggering.Examples.ActuatorExample.ActuatorExternalFault";
+  input String[:] faultNames={"FaultTriggering.Examples.ActuatorExample.Actuator.driveline.friction.externalRealFault"};
+  input String modelName="FaultTriggering.Examples.ActuatorExample.Actuator";
   input Boolean translateFirst=true "translate model if flag is true";
   output Real[size(faultNames, 1)] outputValues "Values of the variables";
 
@@ -31,8 +31,8 @@ algorithm
   // get attributes of the faults and save them into outputValues
   for n in 1:size(faultNames, 1) loop
     n2 := n2 + 1;
-    attributes := Dymola_Initialization_getAttributes({bareFaultNames[n] + ".faultIndex"},
-      4);
+ //   attributes := Dymola_Initialization_getAttributes({bareFaultNames[n] + ".faultIndex"},4);
+    attributes := Dymola_Initialization_getAttributes({readToLastDot(bareFaultNames[n]) + ".fault_local"},4);
     outputValues[n2] :=attributes[1, 2];
   end for;
 
