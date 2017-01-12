@@ -13,7 +13,7 @@ The FaultTriggering Library is an open-source Modelica library to aid the user i
 
 For Dymola up to 2014 FD01 the following version is supported: [FaultTriggering Library 0.5.0 (2014-04-02)](../../archive/v0.5.0.zip)
 
-For Dymola versions 2015 and higher the following version is recommended: [FaultTriggering Library 0.6.5 (2016-07-19)](../../archive/v0.6.5.zip)
+For Dymola versions 2015 and higher the following version is recommended: [FaultTriggering Library 0.6.6 (2017-01-12)](../../archive/v0.6.6.zip)
 
 
 ## License
