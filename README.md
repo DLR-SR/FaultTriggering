@@ -1,4 +1,4 @@
-##FaultTriggering
+## FaultTriggering
 
 
 A free Modelica library for trigger faults in Modelica
