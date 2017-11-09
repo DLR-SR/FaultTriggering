@@ -46,7 +46,7 @@ ActuatorPackageStatistics.Interfaces.Faults faults
     annotation (Placement(transformation(extent={{-40,-80},{-20,-60}})));
   Modelica.Blocks.Sources.Constant failureRateDrivelineBearing(k=0.1)
     annotation (Placement(transformation(extent={{-80,-80},{-60,-60}})));
-  inner Modelica_Noise.Blocks.Noise.GlobalSeed globalSeed(useAutomaticSeed=true)
+  inner Modelica.Blocks.Noise.GlobalSeed globalSeed(useAutomaticSeed=true)
     annotation (Placement(transformation(extent={{60,60},{80,80}})));
 equation
 realFault[1] = faults.driveline.friction.externalRealFault;
