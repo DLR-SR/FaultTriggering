@@ -5,11 +5,11 @@ extends Modelica.Electrical.Machines.Icons.TransientMachine;
   Modelica.Mechanics.Rotational.Sources.Torque motor
     annotation (Placement(transformation(extent={{10,-10},{30,10}})));
   Modelica.Mechanics.Rotational.Interfaces.Flange_b flange1 "Flange of shaft"
-    annotation (Placement(transformation(extent={{88,-10},{108,10}})));
+    annotation (Placement(transformation(extent={{90,-10},{110,10}})));
   Modelica.Mechanics.Rotational.Components.Inertia motorInertia(J=1e-3)
     annotation (Placement(transformation(extent={{44,-10},{64,10}})));
   Modelica.Blocks.Interfaces.RealOutput speed "Connector of Real output signal"
-    annotation (Placement(transformation(extent={{96,-90},{116,-70}})));
+    annotation (Placement(transformation(extent={{100,-90},{120,-70}})));
   Modelica.Blocks.Math.Product motorTorque
     annotation (Placement(transformation(extent={{-30,-10},{-10,10}})));
   FaultSpeedSensor_ParamterFault
@@ -45,17 +45,16 @@ equation
       smooth=Smooth.None));
 
   connect(speedSensor.flange, motor.flange) annotation (Line(
-      points={{59.8,-80},{38,-80},{38,0},{30,0}},
+      points={{60,-80},{38,-80},{38,0},{30,0}},
       color={0,0,0},
       smooth=Smooth.None));
   connect(speedSensor.w, speed)      annotation (Line(
-      points={{81,-80},{106,-80}},
+      points={{80,-80},{110,-80}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(motorTorque.u1, torqueReference)      annotation (Line(
       points={{-32,6},{-36,6},{-36,60},{-60,60}},
       color={0,0,127},
-      pattern=LinePattern.None,
       smooth=Smooth.None));
   connect(halfBrokenKt.y,multiplex. u2[1])  annotation (Line(
       points={{-79,-50},{-72,-50}},

@@ -9,7 +9,7 @@ extends Modelica.Electrical.Machines.Icons.TransientMachine;
   Modelica.Blocks.Sources.Constant halfBrokenKt(k=0.5)
     annotation (Placement(transformation(extent={{-100,-50},{-80,-30}})));
   Modelica.Mechanics.Rotational.Interfaces.Flange_b flange1 "Flange of shaft"
-    annotation (Placement(transformation(extent={{88,-10},{108,10}})));
+    annotation (Placement(transformation(extent={{90,-10},{110,10}})));
   Modelica.Mechanics.Rotational.Components.Inertia motorInertia(J=1e-3)
     annotation (Placement(transformation(extent={{44,-10},{64,10}})));
   Modelica.Blocks.Routing.Extractor kt_selection(nin=3)
@@ -19,11 +19,11 @@ extends Modelica.Electrical.Machines.Icons.TransientMachine;
   Modelica.Blocks.Sources.Constant healthyKt(k=1)
     annotation (Placement(transformation(extent={{-100,-20},{-80,0}})));
   Modelica.Blocks.Interfaces.RealOutput speed "Connector of Real output signal"
-    annotation (Placement(transformation(extent={{96,-90},{116,-70}})));
+    annotation (Placement(transformation(extent={{100,-90},{120,-70}})));
   Modelica.Blocks.Math.Product motorTorque
     annotation (Placement(transformation(extent={{-30,-10},{-10,10}})));
   FaultSpeedSensor speedSensor
-    annotation (Placement(transformation(extent={{58,-90},{78,-70}})));
+    annotation (Placement(transformation(extent={{60,-90},{80,-70}})));
   Modelica.Blocks.Interfaces.RealInput torqueReference "motorTorqueReference"
                            annotation (Placement(transformation(extent={{-80,40},
             {-40,80}}), iconTransformation(extent={{-80,40},{-40,80}})));
@@ -66,17 +66,16 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(speedSensor.flange, motor.flange) annotation (Line(
-      points={{58,-80},{38,-80},{38,0},{30,0}},
+      points={{60,-80},{38,-80},{38,0},{30,0}},
       color={0,0,0},
       smooth=Smooth.None));
   connect(speedSensor.w, speed)      annotation (Line(
-      points={{79,-80},{106,-80}},
+      points={{80,-80},{110,-80}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(motorTorque.u1, torqueReference)      annotation (Line(
       points={{-32,6},{-36,6},{-36,60},{-60,60}},
       color={0,0,127},
-      pattern=LinePattern.None,
       smooth=Smooth.None));
   connect(ktFault.y, kt_selection.index) annotation (Line(
       points={{-39,-70},{-30,-70},{-30,-52}},
