@@ -16,8 +16,8 @@ extends Modelica.Electrical.Machines.Icons.TransientMachine;
                      speedSensor(constBooleanFault=false)
     annotation (Placement(transformation(extent={{60,-90},{80,-70}})));
   Modelica.Blocks.Interfaces.RealInput torqueReference "motorTorqueReference"
-                           annotation (Placement(transformation(extent={{-80,40},
-            {-40,80}}), iconTransformation(extent={{-80,40},{-40,80}})));
+                           annotation (Placement(transformation(extent={{-140,40},
+            {-100,80}}), iconTransformation(extent={{-80,40},{-40,80}})));
   Modelica.Blocks.Sources.Constant bokenKt(k=0)
     annotation (Placement(transformation(extent={{-100,-90},{-80,-70}})));
   Modelica.Blocks.Sources.Constant halfBrokenKt(k=0.5)
@@ -53,7 +53,7 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(motorTorque.u1, torqueReference)      annotation (Line(
-      points={{-32,6},{-36,6},{-36,60},{-60,60}},
+      points={{-32,6},{-36,6},{-36,60},{-120,60}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(halfBrokenKt.y,multiplex. u2[1])  annotation (Line(

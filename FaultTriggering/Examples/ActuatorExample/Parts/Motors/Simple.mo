@@ -25,8 +25,8 @@ extends Modelica.Electrical.Machines.Icons.TransientMachine;
   FaultSpeedSensor speedSensor
     annotation (Placement(transformation(extent={{60,-90},{80,-70}})));
   Modelica.Blocks.Interfaces.RealInput torqueReference "motorTorqueReference"
-                           annotation (Placement(transformation(extent={{-80,40},
-            {-40,80}}), iconTransformation(extent={{-80,40},{-40,80}})));
+                           annotation (Placement(transformation(extent={{-140,40},
+            {-100,80}}), iconTransformation(extent={{-80,40},{-40,80}})));
   FaultOutput.VariableIntegerFault ktFault(useModelModeSelection=false)
     annotation (Placement(transformation(extent={{-60,-80},{-40,-60}})));
 equation
@@ -74,7 +74,7 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(motorTorque.u1, torqueReference)      annotation (Line(
-      points={{-32,6},{-36,6},{-36,60},{-60,60}},
+      points={{-32,6},{-36,6},{-36,60},{-120,60}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(ktFault.y, kt_selection.index) annotation (Line(
