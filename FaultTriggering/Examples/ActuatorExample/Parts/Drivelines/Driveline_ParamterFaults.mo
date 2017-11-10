@@ -28,7 +28,7 @@ extends Modelica.Mechanics.Rotational.Icons.Gearbox;
                      speedSensor(constBooleanFault=false)
     annotation (Placement(transformation(extent={{60,-40},{80,-20}})));
   FaultOutput.ConstantRealFault friction(constRealFault=0)
-    annotation (Placement(transformation(extent={{0,20},{20,40}})));
+    annotation (Placement(transformation(extent={{0,40},{20,60}})));
 equation
   connect(booleanToReal.y,driveline_Break. f_normalized) annotation (Line(
       points={{-39,50},{-30,50},{-30,11}},
@@ -63,7 +63,7 @@ equation
       color={0,0,127},
       smooth=Smooth.None));
   connect(friction.y, brake.f_normalized)      annotation (Line(
-      points={{21,30},{30,30},{30,11}},
+      points={{21,50},{30,50},{30,11}},
       color={0,0,127},
       smooth=Smooth.None));
   connect(disconnect.y, booleanToReal.u)          annotation (Line(
