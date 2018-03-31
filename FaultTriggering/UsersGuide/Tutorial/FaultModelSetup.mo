@@ -25,7 +25,7 @@ extends Modelica.Icons.Information;
 <li>maxSearchSize (the maximum number of elements in the model for pre-allocation of the vectors)</li>
 </ol></p>
 <p><br/>Note that &quot;maxSearchSize&quot; must be set so that all model components can be allocated. If this is not big enough, the error &quot;<code>getAllModelComponents: the&nbsp;pre&nbsp;located&nbsp;size&nbsp;of&nbsp;the&nbsp;vectors&nbsp;is&nbsp;not&nbsp;big&nbsp;enough.&nbsp;Please&nbsp;increase&nbsp;maxSearchSize</code>&quot; will be issued.</p>
-<p>Calling <a href=\" FaultTriggering.FaultProcessing()\">Fail</a><a href=\" FaultTriggering.faultProcessing()\">ureProce</a><a href=\" FaultTriggering.FaultProcessing()\">ssing</a> with the default inputs leads to an overview of all faults in the model. To get the default values, the model is translated. Therefore only complete models that can be translated can be used.</p>
+<p>Calling <a href=\" FaultTriggering.FaultProcessing()\">FailureProcessing</a> with the default inputs leads to an overview of all faults in the model. To get the default values, the model is translated. Therefore only complete models that can be translated can be used.</p>
 <p><img src=\"modelica://FaultTriggering/Resources/Documentation/FaultOverview.png\"/></p>
 <p><br/>The faults are sorted between Parameter Faults and Variable Faults. In each &quot;Fault Names&quot; subset the name and some of the properties of the fault are given. </p>
 <p><img src=\"modelica://FaultTriggering/Resources/Documentation/BooleanFaultOverview.png\"/></p>
