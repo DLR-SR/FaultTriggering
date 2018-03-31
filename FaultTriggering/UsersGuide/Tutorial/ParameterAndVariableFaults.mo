@@ -29,7 +29,7 @@ model ParameterAndVariableFaults "Parameter and Variable Faults"
 <li>Actuator jam</li>
 </ul></p>
 <p><h4><font color=\"#008000\">Real, Integer or Boolean faults?</font></h4></p>
-<p>The choice between Real, Integer and Boolean faults, can usually be mady by analysing the fault and the test procedures which are planned with it.</p>
+<p>The choice between Real, Integer and Boolean faults, can usually be made by analysing the fault and the test procedures which are planned with it.</p>
 <p>If a fault has a variable &quot;fault&quot; value (such as a friction increase), a Real fault is most appropriate. If the faultoutput is used to switch certain pre-defined fault cases (different fault modes of a bearing), an Integer fault should be used. If a fault only has an &quot;Off&quot; and an &quot;On&quot; state (such a short circuit or shaft breakage), a boolean fault should be used.</p>
 </html>", revisions="<html><table border=0 cellspacing=0 cellpadding=0>
   <tr><td valign=\"center\"> <img src=\"modelica://FaultTriggering/Resources/Documentation/Images/logo_dlr.png\" width=60></td>
