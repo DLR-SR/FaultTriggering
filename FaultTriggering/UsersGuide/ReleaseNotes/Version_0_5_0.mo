@@ -3,7 +3,7 @@ class Version_0_5_0 "Version 0.5.0 (2014-04-02)"
   extends Modelica.Icons.ReleaseNotes;
 
     annotation (Documentation(info="<html>
-<p>Release to Github, Included Licence information and copyrights</p>
+<p>Release to GitHub, Included License information and copyrights</p>
 </html>",
 revisions="<html><table border=0 cellspacing=0 cellpadding=0>
   <tr><td valign=\"center\"> <img src=\"modelica://FaultTriggering/Resources/Documentation/Images/logo_dlr.png\" ></td>

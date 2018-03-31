@@ -64,7 +64,7 @@ function createFaultPackageInternal
 //  input Integer preAllocationSize=500
 //    "pre allocation size of the output matrices";
   input Boolean overWriteScripts = false
-    "Replaces existing models without propmpting" annotation(choices(checkBox=true));
+    "Replaces existing models without prompting" annotation(choices(checkBox=true));
 
   output String[:] name "name of component";
   output String[:] extendsTo "extending to";
