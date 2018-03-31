@@ -456,10 +456,5 @@ Streams.print("end Interfaces;", packageName);
 <td><p><b>Copyright &copy; DLR Institute of System Dynamics and Control</b> </p></td>
 </tr>
 </table>
-<table cellspacing=\"0\" cellpadding=\"0\" border=\"0\"><tr>
-<td></td>
-<td></td>
-</tr>
-</table>
 </html>"));
 end createFaultPackageInternal;

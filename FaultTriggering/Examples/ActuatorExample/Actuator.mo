@@ -185,11 +185,6 @@ wrapper model is made of this model.")}),
 <td><p><h4>Copyright &copy; DLR Institute of System Dynamics and Control </h4></p></td>
 </tr>
 </table>
-<table cellspacing=\"0\" cellpadding=\"0\" border=\"0\"><tr>
-<td></td>
-<td></td>
-</tr>
-</table>
 </html>", revisions="<html><table border=0 cellspacing=0 cellpadding=0>
   <tr><td valign=\"center\"> <img src=\"modelica://FaultTriggering/Resources/Documentation/Images/logo_dlr.png\" width=60></td>
     <td valign=\"center\"><b>Copyright</b>
