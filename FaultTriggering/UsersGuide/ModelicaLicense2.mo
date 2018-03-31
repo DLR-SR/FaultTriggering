@@ -17,7 +17,7 @@ th      { solid #000; vertical-align:top; font-weight: bold; }
 table   { solid #000; border-collapse: collapse;}
 </style>
 </head>
-<p>All files in this directory (FaultTriggering) and in all subdirectories, especially all files that build package &QUOT;FaultTriggering&QUOT; and all files in &QUOT;FaultTriggering/Resources/*&QUOT; and &QUOT;FaultTriggering/UsersGuide&QUOT; are licensed by the <u><b>DLR German Aerospace Center</b></u> under the <u><b>Modelica License 2</b></u>. </p>
+<p>All files in this directory (FaultTriggering) and in all subdirectories, especially all files that build package &quot;FaultTriggering&quot; and all files in &quot;FaultTriggering/Resources/*&quot; and &quot;FaultTriggering/UsersGuide&quot; are licensed by the <u><b>DLR German Aerospace Center</b></u> under the <u><b>Modelica License 2</b></u>. </p>
 
 <p style=\"margin-left: 40px;\"><b>Licensor:</b><br>
 DLR German Aerospace Center <br>

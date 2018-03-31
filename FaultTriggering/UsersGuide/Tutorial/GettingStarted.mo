@@ -14,7 +14,7 @@ extends Modelica.Icons.Information;
 <li><b>Real</b>: Can be used to set fault levels like bearing friction, increasing pressure losses.</li>
 </ol></p>
 <p>All Fault models are supplied in <b>FaultTriggering.FaultOutput</b>.</p>
-<p>All Variable Faults are controlled by a global <a href=\"FaultTriggering.FaultOutput.FaultTrigger\">model</a> &QUOT;broadcasting&QUOT; the faults. Each variable fault therefore must be coupled to a fault channel from the global FaultTriggering model. This makes also external triggering of the faults (e.g. from Simulink) possible.</p>
+<p>All Variable Faults are controlled by a global <a href=\"FaultTriggering.FaultOutput.FaultTrigger\">model</a> &quot;broadcasting&quot; the faults. Each variable fault therefore must be coupled to a fault channel from the global FaultTriggering model. This makes also external triggering of the faults (e.g. from Simulink) possible.</p>
 <p><br/>Using these fault models all commonly know faults can be modelled. In <a href=\"FaultTriggering.UsersGuide.Tutorial.FaultModelling\">Fault Modelling</a> is explained how to use these blocks.</p>
 </html>", revisions="<html><table border=0 cellspacing=0 cellpadding=0>
   <tr><td valign=\"center\"> <img src=\"modelica://FaultTriggering/Resources/Documentation/Images/logo_dlr.png\" width=60></td>

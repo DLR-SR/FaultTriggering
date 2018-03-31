@@ -111,10 +111,10 @@ algorithm
   str4 := FormatReal(1e-2*Modelica.Constants.pi, 5);               
   str5 := FormatReal(1e-3*Modelica.Constants.pi, 5);
   
-               -&GT; str1 = &QUOT;   3.14159     &QUOT;
-               -&GT; str2 = &QUOT;   3.14159e+25 &QUOT;
-               -&GT; str3 = &QUOT; 314.15927     &QUOT;
-               -&GT; str4 = &QUOT;   0.03142     &QUOT;
-               -&GT; str5 = &QUOT;   3.14159e-3  &QUOT;              </pre></blockquote>
+               -&gt; str1 = &quot;   3.14159     &quot;
+               -&gt; str2 = &quot;   3.14159e+25 &quot;
+               -&gt; str3 = &quot; 314.15927     &quot;
+               -&gt; str4 = &quot;   0.03142     &quot;
+               -&gt; str5 = &quot;   3.14159e-3  &quot;              </pre></blockquote>
 </html>"));
 end FormatReal;
