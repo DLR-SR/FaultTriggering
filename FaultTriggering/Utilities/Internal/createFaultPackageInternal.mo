@@ -6,7 +6,7 @@ function createFaultPackageInternal
   input String[:] faultNames={"driveline.DriveFriction.externalRealFault","motor.motorKtFault.externalIntegerFault",
       "motor.speedSensor.externalBooleanFault","driveline.speedSensor.externalBooleanFault",
       "driveline.DrivelineDisconnect.constBooleanFault"};
-  input FaultTriggering.Utilities.Types.FaultType[:] faultType={4,5,6,6,3}
+  input FaultTriggering.Utilities.Types.FaultType[:] faultType={FaultTriggering.Utilities.Types.FaultType.realVar,FaultTriggering.Utilities.Types.FaultType.intVar,FaultTriggering.Utilities.Types.FaultType.boolVar,FaultTriggering.Utilities.Types.FaultType.boolVar,FaultTriggering.Utilities.Types.FaultType.boolPar}
     "fault type:";
   input Integer[:] faultChannel={1,1,1,2,1}
     "channel to which each fault is connected";
