@@ -3,7 +3,7 @@ function [FaultNames,FaultValues,FaultDescriptions] = ProcessFailureScript(Scrip
 % names and default values.
 %
 % [FaultNames,FaultValues,FaultDescription] = ProcessFailureScript(ScriptName)
-% In this function the modelica script ScriptName is processed. From the
+% In this function the Modelica script ScriptName is processed. From the
 % script the faultnames FaultNames are read from the script, just like the
 % applied fault values FaultValues and the fault type FaultDescription
 % (boolean, integer or real)
@@ -17,7 +17,7 @@ fid = fopen(ScriptName);
 RawFaultNames = fscanf(fid,'%s');
 fclose(fid);
 RawFaultLength = length(RawFaultNames);
-% find the posiion of features in the file to distinguish values names and
+% find the position of features in the file to distinguish values names and
 % descriptions
 FaultCommaPositions = [0,strfind(RawFaultNames,';')];
 FaultEqualPositions = strfind(RawFaultNames,'=');

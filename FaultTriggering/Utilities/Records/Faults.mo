@@ -9,7 +9,7 @@ record Faults "Fault information"
 parameter FaultTriggering.Utilities.Records.Parameter_Faults parameterFaults;
 
 // ------- --------------------------------------------
-// ------- Vairable Faults -------------------------
+// ------- Variable Faults -------------------------
 // ------- --------------------------------------------
 
 parameter FaultTriggering.Utilities.Records.Variable_Faults variableFaults;

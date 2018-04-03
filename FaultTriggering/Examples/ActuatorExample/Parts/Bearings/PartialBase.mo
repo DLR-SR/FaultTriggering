@@ -99,10 +99,5 @@ extends Modelica.Mechanics.Rotational.Interfaces.PartialTwoFlanges;
 <td><p><h4>Copyright &copy; DLR Institute of System Dynamics and Control </h4></p></td>
 </tr>
 </table>
-<table cellspacing=\"0\" cellpadding=\"0\" border=\"0\"><tr>
-<td></td>
-<td></td>
-</tr>
-</table>
 </html>"));
 end PartialBase;

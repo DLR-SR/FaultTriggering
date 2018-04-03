@@ -2,11 +2,11 @@ within FaultTriggering.FaultOutput;
 partial model Partial_FaultTrigger "partial model defining the fault classes"
   extends FaultTriggering.Utilities.Icons.FaultModel;
   parameter Integer realFaultSize(    min=0)=0
-    "Number of real fault channels in the model"                                            annotation(Dialog(enable = tue, tab = "Advanced"));
+    "Number of real fault channels in the model"                                            annotation(Dialog(enable = true, tab = "Advanced"));
   parameter Integer integerFaultSize( min=0)=0
-    "Number of integer fault channels in the model"                                            annotation(Dialog(enable = tue, tab = "Advanced"));
+    "Number of integer fault channels in the model"                                            annotation(Dialog(enable = true, tab = "Advanced"));
   parameter Integer booleanFaultSize( min=0)=0
-    "Number of boolean fault channels in the model"                                            annotation(Dialog(enable = tue, tab = "Advanced"));
+    "Number of boolean fault channels in the model"                                            annotation(Dialog(enable = true, tab = "Advanced"));
 
   Real    realFault[realFaultSize] "Real Fault trigger";
   Integer integerFault[integerFaultSize] "Integer Fault trigger";
@@ -64,11 +64,6 @@ partial model Partial_FaultTrigger "partial model defining the fault classes"
 <h4>General Information</h4>
 <p>This global model is used in combination with variable Faults.</p>
 <p><br>The values of the Real, Integer and Boolean values must be set in this element.</p>
-<table cellspacing=\"0\" cellpadding=\"0\" border=\"0\"><tr>
-<td></td>
-<td></td>
-</tr>
-</table>
 </html>", revisions="<html><table border=0 cellspacing=0 cellpadding=0>
   <tr><td valign=\"center\"> <img src=\"modelica://FaultTriggering/Resources/Documentation/Images/logo_dlr.png\" width=60></td>
     <td valign=\"center\"><b>Copyright</b>

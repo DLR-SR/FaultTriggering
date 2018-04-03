@@ -1,5 +1,5 @@
 within FaultTriggering.Examples.ActuatorExample.Parts;
-package Bearings "simple bearing package"
+package Bearings "Simple bearing package"
 
 
   annotation (Icon(graphics={

@@ -30,11 +30,6 @@ equation
 &nbsp;&nbsp;booleanFault[2]&nbsp;=&nbsp;false;
 &nbsp;&nbsp;booleanFault[3]&nbsp;=&nbsp;true;
 &nbsp;&nbsp;booleanFault[4]&nbsp;=&nbsp;false;</pre>
-<table cellspacing=\"0\" cellpadding=\"0\" border=\"0\"><tr>
-<td></td>
-<td></td>
-</tr>
-</table>
 </html>", revisions="<html><table border=0 cellspacing=0 cellpadding=0>
   <tr><td valign=\"center\"> <img src=\"modelica://FaultTriggering/Resources/Documentation/Images/logo_dlr.png\" width=60></td>
     <td valign=\"center\"><b>Copyright</b>
