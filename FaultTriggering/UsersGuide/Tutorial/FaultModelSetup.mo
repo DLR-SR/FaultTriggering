@@ -51,6 +51,7 @@ driveline.speedSensor.constBooleanFault=0;//Boolean&percnt;</pre>
 <p>An example of such a generated library is given in FaultTriggering.Examples.ActuatorExample.ActuatorFaults.</p>
 <p><h4><font color=\"#008000\">Using the Fault toolbox in Simulink</font></h4></p>
 <p>To use the fault toolbox with Simulink the model has to be set up like before, however, the faultbus should be defined as an input. <a href=\" FaultBus.FaultsInput\">FaultsInput</a> in the FaultBus package is a predefined input connector.</p>
+<p>After the model is prepared in Dymola, it can be set up as usual in simulink. Please refer to the Dymola documentation on how to set up Dymola models in Simulink using a &QUOT;DymolaBlock&QUOT;.</p>
 <p>After the model is prepared in Dymola, it can be set up as usual in Simulink. Please refer to the Dymola documentation on how to set up Dymola models in Simulink using a &QUOT;DymolaBlock&QUOT;.</p>
 </html>", revisions="<html><table border=0 cellspacing=0 cellpadding=0>
   <tr><td valign=\"center\"> <img src=\"modelica://FaultTriggering/Resources/Documentation/Images/logo_dlr.png\" width=60></td>

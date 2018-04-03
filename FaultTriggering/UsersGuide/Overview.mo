@@ -16,7 +16,7 @@ class Overview
 <p><img src=\"modelica://FaultTriggering/Resources/Documentation/FaultPackageModel.png\"/></p>
 <p>The faults can be set using the faultTrigger instance. Inside this model, the fault can be set as shown in the following figure:</p>
 <p><img src=\"modelica://FaultTriggering/Resources/Documentation/ConnectBusToFault.png\"/></p>
-<p>The parameter faults can be set directly in the model by ajusting the parameters of the fault block.</p>
+<p>The parameter faults can be set directly in the model by adjusting the parameters of the fault block.</p>
 </html>", revisions="<html><table border=0 cellspacing=0 cellpadding=0>
   <tr><td valign=\"center\"> <img src=\"modelica://FaultTriggering/Resources/Documentation/Images/logo_dlr.png\" width=60></td>
     <td valign=\"center\"><b>Copyright</b>
