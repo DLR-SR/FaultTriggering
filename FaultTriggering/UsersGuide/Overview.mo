@@ -1,7 +1,7 @@
 within FaultTriggering.UsersGuide;
 class Overview
   extends Modelica.Icons.Information;
-  annotation (__Dymola_DocumentationClass=true, Documentation(info="<html>
+  annotation (DocumentationClass=true, Documentation(info="<html>
 <p>In this package, models are supplied to trigger faults in an consistent way. Several types of faults are included: </p>
 <ul>
 <li><b>Parameter Faults </b>(Real,Integer as well as Boolean). These can be set at the beginning of each simulation run.</li>
