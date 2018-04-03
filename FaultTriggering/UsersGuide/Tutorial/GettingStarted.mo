@@ -2,7 +2,7 @@ within FaultTriggering.UsersGuide.Tutorial;
 class GettingStarted "Getting started"
 extends Modelica.Icons.Information;
     annotation (Documentation(info="<html>
-<p>The <b>FaultTriggering</b> Toolbox accomodates 2 fault types;</p>
+<p>The <b>FaultTriggering</b> Toolbox accommodates two fault types;</p>
 <p><ol>
 <li><b>Parameter Faults</b>: Faults that at set at the beginning of each simulation.</li>
 <li><b>Variable Faults</b>: Faults that can vary during simulation time.</li>

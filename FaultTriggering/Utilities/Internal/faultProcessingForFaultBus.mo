@@ -7,7 +7,7 @@ function faultProcessingForFaultBus
     "Model name";
   input String scriptName="SetFaults.mos" "Name of output script";
   input Boolean overWriteScripts = false
-    "Replaces existing models without propmpting" annotation(choices(checkBox=true));
+    "Replaces existing models without prompting" annotation(choices(checkBox=true));
 
   output String[:] realFaultParameterNames;
   output String[:] integerFaultParameterNames;
@@ -186,7 +186,7 @@ algorithm
   // check if file already exist. if not, exit when not overWriteScripts
   if overWriteScripts == false then
   assert(not (Modelica.Utilities.Files.exist(scriptName)), scriptName +
-    " already exist: exitting");
+    " already exist: exiting");
     else
   Modelica.Utilities.Files.remove(scriptName);
   end if;
@@ -312,16 +312,11 @@ algorithm
           pattern=LinePattern.None,
           lineColor={0,0,0})}),
     Documentation(info="<html>
-<p>This Function gathers all the faults in the model <b>modelName</b>, sets the values of the faults and saves it into the modelica script <b>scriptName</b>. The Integer <b>maxSearchSize</b> is needed to preallocate the number of searched elements.</p>
-<p><br/>Unfortunately it is impossibke to read the default values directly from the model using the ModelManagement.Structure.AST libray, therefore all parameter values are set to 0, and all variable faults to index 1 by default. </p>
+<p>This Function gathers all the faults in the model <b>modelName</b>, sets the values of the faults and saves it into the Modelica script <b>scriptName</b>. The Integer <b>maxSearchSize</b> is needed to preallocate the number of searched elements.</p>
+<p><br/>Unfortunately it is impossible to read the default values directly from the model using the ModelManagement.Structure.AST library, therefore all parameter values are set to 0, and all variable faults to index 1 by default. </p>
 <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\"><tr>
 <td><p><br/><img src=\"modelica://FaultTriggering/Resources/Documentation/Images/logo_dlr.png\"/></p></td>
 <td><p><b>Copyright &copy; DLR Institute of System Dynamics and Control</b> </p></td>
-</tr>
-</table>
-<table cellspacing=\"0\" cellpadding=\"0\" border=\"0\"><tr>
-<td></td>
-<td></td>
 </tr>
 </table>
 </html>"));

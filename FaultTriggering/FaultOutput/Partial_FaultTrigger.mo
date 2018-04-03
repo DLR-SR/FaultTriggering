@@ -64,11 +64,6 @@ partial model Partial_FaultTrigger "partial model defining the fault classes"
 <h4>General Information</h4>
 <p>This global model is used in combination with variable Faults.</p>
 <p><br>The values of the Real, Integer and Boolean values must be set in this element.</p>
-<table cellspacing=\"0\" cellpadding=\"0\" border=\"0\"><tr>
-<td></td>
-<td></td>
-</tr>
-</table>
 </html>", revisions="<html><table border=0 cellspacing=0 cellpadding=0>
   <tr><td valign=\"center\"> <img src=\"modelica://FaultTriggering/Resources/Documentation/Images/logo_dlr.png\" width=60></td>
     <td valign=\"center\"><b>Copyright</b>

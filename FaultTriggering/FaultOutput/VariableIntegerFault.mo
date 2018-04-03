@@ -2,7 +2,7 @@ within FaultTriggering.FaultOutput;
 block VariableIntegerFault "Generate variable signal of type Real"
 extends FaultTriggering.FaultOutput.Internal.InternalIntegerFault;
 parameter Boolean useModelModeSelection = false
-    "toggles external output for mode selection" annotation(choices(__Dymola_checkBox=true));
+    "toggles external output for mode selection" annotation(choices(checkBox=true));
 
   Modelica.Blocks.Interfaces.IntegerOutput y
     annotation (Placement(transformation(extent={{100,-10},{120,10}}),

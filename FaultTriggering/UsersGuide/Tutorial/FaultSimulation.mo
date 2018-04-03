@@ -11,9 +11,9 @@ extends Modelica.Icons.Information;
 <p><h4><font color=\"#008000\">Simulink fault injection</font></h4></p>
 <p><br/>For the use in Simulink, it is possible to directly set the bus as an input. Use the supplied &quot;FaultsInput&quot; to set up the input for the usage with the simulink. First, the FaultTriggerController block should be editted. Add a FaultsInput bus and connect the two:</p>
 <p><img src=\"modelica://FaultTriggering/Resources/Documentation/SimulinkFaultTriggerControllerSetup.png\"/></p>
-<p><br/><br/>Also in the wraper model, a faultsInput bus should be added:</p>
+<p><br/><br/>Also in the wrapper model, a faultsInput bus should be added:</p>
 <p><br/><br/><img src=\"modelica://FaultTriggering/Resources/Documentation/SimulinkWrapperSetup.png\"/></p>
-<p>Using this setup, the model can be directly integrated in a simulink environment.</p>
+<p>Using this setup, the model can be directly integrated in a Simulink environment.</p>
 <p><img src=\"modelica://FaultTriggering/Resources/Documentation/SimulinkDymolaBlock.png\"/></p>
 </html>", revisions="<html><table border=0 cellspacing=0 cellpadding=0>
   <tr><td valign=\"center\"> <img src=\"modelica://FaultTriggering/Resources/Documentation/Images/logo_dlr.png\" width=60></td>

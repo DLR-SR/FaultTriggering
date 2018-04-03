@@ -3,7 +3,7 @@ class FaultModelling "Fault Modelling"
 extends Modelica.Icons.Information;
   annotation (Documentation(info="<html>
 <h4>Getting started</h4>
-<p>In this chapter is explained how to use the fault models. This will be done using using an example of a driveline. In this example, a boolean parameter fault that models a driveline breakage, and a variable real fault, leading to increased friction. </p>
+<p>In this chapter is explained how to use the fault models. This will be done using an example of a driveline. In this example, a boolean parameter fault that models a driveline breakage, and a variable real fault, leading to increased friction. </p>
 <h4>1. Fault Modelling</h4>
 <p>In Figure 1. the driveline of a <a href=\"FaultTriggering.Examples.ActuatorExample.Parts.Drivelines.Driveline\">rotational</a><a href=\"FaultTriggering.Examples.MotorExample.Driveline\"> actuator</a> is shown. Three triggerable faults can be identified:</p>
 <ol>

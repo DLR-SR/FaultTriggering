@@ -1,3 +1,4 @@
 within FaultTriggering.Examples;
-package Replaceables 
+package Replaceables
+  extends FaultTriggering.Utilities.Icons.Package;
 end Replaceables;

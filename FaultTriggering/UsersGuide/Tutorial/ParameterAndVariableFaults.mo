@@ -20,7 +20,7 @@ model ParameterAndVariableFaults "Parameter and Variable Faults"
 <li>Oil viscosity degradation</li>
 </ul></p>
 <p><h5>Variable faults</h5></p>
-<p>Variable faults should be used so simulate relatively fast faults with respect to simulation time, and no constant fault signal can be assumed during simulation time. When simulationg this kind of faults, usually transient and dynamic effects are important.</p>
+<p>Variable faults should be used so simulate relatively fast faults with respect to simulation time, and no constant fault signal can be assumed during simulation time. When simulating this kind of faults, usually transient and dynamic effects are important.</p>
 <p>Examples:</p>
 <p><ul>
 <li>IGBT internal shortcut</li>

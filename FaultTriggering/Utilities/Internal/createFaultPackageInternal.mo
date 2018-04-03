@@ -6,7 +6,7 @@ function createFaultPackageInternal
   input String[:] faultNames={"driveline.DriveFriction.externalRealFault","motor.motorKtFault.externalIntegerFault",
       "motor.speedSensor.externalBooleanFault","driveline.speedSensor.externalBooleanFault",
       "driveline.DrivelineDisconnect.constBooleanFault"};
-  input FaultTriggering.Utilities.Types.FaultType[:] faultType={4,5,6,6,3}
+  input FaultTriggering.Utilities.Types.FaultType[:] faultType={FaultTriggering.Utilities.Types.FaultType.realVar,FaultTriggering.Utilities.Types.FaultType.intVar,FaultTriggering.Utilities.Types.FaultType.boolVar,FaultTriggering.Utilities.Types.FaultType.boolVar,FaultTriggering.Utilities.Types.FaultType.boolPar}
     "fault type:";
   input Integer[:] faultChannel={1,1,1,2,1}
     "channel to which each fault is connected";
@@ -64,7 +64,7 @@ function createFaultPackageInternal
 //  input Integer preAllocationSize=500
 //    "pre allocation size of the output matrices";
   input Boolean overWriteScripts = false
-    "Replaces existing models without propmpting" annotation(choices(checkBox=true));
+    "Replaces existing models without prompting" annotation(choices(checkBox=true));
 
   output String[:] name "name of component";
   output String[:] extendsTo "extending to";
@@ -454,11 +454,6 @@ Streams.print("end Interfaces;", packageName);
 <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\"><tr>
 <td><p><br/><img src=\"modelica://FaultTriggering/Resources/Documentation/Images/logo_dlr.png\"/></p></td>
 <td><p><b>Copyright &copy; DLR Institute of System Dynamics and Control</b> </p></td>
-</tr>
-</table>
-<table cellspacing=\"0\" cellpadding=\"0\" border=\"0\"><tr>
-<td></td>
-<td></td>
 </tr>
 </table>
 </html>"));
