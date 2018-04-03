@@ -13,7 +13,7 @@ extends Modelica.Icons.Information;
 <p><img src=\"modelica://FaultTriggering/Resources/Documentation/SimulinkFaultTriggerControllerSetup.png\"/></p>
 <p><br/><br/>Also in the wrapper model, a faultsInput bus should be added:</p>
 <p><br/><br/><img src=\"modelica://FaultTriggering/Resources/Documentation/SimulinkWrapperSetup.png\"/></p>
-<p>Using this setup, the model can be directly integrated in a simulink environment.</p>
+<p>Using this setup, the model can be directly integrated in a Simulink environment.</p>
 <p><img src=\"modelica://FaultTriggering/Resources/Documentation/SimulinkDymolaBlock.png\"/></p>
 </html>", revisions="<html><table border=0 cellspacing=0 cellpadding=0>
   <tr><td valign=\"center\"> <img src=\"modelica://FaultTriggering/Resources/Documentation/Images/logo_dlr.png\" width=60></td>

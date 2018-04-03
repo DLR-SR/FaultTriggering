@@ -6,7 +6,7 @@ function [FaultNames,FaultValues,FaultDescriptions] = CreateFailureScript(Script
 % TestCase selects what kind of testscript has to be generated:
 %   1: each Variable and boolean fault 1 Test (singe failure case)
 %   2: All possible single and double failures of Variable and boolean
-%       (first 1 then 2 Failues at the same time)
+%       (first 1 then 2 Failures at the same time)
 %   3: Single Parameter Failures
 
 %  Author: F.L.J. van der Linden,

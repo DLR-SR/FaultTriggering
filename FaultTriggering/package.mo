@@ -11,7 +11,7 @@ package FaultTriggering "Library for Fault Triggering"
 
 
 
-  annotation (uses(Modelica(version="3.2.2")),
+  annotation (uses(Modelica(version="3.2.2"),AdvancedNoise(version="1.0.0")),
     version="0.6.6", conversion(from(version="0.6.4", to="0.6.5", script="modelica://FaultTriggering/Resources/Scripts/Convert_from_0.6.4_to_0.6.5.mos")),
     versionDate="2015-07-15",
 preferredView="info",
@@ -66,7 +66,7 @@ preferredView="info",
 </tr>
 <tr>
 <td><p>0.5</p></td>
-<td><p>2014-04-02: Release to Github, Included Licence information and copyrights </p></td>
+<td><p>2014-04-02: Release to GitHub, Included License information and copyrights </p></td>
 </tr>
 <tr>
 <td><p>0.6.3</p></td>
