@@ -72,7 +72,7 @@ faultSizes :={size(realFaultNames, 1),size(integerFaultNames, 1),size(
     integerFaultNames,
     booleanFaultNames);
 
- faultType := cat(1,ones(size(realFaultNames, 1))*4,ones(size(integerFaultNames, 1))*5,ones(size(booleanFaultNames, 1))*6);
+ faultType := cat(1,fill(FaultTriggering.Utilities.Types.FaultType.realVar, size(realFaultNames, 1)),fill(FaultTriggering.Utilities.Types.FaultType.intVar, size(integerFaultNames, 1)),fill(FaultTriggering.Utilities.Types.FaultType.boolVar, size(booleanFaultNames, 1)));
  faultChannel := cat(1,1:size(realFaultNames, 1),1:size(integerFaultNames, 1),1:size(booleanFaultNames, 1));
 
 // create the package
