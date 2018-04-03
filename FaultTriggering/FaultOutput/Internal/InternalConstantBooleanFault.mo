@@ -18,16 +18,6 @@ block InternalConstantBooleanFault "Generate constant Fault of type Boolean"
 <p>This block is used to simulate a constant fault. Using the function <a href=\"FaultTriggering.GatherAndSetFaults\">FaultTriggering.GatherAndSetFaults</a> all the faults in the model can be found and set.</p>
 <p>The Boolean output y is a constant signal: </p>
 <p><img src=\"modelica://Modelica/Resources/Images/Blocks/Sources/BooleanConstant.png\"/> </p>
-<table cellspacing=\"0\" cellpadding=\"0\" border=\"0\"><tr>
-<td></td>
-<td></td>
-</tr>
-</table>
-<table cellspacing=\"0\" cellpadding=\"0\" border=\"0\"><tr>
-<td></td>
-<td></td>
-</tr>
-</table>
 </html>", revisions="<html><table border=0 cellspacing=0 cellpadding=0>
   <tr><td valign=\"center\"> <img src=\"modelica://FaultTriggering/Resources/Documentation/Images/logo_dlr.png\" width=60></td>
     <td valign=\"center\"><b>Copyright</b>
