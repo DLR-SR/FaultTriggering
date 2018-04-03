@@ -31,6 +31,9 @@ protected
   output Boolean[:] finalVariable "indicates if it is the final extension";
 
 algorithm
+
+  translateModel(modelName);
+
   (realFaultParameterNames,integerFaultParameterNames,
     booleanFaultParameterNames,realFaultNames,integerFaultNames,
     booleanFaultNames,faults) :=
