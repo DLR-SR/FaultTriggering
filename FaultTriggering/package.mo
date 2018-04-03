@@ -66,7 +66,7 @@ preferredView="info",
 </tr>
 <tr>
 <td><p>0.5</p></td>
-<td><p>2014-04-02: Release to Github, Included Licence information and copyrights </p></td>
+<td><p>2014-04-02: Release to GitHub, Included License information and copyrights </p></td>
 </tr>
 <tr>
 <td><p>0.6.3</p></td>

@@ -10,7 +10,7 @@ record Faults_Depreciated "Fault information"
 parameter FaultTriggering.Utilities.Records.Parameter_Faults parameterFaults;
 
 // ------- --------------------------------------------
-// ------- Vairable Faults -------------------------
+// ------- Variable Faults -------------------------
 // ------- --------------------------------------------
 
   parameter

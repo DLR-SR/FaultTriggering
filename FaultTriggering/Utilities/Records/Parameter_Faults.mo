@@ -1,5 +1,5 @@
 within FaultTriggering.Utilities.Records;
-record Parameter_Faults "Paramter Faults"
+record Parameter_Faults "Parameter Faults"
 
 // ------- --------------------------------------------
 // ------- Parameter Faults -------------------------

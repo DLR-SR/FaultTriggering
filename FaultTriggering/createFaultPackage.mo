@@ -8,7 +8,7 @@ function createFaultPackage
   input String packageName="Faults.mo"
     "Name of the Fault package created by the function";
   input Boolean overWriteScripts = true
-    "Replaces existing models without propmpting" annotation(choices(checkBox=true));
+    "Replaces existing models without prompting" annotation(choices(checkBox=true));
   output FaultTriggering.Utilities.Records.Faults faults;
 
 protected
@@ -18,7 +18,7 @@ protected
   String[:] realFaultNames;
   String[:] integerFaultNames;
   String[:] booleanFaultNames;
-  Integer faultNr "counter of the failues";
+  Integer faultNr "counter of the failures";
   Integer faultSizes[3] "size of the Real, Integer and Boolean faults";
 
   output String[:] faultNames;
@@ -72,7 +72,7 @@ faultSizes :={size(realFaultNames, 1),size(integerFaultNames, 1),size(
     integerFaultNames,
     booleanFaultNames);
 
- faultType := cat(1,ones(size(realFaultNames, 1))*4,ones(size(integerFaultNames, 1))*5,ones(size(booleanFaultNames, 1))*6);
+ faultType := cat(1,fill(FaultTriggering.Utilities.Types.FaultType.realVar, size(realFaultNames, 1)),fill(FaultTriggering.Utilities.Types.FaultType.intVar, size(integerFaultNames, 1)),fill(FaultTriggering.Utilities.Types.FaultType.boolVar, size(booleanFaultNames, 1)));
  faultChannel := cat(1,1:size(realFaultNames, 1),1:size(integerFaultNames, 1),1:size(booleanFaultNames, 1));
 
 // create the package
@@ -88,8 +88,8 @@ faultSizes :={size(realFaultNames, 1),size(integerFaultNames, 1),size(
     overWriteScripts);
 
   annotation (   Documentation(info="<html>
-<p>This Function gathers all the faults in the model <b>modelName</b>, sets the values of the faults and saves it into the modelica script <b>scriptName</b>. The Integer <b>maxSearchSize</b> is needed to preallocate the number of searched elements.</p>
-<p><br>This function creates a package with name <b>packageName</b>. In this package a hiarchial bus is build to which all faults can be easily coupled in the model <b>ConnectBusToFaults</b>. </p>
+<p>This Function gathers all the faults in the model <b>modelName</b>, sets the values of the faults and saves it into the Modelica script <b>scriptName</b>. The Integer <b>maxSearchSize</b> is needed to preallocate the number of searched elements.</p>
+<p><br>This function creates a package with name <b>packageName</b>. In this package a hierarchical bus is built to which all faults can be easily coupled in the model <b>ConnectBusToFaults</b>.</p>
 </html>", revisions="<html><table border=0 cellspacing=0 cellpadding=0>
   <tr><td valign=\"center\"> <img src=\"modelica://FaultTriggering/Resources/Documentation/Images/logo_dlr.png\" width=60></td>
     <td valign=\"center\"><b>Copyright</b>
