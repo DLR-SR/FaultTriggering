@@ -1,5 +1,5 @@
 within FaultTriggering.Examples.ActuatorExample.Parts.Motors;
-model Simple_ParameterFaults "example of a simple motor with faults"
+model Simple_ParameterFaults "Example of a simple motor with faults"
 
 extends Modelica.Electrical.Machines.Icons.TransientMachine;
   Modelica.Mechanics.Rotational.Sources.Torque motor
@@ -12,7 +12,7 @@ extends Modelica.Electrical.Machines.Icons.TransientMachine;
     annotation (Placement(transformation(extent={{100,-90},{120,-70}})));
   Modelica.Blocks.Math.Product motorTorque
     annotation (Placement(transformation(extent={{-20,-10},{0,10}})));
-  FaultSpeedSensor_ParamterFault
+  FaultSpeedSensor_ParameterFault
                      speedSensor(constBooleanFault=false)
     annotation (Placement(transformation(extent={{60,-90},{80,-70}})));
   Modelica.Blocks.Interfaces.RealInput torqueReference "motorTorqueReference"
@@ -31,7 +31,7 @@ extends Modelica.Electrical.Machines.Icons.TransientMachine;
   FaultOutput.ConstantIntegerFault motorKtFault
     annotation (Placement(transformation(extent={{-50,-80},{-30,-60}})));
 equation
-  connect(motor.flange,motorInertia. flange_a) annotation (Line(
+  connect(motor.flange,motorInertia.flange_a) annotation (Line(
       points={{40,0},{60,0}},
       color={0,0,0},
       smooth=Smooth.None));

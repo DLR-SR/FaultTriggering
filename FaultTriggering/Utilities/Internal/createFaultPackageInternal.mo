@@ -135,7 +135,7 @@ assert( not
 
   Streams.print("model " +  readAfterDot(modelName) + "Wrapper", packageName);
 
-// Setup model paramters
+// Setup model parameters
 // REAL parameter Faults
   Streams.print("extends  " + modelName + "(", packageName);
 
@@ -371,7 +371,7 @@ Streams.print("extends FaultTriggering.Utilities.Icons.InterfacesPackage;", pack
 //     partialExtends);
   partialExtends := FaultTriggering.Utilities.Internal.emptyStringVector(
     name);
- // add all "underbusses"
+ // add all "subbuses"
   for nameNr in 1:size(name, 1) loop
     if extensionDepths[nameNr] == 1 and not (
         FaultTriggering.Utilities.Internal.checkInString(name[nameNr],
@@ -386,10 +386,10 @@ Streams.print("extends FaultTriggering.Utilities.Icons.InterfacesPackage;", pack
   Streams.print("end Faults;", packageName);
 
 // --------------------------------------------------------------------------------------------
-// ----------   setup sub busses --------------------------------------------------------------
+// ----------   setup sub buses --------------------------------------------------------------
 // --------------------------------------------------------------------------------------------
 
-  // create subbusses and "preallocate" then with the subbusses and variables
+  // create subbuses and "preallocate" then with the subbuses and variables
  //   processedNames := zeros(size(
   //  name,1));
   for nameNr2 in 1:size(name, 1) loop

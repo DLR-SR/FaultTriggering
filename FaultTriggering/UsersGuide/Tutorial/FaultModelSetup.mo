@@ -2,9 +2,9 @@ within FaultTriggering.UsersGuide.Tutorial;
 class FaultModelSetup "Fault model setup"
 extends Modelica.Icons.Information;
     annotation (Documentation(info="<html>
-<p>To show how the FaultTriggering toolbox works, a complete rotational actuator <a href=\"FaultTriggering.Examples.ActuatorExample.Actuator\">model</a> with faults including a load is prepared.</p>
-<p><h4><font color=\"#008000\">General Model</font></h4></p>
-<p><br/>The actuator model is built of 2 main parts, the motor and the driveline. In the motor the following faults are implemented:</p>
+<p>To show how the FaultTriggering toolbox works, a complete rotational actuator <a href=\"modelica://FaultTriggering.Examples.ActuatorExample.Actuator\">model</a> with faults including a load is prepared.</p>
+<h4>General Model</h4>
+<p>The actuator model is built of 2 main parts, the motor and the driveline. In the motor the following faults are implemented:</p>
 <p><ol>
 <li>Winding Fault (Integer Fault): the motor torque constant is reduced with the fault level</li>
 <li>Sensor Fault (Boolean Fault): Disconnects the sensor output.</li>
@@ -16,20 +16,20 @@ extends Modelica.Icons.Information;
 <li>Sensor Fault (Boolean parameter fault): Disconnects the sensor output.</li>
 <li>Bearing Fault (Boolean fault); using the advanced model reconfiguration functions.</li>
 </ol></p>
-<p><h4><font color=\"#008000\">Model for use with Dymola</font></h4></p>
-<p>The faults in the model <a href=\"FaultTriggering.Examples.ActuatorExample.Actuator\">Actuator</a> can be found and triggered using the function <a href=\"FaultTriggering.createFaultPackage()\">FaultTriggering.createFaultPackage</a>. This function can be called (right click on function --&gt; call function) and needs 4 inputs:</p>
+<h4>Model for use with Dymola</h4>
+<p>The faults in the model <a href=\"modelica://FaultTriggering.Examples.ActuatorExample.Actuator\">Actuator</a> can be found and triggered using the function <a href=\"modelica://FaultTriggering.createFaultPackage\">FaultTriggering.createFaultPackage</a>. This function can be called (right click on function --&gt; call function) and needs 4 inputs:</p>
 <p><ol>
 <li>modelName (name of the model that should be analyzed)</li>
 <li>scriptName (name of the script that stores all model information)</li>
-<li>packageName (Name of the Fault package created by the function) </li>
+<li>packageName (Name of the Fault package created by the function)</li>
 <li>maxSearchSize (the maximum number of elements in the model for pre-allocation of the vectors)</li>
 </ol></p>
 <p><br/>Note that &quot;maxSearchSize&quot; must be set so that all model components can be allocated. If this is not big enough, the error &quot;<code>getAllModelComponents: the&nbsp;pre&nbsp;located&nbsp;size&nbsp;of&nbsp;the&nbsp;vectors&nbsp;is&nbsp;not&nbsp;big&nbsp;enough.&nbsp;Please&nbsp;increase&nbsp;maxSearchSize</code>&quot; will be issued.</p>
-<p>Calling <a href=\" FaultTriggering.FaultProcessing()\">FailureProcessing</a> with the default inputs leads to an overview of all faults in the model. To get the default values, the model is translated. Therefore only complete models that can be translated can be used.</p>
+<p>Calling <a href=\"modelica://FaultTriggering.FaultProcessing\">FaultProcessing</a> with the default inputs leads to an overview of all faults in the model. To get the default values, the model is translated. Therefore only complete models that can be translated can be used.</p>
 <p><img src=\"modelica://FaultTriggering/Resources/Documentation/FaultOverview.png\"/></p>
 <p><br/>The faults are sorted between Parameter Faults and Variable Faults. In each &quot;Fault Names&quot; subset the name and some of the properties of the fault are given. </p>
 <p><img src=\"modelica://FaultTriggering/Resources/Documentation/BooleanFaultOverview.png\"/></p>
-<p>In the &quot;Fault values&quot; subsets the properties of the fault can be set. In the example shown above the boolean variable faults are shown. It can be seen that both boolean faults are in the driveline: A disconnect and an speedsensor fault. Below the setup for the mode selection of the variable faults is shown. The setup of these modes is only necessary for faults where mode selection is triggered.</p>
+<p>In the &quot;Fault values&quot; subsets the properties of the fault can be set. In the example shown above the boolean variable faults are shown. It can be seen that both boolean faults are in the driveline: A disconnect and a speed sensor fault. Below the setup for the mode selection of the variable faults is shown. The setup of these modes is only necessary for faults where mode selection is triggered.</p>
 <p>In the variableFaults part, the mode selection parts can be set and are treated as parameters.</p>
 <p>All the settings made in the GUI are also saved into a plain text file &quot;scriptName&quot;. A plain text Modelica script is generated, which summarizes all settings:</p>
 <pre>driveline.friction.externalRealFault.faultIndex=1;//RealIndex
@@ -49,8 +49,8 @@ driveline.speedSensor.constBooleanFault=0;//Boolean</pre>
 <p>This script can be directly run in Dymola (and probably also other Modelica simulators) to set the values of the faults. It is also possible to modify this script for other purposes.</p>
 <p>Moreover a library is generated and saved. In this library, the topmost model, which is named &quot;&lt;ModelName&gt;+Package&quot; is included. This model extends the original model and includes an inner model to control all variable faults as well as an parameter &quot;FaultRecord&quot; that controls all parameter faults. All values given in the GUI will be set. Manually editing can be by editing the faultTrigger block in the &quot;&lt;ModelName&gt;+Wrapper&quot; model. Dymola 2013FD01 has problems if single entries are changed in subrecords. If problems exist, the FaultRecord-Record has to be directly edited by hand.</p>
 <p>An example of such a generated library is given in FaultTriggering.Examples.ActuatorExample.ActuatorFaults.</p>
-<p><h4><font color=\"#008000\">Using the Fault toolbox in Simulink</font></h4></p>
-<p>To use the fault toolbox with Simulink the model has to be set up like before, however, the faultbus should be defined as an input. <a href=\" FaultBus.FaultsInput\">FaultsInput</a> in the FaultBus package is a predefined input connector.</p>
+<h4>Using the Fault toolbox in Simulink</h4>
+<p>To use the fault toolbox with Simulink the model has to be set up like before, however, the fault bus should be defined as an input. <a href=\"modelica://FaultBus.FaultsInput\">FaultsInput</a> in the FaultBus package is a predefined input connector.</p>
 <p>After the model is prepared in Dymola, it can be set up as usual in Simulink. Please refer to the Dymola documentation on how to set up Dymola models in Simulink using a &quot;DymolaBlock&quot;.</p>
 </html>", revisions="<html><table border=0 cellspacing=0 cellpadding=0>
   <tr><td valign=\"center\"> <img src=\"modelica://FaultTriggering/Resources/Documentation/Images/logo_dlr.png\" width=60></td>

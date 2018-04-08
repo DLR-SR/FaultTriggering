@@ -3,7 +3,7 @@ model Actuator_ParameterFaults "Actuator with faults everywhere"
 
   Parts.Motors.Simple_ParameterFaults                    motor
     annotation (Placement(transformation(extent={{-70,-50},{-50,-30}})));
-  FaultTriggering.Examples.ActuatorExample.Parts.Drivelines.Driveline_ParamterFaults
+  FaultTriggering.Examples.ActuatorExample.Parts.Drivelines.Driveline_ParameterFaults
     driveline
     annotation (Placement(transformation(extent={{-30,-50},{-10,-30}})));
   Modelica.Mechanics.Rotational.Sources.LinearSpeedDependentTorque load(
