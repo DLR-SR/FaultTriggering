@@ -1,5 +1,5 @@
 within FaultTriggering.Examples.ActuatorExample.Parts.Drivelines;
-model Driveline_ParamterFaults "Example of a simple driveline with faults"
+model Driveline_ParameterFaults "Example of a simple driveline with faults"
 
 extends Modelica.Mechanics.Rotational.Icons.Gearbox;
   Modelica.Blocks.Math.BooleanToReal booleanToReal(realTrue=0, realFalse=1)
@@ -24,7 +24,7 @@ extends Modelica.Mechanics.Rotational.Icons.Gearbox;
     annotation (Placement(transformation(extent={{-80,-10},{-60,10}})));
   FaultOutput.ConstantBooleanFault disconnect(constBooleanFault=false)
     annotation (Placement(transformation(extent={{-90,40},{-70,60}})));
-  FaultSpeedSensor_ParamterFault
+  FaultSpeedSensor_ParameterFault
                      speedSensor(constBooleanFault=false)
     annotation (Placement(transformation(extent={{60,-40},{80,-20}})));
   FaultOutput.ConstantRealFault friction(constRealFault=0)
@@ -82,4 +82,4 @@ equation
 </tr>
 </table>
 </html>"));
-end Driveline_ParamterFaults;
+end Driveline_ParameterFaults;

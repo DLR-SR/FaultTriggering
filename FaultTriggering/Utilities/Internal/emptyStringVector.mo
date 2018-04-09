@@ -7,6 +7,6 @@ algorithm
 // nothing is needed since only a new vector of the same size is preallocated.
 
   annotation (Documentation(info="<html>
-<p>Function which empies a string vector.</p>
+<p>Function which empties a string vector.</p>
 </html>"));
 end emptyStringVector;

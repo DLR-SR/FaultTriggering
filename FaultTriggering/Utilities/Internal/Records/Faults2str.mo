@@ -265,7 +265,7 @@ algorithm
     y,
     {Indention(level + 2) + "booleanValue = " + BooleanVector2str(faults.parameterFaults.booleanValue)});
 
-  // close paramter faults
+  // close parameter faults
   y := cat(
     1,
     y,

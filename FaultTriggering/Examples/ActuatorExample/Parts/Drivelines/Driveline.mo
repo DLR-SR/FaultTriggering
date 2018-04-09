@@ -24,7 +24,7 @@ extends Modelica.Mechanics.Rotational.Icons.Gearbox;
     annotation (Placement(transformation(extent={{-80,-10},{-60,10}})));
   FaultOutput.ConstantBooleanFault disconnect(constBooleanFault=false)
     annotation (Placement(transformation(extent={{-90,40},{-70,60}})));
-  FaultSpeedSensor_ParamterFault
+  FaultSpeedSensor_ParameterFault
                      speedSensor
     annotation (Placement(transformation(extent={{60,-40},{80,-20}})));
   Bearings.FaultSelector bearing

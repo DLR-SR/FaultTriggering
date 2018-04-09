@@ -3,7 +3,7 @@ model AutomaticModelReconfiguration "Automatic Model Reconfiguration"
   extends Modelica.Icons.Information;
 
   annotation (Documentation(info="<html>
-<h4><span style=\"color:#008000\">Model reconfiguration</span></h4>
+<h4>Model reconfiguration</h4>
 <p>Using the extra integer parameter that is transmitted with each variable fault, it is possible to use an automatic model reconfiguration to save resources in the case that no fault is modelled. In the figure below a setup of such a reconfiguration is given.</p>
 <p><br><img src=\"modelica://FaultTriggering/Resources/Documentation/AutomaticModelReconfiguration.png\"/></p>
 <p>To trigger the reconfiguration, in the text layer the switching has to be activated. In this case this is done using following code:</p>

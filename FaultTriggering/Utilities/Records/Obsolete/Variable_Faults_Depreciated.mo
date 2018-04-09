@@ -108,6 +108,6 @@ record Variable_Faults_Depreciated "Variable Faults"
  </table>
 </html>",
         info="<html>
-<p><span style=\"font-family: MS Shell Dlg 2;\">Legacy version of the Variable Fault Record without default variable values.</span></p>
+<p>Legacy version of the Variable Fault Record without default variable values.</p>
 </html>"));
 end Variable_Faults_Depreciated;
