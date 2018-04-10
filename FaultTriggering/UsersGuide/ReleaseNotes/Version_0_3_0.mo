@@ -7,7 +7,7 @@ class Version_0_3_0 "Version 0.3.0 (2012-12-18)"
 <p><ol>
 <li>Fault package generation proper implemented and standard</li>
 <li>Fault Wrapper for easy fault triggering without model reconfigurations</li>
-<li>Fault Structure intruduced for paramter faults</li>
+<li>Fault Structure introduced for parameter faults</li>
 </ol></p>
 </html>",
 revisions="<html><table border=0 cellspacing=0 cellpadding=0>

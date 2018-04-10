@@ -3,7 +3,7 @@ model Actuator_ParameterFaults "Actuator with faults everywhere"
 
   Parts.Motors.Simple_ParameterFaults                    motor
     annotation (Placement(transformation(extent={{-70,-50},{-50,-30}})));
-  FaultTriggering.Examples.ActuatorExample.Parts.Drivelines.Driveline_ParamterFaults
+  FaultTriggering.Examples.ActuatorExample.Parts.Drivelines.Driveline_ParameterFaults
     driveline
     annotation (Placement(transformation(extent={{-30,-50},{-10,-30}})));
   Modelica.Mechanics.Rotational.Sources.LinearSpeedDependentTorque load(
@@ -174,7 +174,7 @@ equation
           pattern=LinePattern.None,
           smooth=Smooth.None)}),
     Documentation(info="<html>
-<p>The ActuatorInternalFault model is a basic rotational actuator model with faults. The goal of the model is the demonstration of various fault possibilities as well as how to model faults and to control them. All faults can be set in the &QUOT;FaultTrigger&QUOT; model.</p>
+<p>The ActuatorInternalFault model is a basic rotational actuator model with faults. The goal of the model is the demonstration of various fault possibilities as well as how to model faults and to control them. All faults can be set in the &quot;FaultTrigger&quot; model.</p>
 <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\"><tr>
 <td><p><br/><img src=\"modelica://FaultTriggering/Resources/Documentation/Images/logo_dlr.png\"/></p></td>
 <td><p><h4>Copyright &copy; DLR Institute of System Dynamics and Control </h4></p></td>

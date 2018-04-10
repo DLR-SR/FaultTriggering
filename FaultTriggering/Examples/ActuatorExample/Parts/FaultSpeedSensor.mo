@@ -1,5 +1,5 @@
 within FaultTriggering.Examples.ActuatorExample.Parts;
-model FaultSpeedSensor "exemple of simple sensor model with faults"
+model FaultSpeedSensor "Example of simple sensor model with faults"
 extends FaultTriggering.FaultOutput.Internal.InternalBooleanFault;
 
   Modelica.Blocks.Interfaces.RealOutput w "Absolute angular velocity of flange"
@@ -54,7 +54,7 @@ equation
           lineColor={0,0,0},
           textString="%faultNumber")}),
     Documentation(info="<html>
-<p>Basic roational speed sensor with fault interface to set the actuator output to zero in case of a fault.</p>
+<p>Basic rotational speed sensor with fault interface to set the actuator output to zero in case of a fault.</p>
 <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\"><tr>
 <td><p><br/><img src=\"modelica://FaultTriggering/Resources/Documentation/Images/logo_dlr.png\"/></p></td>
 <td><p><h4>Copyright &copy; DLR Institute of System Dynamics and Control </h4></p></td>

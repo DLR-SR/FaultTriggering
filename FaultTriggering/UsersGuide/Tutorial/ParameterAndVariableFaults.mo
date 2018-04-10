@@ -2,9 +2,9 @@ within FaultTriggering.UsersGuide.Tutorial;
 model ParameterAndVariableFaults "Parameter and Variable Faults"
   extends Modelica.Icons.Information;
   annotation (Documentation(info="<html>
-<p><b><font style=\"color: #008000; \">How to select the right FaultOutput block from the <a href=\"modelica://FaultTriggering.FaultOutput\">FaultOutput</a> package?</font></b></p>
+<h4>How to select the right FaultOutput block from the FaultOutput package?</h4>
 <p>In the FaultOutput package, you will find several fault output models. To trigger the faults, the models ConstantRealFault up to VariableBooleanFault can be selected to trigger any faults.</p>
-<p><h4><font color=\"#008000\">Parameter or Variable faults?</font></h4></p>
+<h4>Parameter or Variable faults?</h4>
 <p>There are two major types that can be selected; <b>Variable</b> and <b>Parameter</b> faults.</p>
 <p><ol>
 <li><b>Parameter Faults</b>: Faults that at set at the beginning of each simulation.</li>
@@ -28,8 +28,8 @@ model ParameterAndVariableFaults "Parameter and Variable Faults"
 <li>Gearbox tooth breakage</li>
 <li>Actuator jam</li>
 </ul></p>
-<p><h4><font color=\"#008000\">Real, Integer or Boolean faults?</font></h4></p>
-<p>The choice between Real, Integer and Boolean faults, can usually be mady by analysing the fault and the test procedures which are planned with it.</p>
+<h4>Real, Integer or Boolean faults?</h4>
+<p>The choice between Real, Integer and Boolean faults, can usually be made by analysing the fault and the test procedures which are planned with it.</p>
 <p>If a fault has a variable &quot;fault&quot; value (such as a friction increase), a Real fault is most appropriate. If the faultoutput is used to switch certain pre-defined fault cases (different fault modes of a bearing), an Integer fault should be used. If a fault only has an &quot;Off&quot; and an &quot;On&quot; state (such a short circuit or shaft breakage), a boolean fault should be used.</p>
 </html>", revisions="<html><table border=0 cellspacing=0 cellpadding=0>
   <tr><td valign=\"center\"> <img src=\"modelica://FaultTriggering/Resources/Documentation/Images/logo_dlr.png\" width=60></td>
