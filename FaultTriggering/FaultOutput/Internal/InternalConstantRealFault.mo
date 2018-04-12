@@ -15,7 +15,7 @@ block InternalConstantRealFault "Generate constant Fault of type Real"
       lineColor={0,0,0},
           textString="%constRealFault")}),
 Documentation(info="<html>
-<p>This block is used to simulate a constant fault. Using the function <a href=\"FaultTriggering.GatherAndSetFaults\">FaultTriggering.GatherAndSetFaults</a> all the faults in the model can be found and set.</p>
+<p>This block is used to simulate a constant fault. Using the function <a href=\"modelica://FaultTriggering.GatherAndSetFaults\">FaultTriggering.GatherAndSetFaults</a> all the faults in the model can be found and set.</p>
 <p>The Real output y is a constant signal: </p>
 <p><img src=\"modelica://Modelica/Resources/Images/Blocks/Sources/Constant.png\"/></p>
 </html>", revisions="<html><table border=0 cellspacing=0 cellpadding=0>

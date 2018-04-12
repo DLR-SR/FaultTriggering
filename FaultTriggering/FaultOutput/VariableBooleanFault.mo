@@ -97,7 +97,7 @@ equation
       fillPattern=FillPattern.Solid,
           pattern=LinePattern.None)}),
     Documentation(info="<html>
-<p>This block is used to simulate a variable fault. Using the function <a href=\"FaultTriggering.createFaultPackage\">FaultTriggering.createFaultPackage</a> all the faults in the model can be found and set.</p>
+<p>This block is used to simulate a variable fault. Using the function <a href=\"modelica://FaultTriggering.createFaultPackage\">FaultTriggering.createFaultPackage</a> all the faults in the model can be found and set.</p>
 </html>", revisions="<html><table border=0 cellspacing=0 cellpadding=0>
   <tr><td valign=\"center\"> <img src=\"modelica://FaultTriggering/Resources/Documentation/Images/logo_dlr.png\" width=60></td>
     <td valign=\"center\"><b>Copyright</b>

@@ -36,9 +36,8 @@ parameter FaultTriggering.Utilities.Records.IntegerFaultValue integerValue[:]
 // ------- --------------------------------------------
 parameter FaultTriggering.Utilities.Records.BooleanFaults booleanFaults[:]
     annotation (Dialog(
-      label="Boolean Fault names",
-      treeView=true,
-      enable=false));
+      label="Boolean Parameter Fault names",
+      treeView=true));
 
 parameter FaultTriggering.Utilities.Records.BooleanFaultValue booleanValue[:]
     "Boolean Parameter Fault Values" annotation (Dialog(

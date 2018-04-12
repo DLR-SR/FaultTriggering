@@ -67,7 +67,7 @@ equation
       lineColor={0,0,0},
       textString="k")}),
 Documentation(info="<html>
-<p>This block is used to simulate a constant fault. Using the function<a href=\"FaultTriggering.createFaultPackage\">FaultTriggering.createFaultPackage</a> all the faults in the model can be found and set.</p>
+<p>This block is used to simulate a constant fault. Using the function<a href=\"modelica://FaultTriggering.createFaultPackage\">FaultTriggering.createFaultPackage</a> all the faults in the model can be found and set.</p>
 <p>The Real output y is a constant signal: </p>
 <p><img src=\"modelica://Modelica/Resources/Images/Blocks/Sources/Constant.png\"/> </p>
 </html>", revisions="<html><table border=0 cellspacing=0 cellpadding=0>

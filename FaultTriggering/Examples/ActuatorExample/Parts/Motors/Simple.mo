@@ -1,5 +1,5 @@
 within FaultTriggering.Examples.ActuatorExample.Parts.Motors;
-model Simple "example of a simple motor with faults"
+model Simple "Example of a simple motor with faults"
 
 extends Modelica.Electrical.Machines.Icons.TransientMachine;
   Modelica.Mechanics.Rotational.Sources.Torque motor

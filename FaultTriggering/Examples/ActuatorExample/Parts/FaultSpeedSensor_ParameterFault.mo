@@ -1,6 +1,6 @@
 within FaultTriggering.Examples.ActuatorExample.Parts;
-model FaultSpeedSensor_ParamterFault
-  "exemple of simple sensor model with faults"
+model FaultSpeedSensor_ParameterFault
+  "Example of simple sensor model with faults"
 
   Modelica.Mechanics.Rotational.Interfaces.Flange_a flange
     "Flange of shaft from which sensor information shall be measured"
@@ -54,11 +54,11 @@ equation
       fillPattern=FillPattern.Solid,
       pattern=LinePattern.None)}),
     Documentation(info="<html>
-<p>Basic roational speed sensor with fault interface to set the actuator output to zero in case of a fault.</p>
+<p>Basic rotational speed sensor with fault interface to set the actuator output to zero in case of a fault.</p>
 <table cellspacing=\"0\" cellpadding=\"0\" border=\"0\"><tr>
 <td><p><br/><img src=\"modelica://FaultTriggering/Resources/Documentation/Images/logo_dlr.png\"/></p></td>
 <td><p><h4>Copyright &copy; DLR Institute of System Dynamics and Control </h4></p></td>
 </tr>
 </table>
 </html>"));
-end FaultSpeedSensor_ParamterFault;
+end FaultSpeedSensor_ParameterFault;
