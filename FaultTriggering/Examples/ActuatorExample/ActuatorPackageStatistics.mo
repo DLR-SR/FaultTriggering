@@ -125,8 +125,8 @@ package Interfaces
 extends FaultTriggering.Utilities.Icons.InterfacesPackage;
 connector Faults
 extends FaultTriggering.Utilities.Icons.FaultBus;
-ActuatorPackageStatistics.Interfaces.driveline driveline annotation ();
-ActuatorPackageStatistics.Interfaces.motor motor annotation ();
+ActuatorPackageStatistics.Interfaces.driveline driveline annotation();
+ActuatorPackageStatistics.Interfaces.motor motor annotation();
 end Faults;
 
 connector driveline
@@ -169,5 +169,5 @@ extends FaultTriggering.Utilities.Icons.FaultSubBus;
 ActuatorPackageStatistics.Interfaces.externalBooleanFault externalBooleanFault;
 end fault;
 end Interfaces;
-  annotation ();
+  annotation();
 end ActuatorPackageStatistics;

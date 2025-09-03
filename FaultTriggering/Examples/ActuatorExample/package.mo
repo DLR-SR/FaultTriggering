@@ -1,5 +1,5 @@
 within FaultTriggering.Examples;
-package ActuatorExample 
+package ActuatorExample  
   extends FaultTriggering.Utilities.Icons.ExamplesPackage;
 
 

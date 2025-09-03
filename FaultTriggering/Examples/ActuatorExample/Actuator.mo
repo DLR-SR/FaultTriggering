@@ -10,15 +10,13 @@ model Actuator "Actuator with faults everywhere"
     annotation (Placement(transformation(extent={{60,-50},{40,-30}})));
   Modelica.Blocks.Sources.Constant speedReference(k=1)
     annotation (Placement(transformation(extent={{-90,0},{-70,20}})));
-  Modelica.Blocks.Continuous.LimPID
-                                 pID(
-    initType=Modelica.Blocks.Types.InitPID.InitialState,
+  Modelica.Blocks.Continuous.LimPID pID(
+    initType=Modelica.Blocks.Types.Init.InitialState,
     Nd=1,
     Td=0,
     Ti=0.005,
     k=0.5,
-    yMax=10)
-           annotation (Placement(transformation(extent={{-28,0},{-8,20}})));
+    yMax=10) annotation (Placement(transformation(extent={{-28,0},{-8,20}})));
 equation
   connect(motor.flange1, driveline.flange_a1) annotation (Line(
       points={{-50.2,-40},{-30,-40}},

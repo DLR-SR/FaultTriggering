@@ -2,7 +2,7 @@ within ;
 package FaultTriggering "Library for Fault Triggering"
   extends FaultTriggering.Utilities.Icons.Package;
 
-  import SI = Modelica.SIunits;
+  import SI = Modelica.Units.SI;
   import Modelica.Utilities.Streams;
   import Modelica.Utilities.Strings;
 
@@ -11,8 +11,10 @@ package FaultTriggering "Library for Fault Triggering"
 
 
 
-  annotation (uses(Modelica(version="3.2.2"),AdvancedNoise(version="1.0.0")),
-    version="0.6.6", conversion(from(version="0.6.4", to="0.6.5", script="modelica://FaultTriggering/Resources/Scripts/Convert_from_0.6.4_to_0.6.5.mos")),
+  annotation (uses(Modelica(version="4.0.0"),AdvancedNoise(version="1.0.0")),
+    version="0.6.7", conversion(from(version="0.6.4", to="0.6.5", script="modelica://FaultTriggering/Resources/Scripts/Convert_from_0.6.4_to_0.6.5.mos"), from(
+          version="0.6.6", script=
+            "modelica://FaultTriggering/Resources/Scripts/ConvertFromFaultTriggering_0.6.6.mos")),
     versionDate="2015-07-15",
 preferredView="info",
    Documentation(info="<html>

@@ -13,7 +13,8 @@ equation
     booleanFault[i] = false;
   end for;
 
-  annotation (defaultComponentPrefixes="inner",defaultComponentName="faultTrigger",    Documentation(info="<html>
+  annotation (defaultComponentPrefixes="inner",missingInnerMessage="No \"faultTrigger\" component is defined. A default faultTrigger component will be used.",
+  defaultComponentName="faultTrigger",    Documentation(info="<html>
 <p>Default model of the FaultTrigger to supply all variable faults with values.</p>
 <p>The default outputs of the fault channels is:</p>
 <pre>&nbsp;&nbsp;realFault[1]&nbsp;=&nbsp;time;

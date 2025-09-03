@@ -1,5 +1,5 @@
 within FaultTriggering.Utilities.Icons;
-partial package Records 
+partial package Records  
 extends FaultTriggering.Utilities.Icons.Package;
 
 
