@@ -13,8 +13,6 @@ partial model Partial_FaultTrigger "partial model defining the fault classes"
   Boolean booleanFault[booleanFaultSize] "Boolean Fault trigger";
 
   annotation (
-    defaultComponentPrefixes="inner",
-    missingInnerMessage="No \"faultTrigger\" component is defined. A default faultTrigger component will be used.",
   Icon(graphics={                          Rectangle(
             extent={{-100,-100},{100,100}},
             lineColor={0,0,0},
