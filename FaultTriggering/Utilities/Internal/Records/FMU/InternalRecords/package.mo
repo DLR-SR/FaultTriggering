@@ -1,4 +1,4 @@
 within FaultTriggering.Utilities.Internal.Records.FMU;
-package InternalRecords 
+package InternalRecords  
 
 end InternalRecords;

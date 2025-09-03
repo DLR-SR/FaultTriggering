@@ -12,12 +12,11 @@ model Actuator_ParameterFaults "Actuator with faults everywhere"
   Modelica.Blocks.Sources.Constant speedReference(k=1)
     annotation (Placement(transformation(extent={{-90,0},{-70,20}})));
   Modelica.Blocks.Continuous.PID pID(
-    initType=Modelica.Blocks.Types.InitPID.InitialState,
+    initType=Modelica.Blocks.Types.Init.InitialState,
     Nd=1,
     Td=0,
     k=0.5,
-    Ti=0.005)
-           annotation (Placement(transformation(extent={{-28,0},{-8,20}})));
+    Ti=0.005) annotation (Placement(transformation(extent={{-28,0},{-8,20}})));
   Modelica.Blocks.Math.Feedback feedback
     annotation (Placement(transformation(extent={{-60,0},{-40,20}})));
 equation

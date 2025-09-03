@@ -11,8 +11,7 @@ block InternalRealFault "Generate variable Fault of type Real"
 
   FaultTriggering.Utilities.Types.Fault_SelectRealFault
                                                 faultNumber
-    "Internal variable automatically set by the FaultTriggering library. Do NOT change!"
-                                                                                                        annotation(Dialog(tab="Advanced", enable=false));
+    "Internal variable automatically set by the FaultTriggering library. Do NOT change!"                annotation(Dialog(tab="Advanced", enable=false));
 equation
   faultNumber = externalRealFault.faultIndex;
   fault = if externalRealFault.externalFaultOn then faultTrigger.realFault[faultNumber] else
